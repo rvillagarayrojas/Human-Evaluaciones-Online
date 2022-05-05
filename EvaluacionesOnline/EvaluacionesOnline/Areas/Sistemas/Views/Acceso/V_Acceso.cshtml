@@ -1,0 +1,196 @@
+﻿    @{
+    ViewBag.Title = "HS | Acceder";
+    Layout = "~/Areas/Sistemas/Views/MPAcceso.cshtml";
+}
+<br />
+<div class="col-md-12">   
+    
+    <div class="col-md-6 text-center" style="padding-top:50px">
+        <img src="~/Recursos/Img/evaluado.jpg" width="88%"/>
+    </div>
+
+    <div class="col-md-6">
+        <img src="~/Recursos/Img/Logo.png" width="90%"/><br />
+        <form class="form-horizontal form-border" role="form">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <div class="col-md-12">
+                        <h5>
+                            Bienvenido al sistema de <strong>TestSmart</strong>, si ya cuentas con un usuario y contraseña ingresalos para acceder a las evaluaciones.
+                        </h5><br />
+                    </div>
+                    <div class="col-sm-12">
+                        <div class = "col-sm-3">
+                        </div>
+                        <div class = "col-sm-6">
+                            <p>                                
+                                Cuenta de usuario. <a href="javascript:;" onclick="$('#ModalTerminos').show();">¿Qué es esto?</a><br />
+                                <input id="vc_cod_usuario" type="text" class="form-control" placeholder="Código" maxlength="16"/><br />
+                            </p>
+                        </div>
+                        <div class = "col-sm-3">
+                        </div>
+                    </div>
+                    <div class="col-sm-12 text-center">
+                        <div class = "col-sm-3">
+                        </div>
+                        <div class = "col-sm-6">
+                            <div class="input-group">
+                                <input type="password" class="form-control pwd" style="padding-left:15px" id="vc_password" maxlength="16" placeholder="Contraseña">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open iconPassw"></i></button>
+                                </span>          
+                            </div>
+                        </div>
+                        <div class = "col-sm-3">
+                        </div>
+                    </div>
+                    <div class="col-sm-12"><br /></div>
+                    <div class="col-sm-12">
+                        <div class = "col-sm-3">
+                        </div>
+                        <div class = "col-sm-6 text-center">
+                            <p>
+                                <a href="javascript:;" onclick="Acceder();" class="btn btn-default"><strong>Iniciar Sesión</strong></a>
+                            </p>
+                        </div>
+                        <div class = "col-sm-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    
+        <footer class="text-center">
+            <strong><label>DESARROLLADO POR: </strong> <a href="http://www.tisi.com.pe" style="font-family:Arial;"><strong style="color:rgba(7, 58, 95, 0.8)">TECNOLOGÍAS DE INFORMACIÓN Y SOLUCIONES INTEGRALES S.A.C.</strong></a><br />Copyright&copy;@DateTime.Now.Year todos los derechos reservados</label><br />
+            <img src="~/Recursos/Img/LogoTisi.png" width="80px"/>
+        </footer>
+</div>
+
+
+@*open>>> Modal: Contenedor de elementos de interacción *@
+    <div id="ModalNotificacion" class="modal" style="overflow:scroll">
+        <div class="modal-dialog">
+            <div class="modal-content" style="border:1px solid rgb(6, 138, 228)">
+                <div class="modal-header">
+                    <section class="content-header">
+                        <h4>
+                            <i class="glyphicon glyphicon-info-sign"></i> Notificación
+                        </h4>
+                    </section>
+                </div>
+                <div id="ModalNotificacion_Contenido" class="modal-body">
+                            
+                </div>
+                <div class="modal-body text-center">
+                    <button class="btn btn-default" onclick="$('#ModalNotificacion').hide(); return false;"><strong>Entiendo</strong></button>
+                </div>
+            </div>
+        </div>
+    </div>
+@*close>> Modal *@
+
+@*open>>> Modal: Contenedor de elementos de interacción *@
+    <div id="ModalTerminos" class="modal" style="overflow:scroll">
+        <div class="modal-dialog">
+            <div class="modal-content" style="border:1px solid rgb(6, 138, 228)">
+                <div class="modal-header">
+                    <section class="content-header">
+                        <h3>
+                            <i class="glyphicon glyphicon-user"></i> <strong>CUENTA DEL CANDIDATO</strong>
+                        </h3>
+                    </section>
+                </div>
+                <div id="ModalTerminos_Contenido" class="modal-body">
+                    <p style="text-align:justify;">
+
+                        Con tu cuenta de usuario tienes acceso a HSmart con el cual puedes realizar el proceso de evaluación psicolaboral
+                        con las distintas funciones permitidos por el sistema.
+                    </p>
+                </div>
+                <div class="modal-body text-center">
+                    <button class="btn btn-default" onclick="$('#ModalTerminos').hide(); return false;"><strong>Entiendo</strong></button>
+                </div>
+            </div>
+        </div>
+    </div>
+@*close>> Modal *@
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#vc_cod_usuario').keypress(Enter);
+        $('#vc_password').keypress(Enter);
+
+        $(".reveal").on('click', function () {
+            var $pwd = $(".pwd");
+            var $iconPassw = $(".iconPassw");
+            if ($pwd.attr('type') === 'password') {
+                $pwd.attr('type', 'text');
+                $iconPassw.removeClass("glyphicon-eye-open");
+                $iconPassw.addClass("glyphicon-eye-close");
+            } else {
+                $pwd.attr('type', 'password');
+                $iconPassw.removeClass("glyphicon-eye-close");
+                $iconPassw.addClass("glyphicon-eye-open");
+            }
+        });
+    });
+
+    function Enter(evt)
+    {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode == 13)
+        {
+            Acceder();
+            return false;
+        }
+        return true;
+    }
+
+    function Acceder()
+    {
+
+        var model = new Object();
+        
+        var candidato = {
+
+            vc_cod_usuario  : $('#vc_cod_usuario').val(),
+            vc_password     : $('#vc_password').val()
+
+        }
+
+        var me_prueba = { candidato: candidato }
+        var mme_prueba = { me_prueba: me_prueba }
+
+        model.mme_prueba = mme_prueba;
+
+        $.ajax({
+            url: "@Url.RouteUrl("AC_Acceder")",
+            type: "POST",
+            data: JSON.stringify(model),
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+
+                if (parseInt(result.trans) > 0)
+                {
+                    window.location.href = "@Url.RouteUrl("V_EvaluacionesSitio")"
+                }
+                else
+                {
+                    $('#ModalNotificacion_Contenido').html(result.trans)
+                    $('#ModalNotificacion').show();
+                }
+
+            },
+            error: function (result) {
+                $('#ModalNotificacion_Contenido').html("Debe ingresar su código y contraseña para iniciar sesión.")
+                $('#ModalNotificacion').show();
+            }
+        });
+
+    }
+</script>

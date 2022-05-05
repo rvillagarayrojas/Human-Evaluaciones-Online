@@ -1,0 +1,66 @@
+﻿@using EvaluacionesOnline.Areas.Sistemas.Models
+@model  EvaluacionesOnline.Areas.Seleccion.Models.PruebasModel
+
+<div class="panel panel-primary">
+    <div class="panel-heading">4. EXPERIENCIA LABORAL (Empiece con la empresa más reciente en la cual trabajó)</div>
+        <div id="div_ListaExperiencia" class="table-responsive" style="padding-top:1px">
+            <table class="table table-striped table-bordered table-condensed ">
+            <thead>
+                <tr style="height:40px">
+                    <th style="font-size:12px;min-width:100px">Nombre de la empresa</th>
+                    <th style="font-size:12px;min-width:100px">Puesto</th>
+                    <th style="font-size:12px;min-width:100px">Desde <strong style="color:red; font-size:12px">(dd/mm/aaaa)</strong></th>
+                    <th style="font-size:12px;min-width:100px"><sup>(**)</sup> Hasta <strong style="color:red; font-size:12px">(dd/mm/aaaa)</strong></th>
+                    <th style="font-size:12px;min-width:100px">Sueldo</th>
+                    <th style="font-size:12px;min-width:100px">Motivo de retiro</th>
+                </tr>
+            </thead>
+            <tbody id="itemsExperiencia">
+                <tr>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td>
+                        <input type="text" id="txtFechNac_Experiencia_inicio" class="form-control input-sm dt_fecha_Experiencia" placeholder="dd/mm/AAAA">
+                    <td>
+                        <div class="input-group">
+                        <span class="input-group-addon" style="background-color:#e1e0e0"><input id="ChkFechNac_Experiencia_Fin" type="checkbox" onchange="activarFecha(this)" /></span>
+                        <input id="txtFechNac_Experiencia_Fin" disabled="disabled" type="text" class="form-control input-sm dt_fecha_Experiencia" placeholder="dd/mm/AAAA">
+                        </div>
+                    </td>                            
+                    <td><input type="text" class="form-control input-sm csSalario" id="txtSalarioExperiencia" /></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td><input id="txtFechNac_Experiencia_inicio" type="text" class="form-control input-sm dt_fecha_Experiencia" placeholder="dd/mm/AAAA"></td>
+                    <td>
+                        <div class="input-group">
+                        <span class="input-group-addon" style="background-color:#e1e0e0"><input id="ChkFechNac_Experiencia_Fin" type="checkbox" onchange="activarFecha(this)"  /></span>
+                        <input id="txtFechNac_Experiencia_Fin" disabled="disabled" type="text" class="form-control input-sm dt_fecha_Experiencia" placeholder="dd/mm/AAAA">
+                        </div>
+                    </td>                            
+                    <td><input type="text" class="form-control input-sm csSalario" id="txtSalarioExperiencia" /></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td><input id="txtFechNac_Experiencia_inicio" type="text" class="form-control input-sm dt_fecha_Experiencia" placeholder="dd/mm/AAAA"></td>
+                    <td>
+                        <div class="input-group">
+                        <span class="input-group-addon" style="background-color:#e1e0e0"><input id="ChkFechNac_Experiencia_Fin" type="checkbox" onchange="activarFecha(this)"    /></span>
+                        <input id="txtFechNac_Experiencia_Fin" disabled="disabled" type="text" class="form-control input-sm dt_fecha_Experiencia" placeholder="dd/mm/AAAA">
+                        </div>
+                    </td>                            
+                    <td><input type="text" class="form-control input-sm csSalario" id="txtSalarioExperiencia" /></td>
+                    <td contenteditable="true"></td>
+                </tr>
+            </tbody>
+        </table>
+            <div style="border-top:solid 1px #f4f4f4"><sup>(**)</sup>Si se encuentra trabajando actualmente no rellene el campo <b>Hasta</b>.</div>
+        </div>
+    <div class="panel-footer">
+        <button type="button" class="btn btn-success" onclick="AgregarFilaExperiencia()">Agregar fila</button>
+    </div>
+</div>

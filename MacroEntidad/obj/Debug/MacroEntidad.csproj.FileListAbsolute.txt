@@ -1,0 +1,168 @@
+G:\Trabajos\Sln 6C\01 Soft\MacroEntidad\bin\Debug\MacroEntidad.dll
+G:\Trabajos\Sln 6C\01 Soft\MacroEntidad\bin\Debug\MacroEntidad.pdb
+G:\Trabajos\Sln 6C\01 Soft\MacroEntidad\obj\Debug\MacroEntidad.dll
+G:\Trabajos\Sln 6C\01 Soft\MacroEntidad\obj\Debug\MacroEntidad.pdb
+G:\Trabajos\Sln23C\01 Soft\MacroEntidad\bin\Debug\MacroEntidad.dll
+G:\Trabajos\Sln23C\01 Soft\MacroEntidad\bin\Debug\MacroEntidad.pdb
+G:\Trabajos\Sln23C\01 Soft\MacroEntidad\bin\Debug\Entidad.dll
+G:\Trabajos\Sln23C\01 Soft\MacroEntidad\bin\Debug\Entidad.pdb
+G:\Trabajos\Sln23C\01 Soft\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+G:\Trabajos\Sln23C\01 Soft\MacroEntidad\obj\Debug\MacroEntidad.dll
+G:\Trabajos\Sln23C\01 Soft\MacroEntidad\obj\Debug\MacroEntidad.pdb
+H:\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+H:\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+H:\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+H:\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+H:\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+H:\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+H:\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+D:\Evaluaciones Online\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+D:\Evaluaciones Online\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+D:\Evaluaciones Online\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+D:\Evaluaciones Online\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+D:\Evaluaciones Online\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+D:\Evaluaciones Online\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+D:\Evaluaciones Online\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+E:\TISI\Evaluaciones Online\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+E:\TISI\Evaluaciones Online\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+E:\TISI\Evaluaciones Online\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+E:\TISI\Evaluaciones Online\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+E:\TISI\Evaluaciones Online\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+E:\TISI\Evaluaciones Online\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+E:\TISI\Evaluaciones Online\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+C:\Users\stephanie.figueroa\Desktop\E\Root\KATY\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+C:\Users\stephanie.figueroa\Desktop\E\Root\KATY\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+C:\Users\stephanie.figueroa\Desktop\E\Root\KATY\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+C:\Users\stephanie.figueroa\Desktop\E\Root\KATY\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+C:\Users\stephanie.figueroa\Desktop\E\Root\KATY\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+C:\Users\stephanie.figueroa\Desktop\E\Root\KATY\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+C:\Users\stephanie.figueroa\Desktop\E\Root\KATY\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+C:\Users\stephanie.figueroa\Desktop\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+C:\Users\stephanie.figueroa\Desktop\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+C:\Users\stephanie.figueroa\Desktop\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+C:\Users\stephanie.figueroa\Desktop\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+C:\Users\stephanie.figueroa\Desktop\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+C:\Users\stephanie.figueroa\Desktop\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+C:\Users\stephanie.figueroa\Desktop\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\MacroEntidad\bin\Debug\Entidad.pdb
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csprojAssemblyReference.cache
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.csproj.CopyComplete
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\MacroEntidad.dll
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\MacroEntidad.pdb
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\Entidad.dll
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\Entidad.pdb
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.dll
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.pdb
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\MacroEntidad\bin\Debug\Entidad.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\MacroEntidad\bin\Debug\Entidad.pdb
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\MacroEntidad\obj\Debug\MacroEntidad.pdb
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\MacroEntidad.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\MacroEntidad.pdb
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\Entidad.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\Entidad.pdb
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.pdb
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\MacroEntidad.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\MacroEntidad.pdb
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\Entidad.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\Entidad.pdb
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\MacroEntidad.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\MacroEntidad.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\Entidad.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\Entidad.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.pdb
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\MacroEntidad.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\MacroEntidad.pdb
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\Entidad.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\bin\Debug\Entidad.pdb
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.csprojResolveAssemblyReference.cache
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\MacroEntidad\obj\Debug\MacroEntidad.pdb
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\MacroEntidad\bin\Debug\MacroEntidad.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\MacroEntidad\bin\Debug\MacroEntidad.pdb
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\MacroEntidad\bin\Debug\Entidad.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\MacroEntidad\bin\Debug\Entidad.pdb
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\MacroEntidad\obj\Debug\MacroEntidad.csproj.AssemblyReference.cache
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\MacroEntidad\obj\Debug\MacroEntidad.csproj.CoreCompileInputs.cache
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\MacroEntidad\obj\Debug\MacroEntidad.csproj.CopyComplete
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\MacroEntidad\obj\Debug\MacroEntidad.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\MacroEntidad\obj\Debug\MacroEntidad.pdb

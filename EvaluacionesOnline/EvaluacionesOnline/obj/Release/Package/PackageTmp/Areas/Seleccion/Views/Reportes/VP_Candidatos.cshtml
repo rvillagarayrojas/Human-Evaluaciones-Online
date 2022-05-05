@@ -1,0 +1,65 @@
+﻿@model  EvaluacionesOnline.Areas.Seleccion.Models.PruebasModel
+
+<table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+    <thead>
+        <tr>
+            <th class="text-center">NRO° DOC.</th>
+            <th>NOMBRES</th>
+            <th class="text-center">EDAD</th>
+            <th>GRADO DE INSTRUCCIÓN</th>
+            <th>PROFESIÓN</th>
+            <th>EMPRESA</th>
+            <th>ÚLTIMA EXPERIENCIA</th>
+            <th>NOMBRES DE REFERENCIA</th>
+            <th class="text-center">TELÉFONO DE REFERENCIA</th>
+            <th>CONSULTOR</th>
+            <th class="text-center">INFORMES</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.ls_candidatos != null)
+        {
+            foreach (var item in Model.ls_candidatos)
+            {   
+                <tr>
+                    <td class="text-center">
+                        @item.me_prueba.candidato_evaluacion.vc_doc_identi
+                    </td>
+                    <td>
+                        @item.me_prueba.candidato_evaluacion.vc_nombres_candidato
+                    </td>
+                    <td class="text-center">
+                        @item.me_prueba.candidato_evaluacion.nu_edad_candidato
+                    </td>
+                    <td>
+                        @item.me_prueba.candidato_evaluacion.vc_grado_instruccion
+                    </td>
+                    <td>
+                        @item.me_prueba.candidato_evaluacion.vc_profesion_candidato
+                    </td>
+                    <td>
+                        @item.me_prueba.candidato_evaluacion.vc_empresa_candidato
+                    </td>
+                    <td>
+                        @item.me_prueba.candidato_evaluacion.vc_ultima_experiencia_candidato
+                    </td>
+                    <td>
+                        @item.me_prueba.candidato_evaluacion.vc_nombre_referencia_candidato
+                    </td>
+                    <td class="text-center">
+                        @item.me_prueba.candidato_evaluacion.vc_telefono_referencia_candidato
+                    </td>
+                    <td>
+                        @item.me_prueba.candidato_evaluacion.vc_consultor
+                    </td>
+                    <td class="text-center">
+                        <button class="btn btn-primary" onclick="VerInformeCompleto('@item.me_prueba.candidato_evaluacion.nu_id_candidato')"><i class="fa fa-file"></i> C</button>
+                        <button class="btn btn-info" onclick="VerInformeResumen('@item.me_prueba.candidato_evaluacion.nu_id_candidato')"><i class="fa fa-file"></i> R</button>
+                        <button class="btn btn-warning" onclick="VerInformeGrafico('@item.me_prueba.candidato_evaluacion.nu_id_candidato')"><i class="fa fa-image"></i> G</button>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+

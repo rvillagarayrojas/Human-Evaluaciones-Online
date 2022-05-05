@@ -1,0 +1,49 @@
+G:\Trabajos\Sln 6C\01 Soft\Politica\bin\Debug\Politica.dll
+G:\Trabajos\Sln 6C\01 Soft\Politica\bin\Debug\Politica.pdb
+G:\Trabajos\Sln 6C\01 Soft\Politica\obj\Debug\Politica.dll
+G:\Trabajos\Sln 6C\01 Soft\Politica\obj\Debug\Politica.pdb
+G:\Trabajos\Sln23C\01 Soft\Politica\bin\Debug\Politica.dll
+G:\Trabajos\Sln23C\01 Soft\Politica\bin\Debug\Politica.pdb
+G:\Trabajos\Sln23C\01 Soft\Politica\obj\Debug\Politica.dll
+G:\Trabajos\Sln23C\01 Soft\Politica\obj\Debug\Politica.pdb
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Politica\bin\Debug\Politica.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Politica\bin\Debug\Politica.pdb
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Politica\obj\Debug\Politica.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Politica\obj\Debug\Politica.pdb
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Politica\bin\Debug\Politica.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Politica\bin\Debug\Politica.pdb
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Politica\obj\Debug\Politica.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Politica\obj\Debug\Politica.pdb
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Politica\bin\Debug\Politica.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Politica\bin\Debug\Politica.pdb
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Politica\obj\Debug\Politica.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Politica\obj\Debug\Politica.pdb
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Politica\bin\Debug\Politica.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Politica\bin\Debug\Politica.pdb
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Politica\obj\Debug\Politica.csprojResolveAssemblyReference.cache
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Politica\obj\Debug\Politica.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Politica\obj\Debug\Politica.pdb
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Politica\bin\Debug\Politica.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Politica\bin\Debug\Politica.pdb
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Politica\obj\Debug\Politica.csprojResolveAssemblyReference.cache
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Politica\obj\Debug\Politica.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Politica\obj\Debug\Politica.pdb
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Politica\bin\Debug\Politica.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Politica\bin\Debug\Politica.pdb
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Politica\obj\Debug\Politica.csprojResolveAssemblyReference.cache
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Politica\obj\Debug\Politica.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Politica\obj\Debug\Politica.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Politica\bin\Debug\Politica.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Politica\bin\Debug\Politica.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Politica\obj\Debug\Politica.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Politica\obj\Debug\Politica.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Politica\obj\Debug\Politica.csprojResolveAssemblyReference.cache
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Politica\bin\Debug\Politica.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Politica\bin\Debug\Politica.pdb
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Politica\obj\Debug\Politica.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Politica\obj\Debug\Politica.pdb
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Politica\bin\Debug\Politica.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Politica\bin\Debug\Politica.pdb
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Politica\obj\Debug\Politica.csproj.CoreCompileInputs.cache
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Politica\obj\Debug\Politica.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Politica\obj\Debug\Politica.pdb

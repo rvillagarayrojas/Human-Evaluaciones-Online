@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Sln23C | Bienvenido";
+    Layout = "~/Areas/Sistemas/Views/MPSistemasSitio.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            PANEL DE CONTROL 23C
+            <small>Seguridad</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-shared"></i> Sistemas</a></li>
+            <li class="active">Panel de control</li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Grupo de Estados</h3>
+                    </div>
+                    <form class="form-horizontal">
+                        <div class="box-body">
+
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    <label for="lbl_vc_grup_stnd_codi">Código</label>
+                                    <input type="text" class="form-control" id="vc_grup_stnd_codi">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="lbl_vc_grup_stnd_nomb">Nombre</label>
+                                    <input type="text" class="form-control" id="vc_grup_stnd_nomb">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="lbl_tx_grup_stnd_desc">Descripción</label>
+                                    <input type="text" class="form-control" id="tx_grup_stnd_desc">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                    <label for="lbl_nu_grup_stnd_iden_inic">Idn inicial</label>
+                                    <input type="text" class="form-control" id="nu_grup_stnd_iden_inic">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="lbl_nu_grup_stnd_iden_finl">Idn Final</label>
+                                    <input type="text" class="form-control" id="nu_grup_stnd_iden_finl">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-default">Volver</button>
+                            <button type="submit" class="btn btn-info pull-right">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>

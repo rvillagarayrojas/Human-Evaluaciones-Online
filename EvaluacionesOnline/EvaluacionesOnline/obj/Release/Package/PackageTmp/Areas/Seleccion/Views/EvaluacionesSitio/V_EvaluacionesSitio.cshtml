@@ -1,0 +1,1147 @@
+﻿@using EvaluacionesOnline.Areas.Sistemas.Models
+@model  EvaluacionesOnline.Areas.Seleccion.Models.PruebasModel
+@{
+    ViewBag.Title = "TEST | Evaluaciones";
+    Layout = "~/Areas/Seleccion/Views/MPEvaluacionesSitio.cshtml";
+    var Sesion = (SesionModel)Session[SesionModel.SessionName];
+}
+<style>
+    sub {
+        color:red;
+    }
+
+    sup {
+        color:red;
+    }
+</style>
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            EVALUACIONES PSICOLABORALES
+        </h1>
+        <ol class="breadcrumb">
+            <li class="active">Evaluaciones</li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="box">
+                    <div class="box-header">
+                    <h3><i class="fa fa-users" style="color:#225973;"></i> Bienvenido a HS SMART, tu asistente virtual de RR.HH.</h3>
+                    </div>
+                    <div class="box-body">
+                        @*<div class="col-md-12">*@
+                            @*<div class="col-md-3">
+                                <img src="~/Recursos/Gif/hsito-saludando.gif" width="200px" style="border-radius:100%"/><br /><br /><br />
+                            </div>*@
+                            <div class="col-md-12" style="padding-left:7px">
+                                                                
+                                @if (Sesion.MME_Sesion.me_prueba.candidato.nu_id_perfil == 3)
+                                {
+
+                                    if (Model.mme_prueba.me_prueba.candidato_evaluacion.ch_proteccion_datos == "0")
+                                    {
+                                        if (Model.mme_prueba.me_prueba.candidato_evaluacion.ch_ficha == "0")
+                                        {
+                                            <div class="col-md-12">
+                                                <h4>Para continuar bríndanos tus datos, si tienes alguna duda puedes <a href="javascript:;" onclick="$('#ModalTerminos').show();" style="text-decoration:underline">leer los términos y condiciones</a>.</h4>
+                                            </div> 
+                                            <div class="col-md-9">
+                                                <form class="form-horizontal form-border" role="form">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-12">
+                                                            <h3 style="color:#225973;font-weight:bold">DATOS GENERALES</h3>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">DNI</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_dni_candidato,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control",
+                                                                            disabled = "disabled"
+                                                                        })
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Teléfono</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_nro_telefono,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control",
+                                                                            disabled = "disabled"
+                                                                        })
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Correo</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_correo_candidato,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control",
+                                                                            disabled = "disabled"
+                                                                        })
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Nombres</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_nombres_candidato,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control"
+                                                                        })
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Apellidos</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_apellidos_candidato,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control"
+                                                                        })
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Sexo</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        @{
+                                                                            string checkeado = "";
+                                                                            if (Model.mme_prueba.me_prueba.candidato_evaluacion.vc_sexo_candidato == "F") { checkeado = "checked=checked"; }
+                                                                        }
+
+                                                                        <label><input id="ch_sexo_M" type="radio" name="sexo" style="width:18px;height:18px;" value="M" checked="checked"/> <span style="font-weight:bold;">Masculino</span></label><br />
+                                                                        <label><input id="ch_sexo_F" type="radio" name="sexo" style="width:18px;height:18px;" value="F" @checkeado/> <span style="font-weight:bold;">Femenino</span></label>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Edad</label>  
+                                                                <div class = "col-sm-3">
+                                                                    <p>
+                                                                        @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.nu_edad_candidato,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control",
+                                                                            maxlength = "2"
+                                                                        })
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <h3 style="color:#225973;font-weight:bold">DATOS LABORALES</h3>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Grado de instrucción</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        <select id="nu_id_grado_instruccion" class="form-control">
+                                                                            <option value="1">Sin nivel</option>
+                                                                            <option value="2">Pre escolar</option>
+                                                                            <option value="3">Primaria</option>
+                                                                            <option value="4">Secundaria</option>
+                                                                            <option value="5">Superior</option>
+                                                                            <option value="6">Postgrado</option>
+                                                                        </select>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Profesión</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_profesion_candidato,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control"
+                                                                        })
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Última experiencia</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_ultima_experiencia_candidato,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control"
+                                                                        })
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Empresa</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_empresa_candidato,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control"
+                                                                        })
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <h3 style="color:#225973;font-weight:bold">REFERENCIA LABORAL</h3>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Nombre Completo</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_nombre_referencia_candidato,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control"
+                                                                        })
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Teléfono</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_telefono_referencia_candidato,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control"
+                                                                        })
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Nombre Completo (Opcional)</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_nombre_referencia_candidato2,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control"
+                                                                        })
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label">Teléfono (Opcional)</label>  
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_telefono_referencia_candidato2,
+                                                                        new
+                                                                        {
+                                                                            type = "text",
+                                                                            @class = "form-control"
+                                                                        })
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <label class="col-sm-3 control-label"></label> 
+                                                                <div class = "col-sm-8">
+                                                                    <p>
+                                                                        <h4 style="color:black"><label><input id="ch_proteccion_datos" type="checkbox" style="width:18px;height:18px"/> He leído y acepto <a href="javascript:;" onclick="$('#ModalTerminos').show();" style="text-decoration:underline">los términos y condiciones</a>.</label></h4>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>                                   
+                                                <div class="col-md-12 text-center">
+                                                    <button class="btn btn-primary" onclick="Confirmar(); return false;"><h4>Realizar Evaluación</h4></button>
+                                                    <br /><br />
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="col-md-12">
+                                                <h4>Para continuar bríndanos tus datos.</h4>
+                                            </div>
+                                    
+                                            <div class="col-md-12">
+                                                <h4 style="color:red"><strong>RECUERDA: </strong> El formato correcto de la fecha es dd/mm/aaaa (Ejm. 28/01/2018)</h4>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <form class="" role="form">
+                                                    <div id="div_ListaDatosPersonales" class="table-responsive" style="padding-top:1px">
+                                                     @Html.Partial("VP_Datos_Personales", Model)
+                                                    </div>
+                                                    
+                                                     @Html.Partial("VP_Educacion", Model)
+                                                                                                        
+                                                     @Html.Partial("VP_Conocimiento", Model)
+                                                                                                        
+                                                     @Html.Partial("VP_Experiencia_Laboral", Model)
+                                                    
+                                                     @Html.Partial("VP_ReferenciaLaboral", Model)
+                                                    
+                                                     @Html.Partial("VP_Datos_Familiares", Model)
+
+                                                    <div class="panel panel-primary">
+                                                        <div class="panel-heading">7. OTROS</div>
+                                                        <div class="panel-body" >
+                                                        <div class="col-sm-12">
+                                                            <label class="col-sm-6 control-label" style="padding-top: 7px;padding-left: 0px;padding-right: 0px;">1.- Motivo de búsqueda de trabajo:</label>  
+                                                            <div class = "col-sm-6">
+                                                                <p>
+                                                                    @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_busqueda_trabajo,
+                                                                    new
+                                                                    {
+                                                                        type = "text",
+                                                                        @class = "form-control"
+                                                                    })
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-12">
+                                                            <label class="col-sm-6 control-label" style="padding-top: 0px;padding-left: 0px;padding-right: 0px;">2.- ¿Está participando de algún otro proceso de selección?</label>  
+                                                            <div class = "col-sm-6">
+                                                                <p>
+                                                                    @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_otro_proceso_seleccion,
+                                                                    new
+                                                                    {
+                                                                        type = "text",
+                                                                        @class = "form-control"
+                                                                    })
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-12">
+                                                            <label class="col-sm-6 control-label" style="padding-top: 0px;padding-left: 0px;padding-right: 0px;">3.- ¿Cómo se contacto con nosotros? (Bumeran, computrabajo, etc.)</label>  
+                                                            <div class = "col-sm-6">
+                                                                <p>
+                                                                    @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_contacto,
+                                                                    new
+                                                                    {
+                                                                        type = "text",
+                                                                        @class = "form-control"
+                                                                    })
+                                                                </p>
+                                                            </div>
+                                                        </div>
+ 
+                                                        <div class="col-sm-12">
+                                                            <label class="col-sm-6 control-label" style="padding-top: 0px;padding-left: 0px;padding-right: 0px;">4.- ¿Haz tenido algún tipo de accidente en el ultimo año?</label>  
+                                                            <div class = "col-sm-6">
+                                                                <p>
+                                                                    @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_accidente,
+                                                                    new
+                                                                    {
+                                                                        type = "text",
+                                                                        @class = "form-control"
+                                                                    })
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                           
+                                                        <div class="col-sm-12">
+                                                            <label class="col-sm-6 control-label" style="padding-top: 0px;padding-left: 0px;padding-right: 0px;">4.- ¿Ha estado involucrado en algún problema de índole legal o judicial?</label>  
+                                                            <div class = "col-sm-6">
+                                                                <p>
+                                                                    @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_problema_legales,
+                                                                    new
+                                                                    {
+                                                                        type = "text",
+                                                                        @class = "form-control"
+                                                                    })
+                                                                </p>
+                                                            </div>
+                                                        </div>  
+                                                    </div>
+                                                </div>
+                                                        <div class="col-sm-12">
+                                                            <label><input id="chkTerminos" type="checkbox" /> He leído y acepto los <a href="javascript:;" onclick="$('#ModalTerminos').show();" style="text-decoration:underline">términos y condiciones</a>. </label>
+                                                        </div>                                                                                                     
+                                                
+                                                </form> 
+                                                <br /><br /> 
+                                                
+                                                <div class="col-md-12 text-center">
+                                                    <button class="btn btn-primary" onclick="Confirmar1(); return false;"><h4>Realizar Evaluación</h4></button>
+                                                    <br /><br />
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <div class="col-md-12 text-center">
+                                            <a href="@Url.RouteUrl("V_Pruebas")" class="btn btn-primary"><h4>Realizar Evaluación</h4></a>
+                                        </div>
+                                    }
+                                }
+                                @if (Sesion.MME_Sesion.me_prueba.candidato.nu_id_perfil == 6)
+                                {
+                                    if (Model.mme_prueba.me_prueba.candidato_evaluacion.ch_proteccion_datos == "0")
+                                    {
+                                        <div class="col-md-12">
+                                            <h4>Para continuar bríndanos tus datos, si tienes alguna duda puedes <a href="javascript:;" onclick="$('#ModalTerminos').show();" style="text-decoration:underline">leer los términos y condiciones</a>.</h4>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <form class="form-horizontal form-border" role="form">
+                                                <div class="form-group">
+                                                    <div class="col-sm-12">
+                                                        <h3 style="color:#225973;font-weight:bold">DATOS GENERALES</h3>
+                                                        <div class="col-sm-12">
+                                                            <label class="col-sm-3 control-label">DNI</label>  
+                                                            <div class = "col-sm-8">
+                                                                <p>
+                                                                    @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_dni_candidato,
+                                                                    new
+                                                                    {
+                                                                        type = "text",
+                                                                        @class = "form-control",
+                                                                        disabled = "disabled"
+                                                                    })
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <label class="col-sm-3 control-label">Teléfono</label>  
+                                                            <div class = "col-sm-8">
+                                                                <p>
+                                                                    @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_nro_telefono,
+                                                                    new
+                                                                    {
+                                                                        type = "text",
+                                                                        @class = "form-control",
+                                                                        disabled = "disabled"
+                                                                    })
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <label class="col-sm-3 control-label">Correo</label>  
+                                                            <div class = "col-sm-8">
+                                                                <p>
+                                                                    @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_correo_candidato,
+                                                                    new
+                                                                    {
+                                                                        type = "text",
+                                                                        @class = "form-control",
+                                                                        disabled = "disabled"
+                                                                    })
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <label class="col-sm-3 control-label">Nombres</label>  
+                                                            <div class = "col-sm-8">
+                                                                <p>
+                                                                    @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_nombres_candidato,
+                                                                    new
+                                                                    {
+                                                                        type = "text",
+                                                                        @class = "form-control"
+                                                                    })
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <label class="col-sm-3 control-label">Apellidos</label>  
+                                                            <div class = "col-sm-8">
+                                                                <p>
+                                                                    @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_apellidos_candidato,
+                                                                    new
+                                                                    {
+                                                                        type = "text",
+                                                                        @class = "form-control"
+                                                                    })
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <h3 style="color:#225973;font-weight:bold">DATOS LABORALES</h3>
+                                                        <div class="col-sm-12">
+                                                            <label class="col-sm-3 control-label">Cargo actual</label>  
+                                                            <div class = "col-sm-8">
+                                                                <p>
+                                                                    @Html.TextBoxFor(m => m.mme_prueba.me_prueba.candidato_evaluacion.vc_ultima_experiencia_candidato,
+                                                                    new
+                                                                    {
+                                                                        type = "text",
+                                                                        @class = "form-control"
+                                                                    })
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <label class="col-sm-3 control-label"></label> 
+                                                            <div class = "col-sm-8">
+                                                                <p>
+                                                                    <h4 style="color:black"><label><input id="ch_proteccion_datos" type="checkbox" style="width:18px;height:18px"/> He leído y acepto <a href="javascript:;" onclick="$('#ModalTerminos').show();" style="text-decoration:underline">los términos y condiciones</a>.</label></h4>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div class="col-md-12 text-center">
+                                                <button class="btn btn-primary" onclick="Confirmar(); return false;"><h4>Realizar la definición del perfil</h4></button>
+                                                <br /><br />
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="col-md-10 text-center">
+                                            <a href="@Url.RouteUrl("V_Pruebas")" class="btn btn-primary"><h4>Realizar la definición del perfil</h4></a>
+                                        </div>
+                                    }
+                                }
+
+                            </div>                            
+                        @*</div>*@
+
+                        <div class="col-md-12">
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+@*open>>> Modal: Contenedor de elementos de interacción *@
+    <div id="ModalDeMensaje" class="modal" style="overflow:scroll">
+        <div class="modal-dialog">
+            <div class="modal-content" style="border:1px solid rgb(6, 138, 228)">
+                <div class="modal-header">
+                    <section class="content-header">
+                        <h4>
+                            <i class="glyphicon glyphicon-envelope"></i> Mensaje
+                            <small id="ModalDeMensaje_Titulo"> Selección</small>
+                            <input id="Peticion" type="hidden"/>
+                        </h4>
+                    </section>
+                </div>
+                <div id="ModalDeMensaje_Contenido" class="modal-body">
+                            
+                </div>
+            </div>
+        </div>
+    </div>
+@*close>> Modal *@
+
+@*open>>> Modal: Contenedor de elementos de interacción *@
+    <div id="ModalNotificacion" class="modal" style="overflow:scroll">
+        <div class="modal-dialog">
+            <div class="modal-content" style="border:1px solid rgb(6, 138, 228)">
+                <div class="modal-header">
+                    <section class="content-header">
+                        <h4>
+                            <i class="glyphicon glyphicon-info-sign"></i> Notificación
+                            <small id="ModalNotificacion_Titulo"> Selección</small>
+                        </h4>
+                    </section>
+                </div>
+                <div id="ModalNotificacion_Contenido" class="modal-body">
+                            
+                </div>
+                <div class="modal-body text-center">
+                    <button class="btn btn-default" onclick="$('#ModalNotificacion').hide(); return false;"><strong>Entiendo</strong></button>
+                </div>
+            </div>
+        </div>
+    </div>
+@*close>> Modal *@
+
+@*open>>> Modal: Contenedor de elementos de interacción *@
+    <div id="ModalTerminos" class="modal" style="overflow:scroll">
+        <div class="modal-dialog">
+            <div class="modal-content" style="border:1px solid rgb(6, 138, 228)">
+                <div class="modal-header">
+                    <section class="content-header">
+                        <h3>
+                            <i class="glyphicon glyphicon-info-sign"></i> <strong>AVISO DE PRIVACIDAD</strong>
+                            <small id="ModalTerminos_Titulo"> Selección</small>
+                        </h3>
+                    </section>
+                </div>
+                <div id="ModalTerminos_Contenido" class="modal-body">
+                    <p style="text-align:justify;">
+
+                        La presente Evaluación tiene como objeto valorar determinadas conductas del evaluado en situaciones hipotéticas y/o reales.<br />
+                        No es materia de evaluación ni se solicitará información de “carácter sensible” o que redunde en la intimidad y/o privacidad del postulante en la presente Evaluación.<br /><br />
+                        <strong>I.    Consentimiento del Evaluado</strong><br /><br />
+                        El Evaluado otorga a través del presente soporte informático su absoluto y expreso consentimiento para el conocimiento y administración de la información que brindará en la presente Evaluación a HUMAN SOLUTIONS S.A.C. y a los clientes que han requerido o requerirán los servicios de HUMAN SOLUTIONS S.A.C. para la evaluación de sus evaluados potenciales a diversos puestos de trabajo en la fase de evaluación de personal.<br />
+                        En ese sentido, el evaluado expresa su conformidad con el contenido de la Evaluación el mismo que no afecta en modo alguno su derecho a la intimidad y privacidad y la divulgación de las respuestas realizadas a las preguntas contenidas en la presente Evaluación a los que lo están evaluando o evaluarán para actuales o futuras posiciones de trabajo.<br />
+                        Dicho consentimiento se extiende con especial incidencia en todo el proceso que evalúa conductas del postulante en situaciones reales que corresponden a la forma como se ha desenvuelto en su pasado en el ámbito profesional y/o personal.<br />
+                        La presente Política se extiende, principalmente, bajo el marco legal de la siguiente normativa:<br />
+                        
+                        <ul type="disk" style="text-align:justify;">
+                            <li>Ley N° 29733, Ley de Protección de Datos Personales y su Reglamento, el Decreto Supremo N° 003-2013-JUS-.</li>
+                            <li>Resolución Ministerial N° 159- 2013-TR –“Guía de Buenas Prácticas en materia de igualdad y no discriminación en el acceso al empleo y la ocupación”-.</li>
+                            <li>Ley N° 26772- “Ofertas de Empleo no pueden contener requisitos de Discriminación, Anulación o Alteración de Igualdad de Oportunidades o de Trato”.</li>
+                        </ul>
+                    </p>
+                    <p style="text-align:justify;">
+                        <br />
+                        <strong>II.    Política de Privacidad y Confidencialidad</strong><br /><br />
+                        HUMAN SOLUTIONS S.A.C y los clientes que han requerido o requerirán los servicios de HUMAN SOLUTIONS S.A.C. son responsables del manejo adecuado y lícito de la información vertida en la presente Evaluación por parte de su persona.
+                        Por lo tanto, ponemos en su conocimiento que la información brindada a todas y  cada una de las preguntas contenidas en la presente Evaluación es de carácter secreto y en estricto confidencial, no pudiendo ser utilizada para otros fines que no sean los previstos en la etapa de selección de evaluados encargada por los clientes de HUMAN SOLUTIONS S.A.C.<br />
+                        Nuestro sistema se encuentra protegido por altos estándares de seguridad a fin de que toda información brindada por su persona en la presente Evaluación no sea vulnerada o divulgada de forma ilícita.
+                        En ese sentido, declaramos nuestro compromiso permanente en el cumplimiento de la política de privacidad y confidencialidad antes descrita. 
+                        <br /><br />
+                        <strong>III.    Declaración y Aceptación del Evaluado:</strong><br /><br />
+                        Mediante la presente declaro que he leído, entendido y me encuentro conforme con todos y cada uno de los aspectos descritos precedentemente.
+                    </p>
+                </div>
+                <div class="modal-body text-center">
+                    <button class="btn btn-primary" onclick="$('#ModalTerminos').hide(); return false;"><strong>Entiendo</strong></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input id="nu_id_perfil" type="hidden" value="@Sesion.MME_Sesion.me_prueba.candidato.nu_id_perfil"/>
+
+@*close>> Modal *@
+
+<script src="~/Scripts/Sistemas/jQuery-2.1.4.js"></script>
+<script type="text/javascript" src="~/Scripts/Sistemas/autoNumeric/autoNumeric-min.js"></script>
+<script type="text/javascript" src="~/Scripts/Sistemas/numeral/numeral.min.js"></script>
+<script type="text/javascript">
+
+    var vc_url = "@Url.RouteUrl("AC_ActualizarDatosCandidato")";
+
+    jQuery(function ($) {
+        $("#txtEdad_FDP").autoNumeric('init', { mDec: 0, vMin: 0, vMax: 99 });
+        $("#txtPretencioEconomica_FDP").autoNumeric('init', { mDec: 2, vMin: 0, vMax: 9999999 });
+
+        $('.csSalario').keyup(function (event) {
+            this.value = numeral(this.value).value();
+            this.value = this.value.replace(/[^0-9]/g, '');
+            if (numeral(this.value).value() == 0) this.value = "";
+        });
+
+        $('.csSalario').focusout(function (event) {
+            this.value = numeral(this.value).format('0,0.00')
+            if (numeral(this.value).value() == 0) this.value = "";
+        });
+
+        $('.csSalario').focus(function (event) {
+            this.value = numeral(this.value).value();
+            if (numeral(this.value).value() == 0) this.value = "";
+        });
+    });
+
+    $(document).ready(function () {
+        $('#mme_prueba_me_prueba_candidato_evaluacion_nu_sueldo_candidato').keypress(ValidaSueldo);
+        $('#mme_prueba_me_prueba_candidato_evaluacion_nu_edad_candidato').keypress(ValidaEdad);
+        $('#mme_prueba_me_prueba_candidato_evaluacion_vc_nombres_candidato').keypress(ValidaLetras);
+        $('#mme_prueba_me_prueba_candidato_evaluacion_vc_apellidos_candidato').keypress(ValidaLetras);
+        $('#mme_prueba_me_prueba_candidato_evaluacion_vc_profesion_candidato').keypress(ValidaLetras);
+        $('#mme_prueba_me_prueba_candidato_evaluacion_vc_ultima_experiencia_candidato').keypress(ValidaLetras);
+        $('#mme_prueba_me_prueba_candidato_evaluacion_vc_empresa_candidato').keypress(ValidaLetras);
+        $('#mme_prueba_me_prueba_candidato_evaluacion_vc_nombre_referencia_candidato').keypress(ValidaLetras);
+
+
+        $("#txtFechNac_FDP").datepicker();
+        
+        $(".dt_fecha_Experiencia").datepicker();
+      
+
+        if ("@Model.mme_prueba.me_prueba.candidato_evaluacion.nu_id_grado_instruccion" == "")
+        {
+            $('#nu_id_grado_instruccion').val(1);
+        }
+        else
+        {
+            $('#nu_id_grado_instruccion').val("@Model.mme_prueba.me_prueba.candidato_evaluacion.nu_id_grado_instruccion");
+        }
+
+
+    });
+
+    function activarFecha(obj) {
+
+        if ($(obj).is(':checked')) {
+            $(obj).parent().parent().find("input[id^='txtFechNac_Experiencia_Fin']").attr("disabled", false);
+        } else {
+            $(obj).parent().parent().find("input[id^='txtFechNac_Experiencia_Fin']").attr("disabled", true);
+            $(obj).parent().parent().find("input[id^='txtFechNac_Experiencia_Fin']").val("");
+        }
+        
+    }
+
+    function Confirmar() {
+
+
+        if ($('#mme_prueba_me_prueba_candidato_evaluacion_vc_nombres_candidato').val() == '') {
+            $('#ModalNotificacion_Contenido').html('<i class="fa fa-remove" style="color:darkred"></i> Debe ingresar sus nombres para continuar.')
+            $('#ModalNotificacion').show();
+            return false;
+        }
+
+        if ($('#mme_prueba_me_prueba_candidato_evaluacion_vc_apellidos_candidato').val() == '') {
+            $('#ModalNotificacion_Contenido').html('<i class="fa fa-remove" style="color:darkred"></i> Debe ingresar sus apellidos para continuar.')
+            $('#ModalNotificacion').show();
+            return false;
+        }
+
+        if ($('#mme_prueba_me_prueba_candidato_evaluacion_nu_edad_candidato').val() == '') {
+            $('#ModalNotificacion_Contenido').html('<i class="fa fa-remove" style="color:darkred"></i> Debe ingresar su edad para continuar.')
+            $('#ModalNotificacion').show();
+            return false;
+        }
+
+        if ($('#mme_prueba_me_prueba_candidato_evaluacion_vc_nombre_referencia_candidato').val() == '') {
+            $('#ModalNotificacion_Contenido').html('<i class="fa fa-remove" style="color:darkred"></i> Debe ingresar el nombre de la persona que tomará como referencia para continuar.')
+            $('#ModalNotificacion').show();
+            return false;
+        }
+
+        if ($('#mme_prueba_me_prueba_candidato_evaluacion_vc_telefono_referencia_candidato').val() == '') {
+            $('#ModalNotificacion_Contenido').html('<i class="fa fa-remove" style="color:darkred"></i> Debe ingresar el teléfono de la persona que tomará como referencia para continuar.')
+            $('#ModalNotificacion').show();
+            return false;
+        }
+
+        if (!$('#ch_proteccion_datos').prop('checked')) {
+            $('#ModalNotificacion_Contenido').html('<i class="fa fa-remove" style="color:darkred"></i> Debe confirmar que acepta los términos y condiciones para continuar.')
+            $('#ModalNotificacion').show();
+            return false;
+        }
+
+        var intervalo = 0;
+        $('#ModalDeMensaje_Contenido').html('<div id="ContenedorGif"><img src="/Recursos/Gif/Cargando.gif" style="height:50px"/> Espere un momento, vamos a actualizar sus datos.</div>');
+        $('#ModalDeMensaje').show();
+
+        cronometro = setInterval
+                     (
+                        function () {
+                            intervalo++;
+                            if (intervalo == 2) {
+                                clearInterval(cronometro); Guardar();
+                            }
+
+                        }, 1000
+                     );
+
+    }
+
+    $(document).on('blur', '#mme_prueba_me_prueba_candidato_evaluacion_nu_sueldo_candidato', function () {
+        if ($('#mme_prueba_me_prueba_candidato_evaluacion_nu_sueldo_candidato').val() == '')
+        {
+            $('#mme_prueba_me_prueba_candidato_evaluacion_nu_sueldo_candidato').val('0.00');
+        }
+        else
+        {
+            $('#mme_prueba_me_prueba_candidato_evaluacion_nu_sueldo_candidato').val(parseFloat($('#mme_prueba_me_prueba_candidato_evaluacion_nu_sueldo_candidato').val()).toFixed(2));
+        }
+    })
+
+    function ValidaLetras(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if ((event.keyCode != 32) && (event.keyCode < 65) || (event.keyCode > 90) && (event.keyCode < 97) || (event.keyCode > 122))
+            return false;
+        return true;
+    }
+
+
+    function ValidaEdad(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+
+        if (charCode < 48 || charCode > 57)
+            return false;
+        return true;
+    }
+
+
+    function ValidaSueldo(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode != 13) {
+            if (charCode != 46 && charCode > 31
+              && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+        else {
+            if ($('#mme_prueba_me_prueba_candidato_evaluacion_nu_sueldo_candidato').val() == '')
+            {
+                $('#mme_prueba_me_prueba_candidato_evaluacion_nu_sueldo_candidato').val('0.00');
+            }
+            else
+            {
+                $('#mme_prueba_me_prueba_candidato_evaluacion_nu_sueldo_candidato').val(parseFloat($('#mme_prueba_me_prueba_candidato_evaluacion_nu_sueldo_candidato').val()).toFixed(2));
+            }
+            return false;
+        }
+    }
+
+    function Guardar() {     
+        
+        var model = new Object();
+        var nu_id_perfil
+        nu_id_perfil = $('#nu_id_perfil').val()
+        if (nu_id_perfil == 6)
+        {
+            var candidato_evaluacion = {
+
+                vc_nombres_candidato: $('#mme_prueba_me_prueba_candidato_evaluacion_vc_nombres_candidato').val(),
+                vc_apellidos_candidato: $('#mme_prueba_me_prueba_candidato_evaluacion_vc_apellidos_candidato').val(),
+                vc_ultima_experiencia_candidato: $('#mme_prueba_me_prueba_candidato_evaluacion_vc_ultima_experiencia_candidato').val(),
+                vc_nombre_referencia_candidato: "Ninguno",
+            }
+        }
+        else {
+            var vc_sexo = "M";
+            if ($('#ch_sexo_F').prop('checked')) { vc_sexo = 'F'; }
+
+            var candidato_evaluacion = {
+
+                vc_nombres_candidato: $('#mme_prueba_me_prueba_candidato_evaluacion_vc_nombres_candidato').val(),
+                vc_apellidos_candidato: $('#mme_prueba_me_prueba_candidato_evaluacion_vc_apellidos_candidato').val(),
+                vc_sexo_candidato: vc_sexo,
+                nu_edad_candidato: $('#mme_prueba_me_prueba_candidato_evaluacion_nu_edad_candidato').val(),
+                vc_profesion_candidato: $('#mme_prueba_me_prueba_candidato_evaluacion_vc_profesion_candidato').val(),
+                vc_ultima_experiencia_candidato: $('#mme_prueba_me_prueba_candidato_evaluacion_vc_ultima_experiencia_candidato').val(),
+                vc_empresa_candidato: $('#mme_prueba_me_prueba_candidato_evaluacion_vc_empresa_candidato').val(),
+                nu_sueldo_candidato: $('#mme_prueba_me_prueba_candidato_evaluacion_nu_sueldo_candidato').val(),
+                vc_nombre_referencia_candidato: $('#mme_prueba_me_prueba_candidato_evaluacion_vc_nombre_referencia_candidato').val(),
+                vc_telefono_referencia_candidato: $('#mme_prueba_me_prueba_candidato_evaluacion_vc_telefono_referencia_candidato').val(),
+                vc_nombre_referencia_candidato2: $('#mme_prueba_me_prueba_candidato_evaluacion_vc_nombre_referencia_candidato2').val(),
+                vc_telefono_referencia_candidato2: $('#mme_prueba_me_prueba_candidato_evaluacion_vc_telefono_referencia_candidato2').val(),
+                nu_id_grado_instruccion: $('#nu_id_grado_instruccion').val()
+            }
+        }
+        var me_prueba   = { candidato_evaluacion: candidato_evaluacion }
+        var mme_prueba  = { me_prueba: me_prueba }
+
+        model.mme_prueba = mme_prueba;
+
+        $.ajax({
+            url         : vc_url,
+            type        : "POST",
+            data        : JSON.stringify(model),
+            contentType : "application/json; charset=utf-8",
+            success     : function (result) {
+
+                if (result.trans == 1)
+                {
+                    $('#ContenedorGif').html('<i class="glyphicon glyphicon-ok" style="color:green"></i> Sus datos se han actualizado correctamente; ahora lo llevaremos a realizar su evaluación.<br/><div class="col-md-12 text-center"><img src="/Recursos/Gif/Cargando.gif" style="max-width:80px;"/></div><br/><label>Cargando pruebas...</label>');
+
+                    var interRedirect = 0;
+                    redirec = setInterval
+                     (
+                        function () {
+                            interRedirect++;
+                            if (interRedirect == 4) {
+                                clearInterval(redirec); window.location.href = "@Url.RouteUrl("V_Pruebas")";
+                            }
+                        }, 1000
+                     );
+                }
+
+            },
+            error       : function (result) {
+                $('#ModalDeMensaje').hide();
+                $('#ModalNotificacion_Contenido').html("Ha ocurrido un error inesperado no se ha podido actualizar sus datos, de persistir el inconveniente contactar con el área de sistemas.")
+                $('#ModalNotificacion').show();
+            }
+        });
+
+    }
+
+    function AgregarFilaEducacion() {
+        $('#itemsEducacion').append('<tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td><select id="cboEducacion_3" class="form-control input-sm"><option value="">Seleccione</option><option value="Secundaria incompleta">Secundaria incompleta</option><option value="Secundaria completa">Secundaria completa</option><option value="Técnico Inconcluso">Técnico Inconcluso</option><option value="Técnico en curso">Técnico en curso</option><option value="Técnico completo">Técnico completo</option><option value="Universitario Inconcluso">Universitario Inconcluso</option><option value="Universitario en curso">Universitario en curso</option><option value="Universitario completo">Universitario completo</option><option value="Bachiller">Bachiller</option><option value="Licenciado">Licenciado</option><option value="Colegiado">Colegiado</option><option value="Maestría">Maestría</option><option value="Doctorado">Doctorado</option><option value="Otro">Otro</option></select></td></tr>')
+    }
+
+    function AgregarFilaConocimiento() {
+        $('#itemsConocimiento').append('<tr><td contenteditable="true"></td><td><select class="form-control input-sm" ><option value="Básico">Básico</option><option value="Intermedio">Intermedio</option><option value="Avanzado">Avanzado</option></select></td></tr>')
+    }
+
+    function AgregarFilaExperiencia() {
+        $('#itemsExperiencia').append('<tr><td contenteditable="true"></td><td contenteditable="true"></td><td><input id="txtFechNac_Experiencia_inicio" type="text" class="form-control input-sm dt_fecha_Experiencia" placeholder="dd/mm/AAAA"></td><td><div class="input-group"><span class="input-group-addon" style="background-color:#e1e0e0"><input id="ChkFechNac_Experiencia_Fin" type="checkbox" onchange="activarFecha(this)"  /></span><input id="txtFechNac_Experiencia_Fin" disabled="disabled" type="text" class="form-control input-sm dt_fecha_Experiencia" placeholder="dd/mm/AAAA"></div></td><td><input type="text" class="form-control input-sm csSalario" id="txtSalarioExperiencia" /></td><td contenteditable="true"></td></tr>')
+        $(".dt_fecha_Experiencia").datepicker();
+        $('.csSalario').keyup(function (event) {
+            this.value = numeral(this.value).value();
+            this.value = this.value.replace(/[^0-9]/g, '');
+            if (numeral(this.value).value() == 0) this.value = "";
+        });
+
+        $('.csSalario').focusout(function (event) {
+            this.value = numeral(this.value).format('0,0.00')
+            if (numeral(this.value).value() == 0) this.value = "";
+        });
+
+        $('.csSalario').focus(function (event) {
+            this.value = numeral(this.value).value();
+            if (numeral(this.value).value() == 0) this.value = "";
+        });
+    }
+                
+    function AgregarFilaFamiliares() {
+        $('#itemsFamiliares').append('<tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>')
+    }
+
+    function Confirmar1() {
+
+        var MensajesValidacion = "";
+
+        if ($('#txtApellidos_FDP').val().trim() == '') {
+            MensajesValidacion = MensajesValidacion + '<li><i class="fa fa-remove" style="color:darkred"></i> Debe ingresar sus Apellidos.';
+            //$('#ModalNotificacion').show();
+        }
+        
+        if ($('#txtNombres_FDP').val().trim() == '') {
+            MensajesValidacion = MensajesValidacion + '<li><i class="fa fa-remove" style="color:darkred"></i> Debe ingresar sus Nombres.';
+            //$('#ModalNotificacion').show();
+        }
+
+        if ($('#txtEdad_FDP').val().trim() == '') {
+            MensajesValidacion = MensajesValidacion + '<li><i class="fa fa-remove" style="color:darkred"></i> Debe ingresar su Edad.';
+            //$('#ModalNotificacion').show();
+        }
+
+        if ($('#cboSexo_FDP').val().trim() == '') {
+            MensajesValidacion = MensajesValidacion + '<li><i class="fa fa-remove" style="color:darkred"></i> Debe ingresar su Sexo.';
+            //$('#ModalNotificacion').show();
+        }
+
+        if ($('#txtFechNac_FDP').val().trim() == '') {
+            MensajesValidacion = MensajesValidacion + '<li><i class="fa fa-remove" style="color:darkred"></i> Debe ingresar su Fecha de Nacimiento.';
+            //$('#ModalNotificacion').show();
+        }
+
+        if ($('#txtLugarNac_FDP').val().trim() == '') {
+            MensajesValidacion = MensajesValidacion + '<li><i class="fa fa-remove" style="color:darkred"></i> Debe ingresar su Lugar Nacimiento.';
+            //$('#ModalNotificacion').show();
+        }
+
+        if ($('#cboEstadoCivil_FDP').val().trim() == '') {
+            MensajesValidacion = MensajesValidacion + '<li><i class="fa fa-remove" style="color:darkred"></i> Debe ingresar su Estado Civil.';
+            //$('#ModalNotificacion').show();
+        }
+
+        if ($('#txtDireccion_FDP').val().trim() == '') {
+            MensajesValidacion = MensajesValidacion + '<li><i class="fa fa-remove" style="color:darkred"></i> Debe ingresar su Dirección.';
+            //$('#ModalNotificacion').show();
+        }
+
+        if ($('#txtDistrito_FDP').val().trim() == '') {
+            MensajesValidacion = MensajesValidacion + '<li><i class="fa fa-remove" style="color:darkred"></i> Debe ingresar su Distrito.';
+            //$('#ModalNotificacion').show();
+        }
+
+        if ($('#txtCelular_FDP').val().trim() == '') {
+            MensajesValidacion = MensajesValidacion + '<li><i class="fa fa-remove" style="color:darkred"></i> Debe ingresar su nro de Celular.';
+            //$('#ModalNotificacion').show();
+        }
+
+
+        if ($('#txtDNI_FDP').val().trim() == '') {
+            MensajesValidacion = MensajesValidacion + '<li><i class="fa fa-remove" style="color:darkred"></i> Debe ingresar su número de DNI.';
+            //$('#ModalNotificacion').show();
+        }
+
+        if ($('#txtEmail_FDP').val().trim() == '') {
+            MensajesValidacion = MensajesValidacion + '<li><i class="fa fa-remove" style="color:darkred"></i> Debe ingresar su Correo Electrónico.';
+            //$('#ModalNotificacion').show();
+            
+        }
+
+        if(MensajesValidacion!=''){
+            $('#ModalNotificacion').show();
+            $('#ModalNotificacion_Contenido').html('<ul>'+MensajesValidacion+'</ul>');
+            return false;
+        }
+
+        if (!$("#chkTerminos").is(":checked")) {
+            $('#ModalNotificacion').show();
+            $('#ModalNotificacion_Contenido').html('Acepte los Terminos y Condiciones para continuar');
+            return false;
+        }
+
+        var intervalo = 0;
+        $('#ModalDeMensaje_Contenido').html('<div id="ContenedorGif"><img src="/Recursos/Gif/Cargando.gif" style="height:50px"/> Espere un momento, vamos a actualizar sus datos.</div>');
+        $('#ModalDeMensaje').show();
+
+        cronometro = setInterval
+                     (
+                        function () {
+                            intervalo++;
+                            if (intervalo == 2) {
+                                clearInterval(cronometro); Guardar1();
+                            }
+
+                        }, 1000
+                     );
+
+    }
+
+    function Guardar1() {
+
+        var model = new Object();
+        
+        var candidato_evaluacion = {
+
+            vc_nombres_candidato: $('#txtNombres_FDP').val(),
+            vc_apellidos_candidato      : $('#txtApellidos_FDP').val(),
+            vc_sexo_candidato: $('#cboSexo_FDP').val(),
+            nu_edad_candidato: $('#txtEdad_FDP').val(),
+            vc_fec_nacimiento: $('#txtFechNac_FDP').val(),
+            vc_lugar_nacimiento: $('#txtLugarNac_FDP').val(),
+
+            vc_estado_civil: $('#cboEstadoCivil_FDP').val(),
+            vc_direccion: $('#txtDireccion_FDP').val() + " - " + $('#txtDistrito_FDP').val(),
+            vc_nro_telefono: $('#txtTelFijo_FDP').val(),
+            vc_celular: $('#txtCelular_FDP').val(),
+            vc_brevete: $('#txtBrevete_FDP').val(),
+            vc_dni_candidato: $('#txtDNI_FDP').val(),
+            vc_correo_candidato: $('#txtEmail_FDP').val(),  
+            vc_pretencion_salarial: $('#txtPretencioEconomica_FDP').val(),
+            
+            vc_nombre_referencia_candidato  : $('#vc_nombres_referencia').text(),
+            vc_cargo_referencia             : $('#vc_cargo_referencia').text(),
+            vc_empresa_candidato            : $('#vc_empresa').text(),
+            vc_telefono_empresa1            : $('#vc_telefono_empresa1').text(),
+            vc_telefono_referencia_candidato: $('#vc_telefono_referencia').text(),
+
+            vc_nombre_referencia_candidato2     : $('#vc_nombres_referencia2').text(),
+            vc_cargo_referencia2                : $('#vc_cargo_referencia2').text(),
+            vc_empresa_referencia2              : $('#vc_empresa_referencia2').text(),
+            vc_telefono_empresa2                : $('#vc_telefono_empresa2').text(),
+            vc_telefono_referencia_candidato2   : $('#vc_telefono_referencia2').text(),
+
+            vc_busqueda_trabajo         : $('#mme_prueba_me_prueba_candidato_evaluacion_vc_busqueda_trabajo').val(),
+            vc_otro_proceso_seleccion   : $('#mme_prueba_me_prueba_candidato_evaluacion_vc_otro_proceso_seleccion').val(),
+            vc_contacto                 : $('#mme_prueba_me_prueba_candidato_evaluacion_vc_contacto').val(),
+            vc_accidente                : $('#mme_prueba_me_prueba_candidato_evaluacion_vc_accidente').val(),
+            vc_problema_legales         : $('#mme_prueba_me_prueba_candidato_evaluacion_vc_problema_legales').val()
+        }
+        
+        var EducacionDetalle = [];
+        var ConocimientoDetalle = [];
+        var ExperienciaDetalle = [];
+        var FamiliaresDetalle = [];
+        $('#itemsEducacion tr').each(function () {
+            if ($(this).find('td').eq(0).text().trim() != '') {
+                EducacionDetalle[EducacionDetalle.length] = {
+                    vc_desc_nivel_estudio: "",
+                    vc_desc_especialidad: ($(this).find('td').eq(0).text().trim()),
+                    vc_centro_estudio: ($(this).find('td').eq(1).text().trim()),
+                    vc_ciclos_cursados: ($(this).find('td').eq(2).text().trim()),
+                    vc_anio_egreso: ($(this).find('td').eq(3).text().trim()),
+                    vc_titulo_obtenido: ($(this).find('td').eq(4).find("select").val())
+                }
+            }
+        })
+
+        $('#itemsConocimiento tr').each(function () {
+            if ($(this).find('td').eq(0).text().trim() != '') {
+                ConocimientoDetalle[ConocimientoDetalle.length] = {
+                    vc_desc_conocimiento: ($(this).find('td').eq(0).text().trim()),
+                    vc_nivel_conocimiento: ($(this).find('td').eq(1).find("select").val()),
+                    vc_desc_capacidad: ""
+                }
+            }
+        })
+
+        $('#itemsExperiencia tr').each(function () {
+            if ($(this).find('td').eq(0).text().trim() != '') {
+                ExperienciaDetalle[ExperienciaDetalle.length] = {
+                    vc_nombre_empresa: ($(this).find('td').eq(0).text().trim()),
+                    vc_puesto: ($(this).find('td').eq(1).text().trim()),
+                    dt_fec_inicio: ($(this).find('td').eq(2).find('input').val().trim()),
+                    dt_fec_fin: ($(this).find('td').eq(3).find("input[id^='txtFechNac_Experiencia_Fin']").val().trim() == "") ? null : ($(this).find('td').eq(3).find("input[id^='txtFechNac_Experiencia_Fin']").val().trim()),
+                    nu_importe_sueldo: numeral($(this).find('td').eq(4).find('input').val().trim()).value(),
+                    vc_motivo_retiro: ($(this).find('td').eq(5).text().trim())
+                }
+
+                //console.log($(this).find('td').eq(2).find("input").val().trim())
+                //console.log($(this).find('td').eq(3).find("input[id^='ChkFechNac_Experiencia_Fin']").is(':checked'))
+                //console.log($(this).find('td').eq(3).find("input[id^='txtFechNac_Experiencia_Fin']").val().trim())
+            }
+        })
+
+        console.log(ExperienciaDetalle)
+        $('#itemsFamiliares tr').each(function () {
+            if ($(this).find('td').eq(0).text().trim() != '') {
+                FamiliaresDetalle[FamiliaresDetalle.length] = {
+                    vc_parentesco: ($(this).find('td').eq(0).text().trim()),
+                    vc_apellidos_nombres: ($(this).find('td').eq(1).text().trim()),
+                    vc_edad: ($(this).find('td').eq(2).text().trim()),
+                    vc_grado_academico: ($(this).find('td').eq(3).text().trim()),
+                    vc_centro_trabajo: ($(this).find('td').eq(4).text().trim()),
+                    vc_ocupacion: ($(this).find('td').eq(5).text().trim())
+                }
+            }
+        })
+
+        var me_prueba = {
+                             candidato_evaluacion : candidato_evaluacion,
+                             EducacionDetalle: EducacionDetalle,
+                             ConocimientoDetalle: ConocimientoDetalle,
+                             ExperienciaDetalle: ExperienciaDetalle,
+                             FamiliaresDetalle: FamiliaresDetalle
+                        }
+        var mme_prueba = { me_prueba: me_prueba }
+
+        model.mme_prueba = mme_prueba;
+        //return false;
+
+        $.ajax({
+            url: "@Url.RouteUrl("AC_ActualizarDatosCandidatoFicha")",
+            type: "POST",
+            data: JSON.stringify(model),
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+
+                if (result.trans == 1) {
+                    $('#ContenedorGif').html('<i class="glyphicon glyphicon-ok" style="color:green"></i> Sus datos se han actualizado correctamente; ahora lo llevaremos a realizar su evaluación.<br/><div class="col-md-12 text-center"><img src="/Recursos/Gif/Cargando.gif" style="max-width:80px;"/></div><br/><label>Cargando pruebas...</label>');
+
+                    var interRedirect = 0;
+                    redirec = setInterval
+                     (
+                        function () {
+                            interRedirect++;
+                            if (interRedirect == 4) {
+                                clearInterval(redirec); window.location.href = "@Url.RouteUrl("V_Pruebas")";
+                            }
+                        }, 1000
+                     );
+                    }
+            },
+            error: function (result) {
+                $('#ModalDeMensaje').hide();
+                $('#ModalNotificacion_Contenido').html("Ha ocurrido un error inesperado no se ha podido actualizar sus datos, de persistir el inconveniente contactar con el área de sistemas.")
+                $('#ModalNotificacion').show();
+            }
+        });
+      }
+</script>

@@ -1,0 +1,19 @@
+﻿@model  EvaluacionesOnline.Areas.Seleccion.Models.PruebasModel
+
+@{
+
+    string ruta = "vc_desc_prueba=" + ViewBag.NombrePrueba + "&nu_id_prueba=" + ViewBag.NuIdPrueba;
+        
+}
+
+<div class="col-md-12 text-center" style="border-bottom: 10px solid #0080C0;border-top: 10px solid #FF0000; border-left: 10px solid #008000; border-right: 10px solid #FF8040;">
+    <br />
+    <div class="col-md-12">
+        <h3 style="color:#5B777D">Has concluido el <strong>@ViewBag.NombrePrueba</strong> exitosamente, tus respuestas han sido enviadas. Muchas gracias, puedes continuar...</h3>
+        <img src="~/Recursos/Img/human3.jpg" style="border-radius:4px"/><br />
+        <br />
+        <a class="btn btn-success" style="background-image:-webkit-linear-gradient(top,#1aa3d6,#1a57a8)" href="@Url.RouteUrl("V_PruebaPartes")?@ruta"><h4>CONTINUAR...</h4></a>
+        <br /><br />
+
+    </div>
+</div>

@@ -1,0 +1,1293 @@
+﻿@using System.Text.RegularExpressions;
+@using EvaluacionesOnline.Areas.Sistemas.Models
+@model  EvaluacionesOnline.Areas.Seleccion.Models.PruebasModel
+@{
+    ViewBag.Title = "HS | Evaluaciones";
+    Layout = "~/Areas/Seleccion/Views/MPEvaluacionesSitio.cshtml";
+    string ruta = "vc_desc_prueba=" + ViewBag.NombrePruebaCorta + "&nu_id_prueba=" + ViewBag.nu_id_prueba;
+    var Sesion = (SesionModel)Session[SesionModel.SessionName];
+
+    string ch_presentacion = "";
+
+    String NomPrueba = ViewBag.NombrePrueba;
+
+    NomPrueba = Regex.Replace(NomPrueba, "á", "a");
+    NomPrueba = Regex.Replace(NomPrueba, "é", "e");
+    NomPrueba = Regex.Replace(NomPrueba, "í", "i");
+    NomPrueba = Regex.Replace(NomPrueba, "ó", "o");
+    NomPrueba = Regex.Replace(NomPrueba, "ú", "u");
+    NomPrueba = Regex.Replace(NomPrueba, "Á", "A");
+    NomPrueba = Regex.Replace(NomPrueba, "É", "E");
+    NomPrueba = Regex.Replace(NomPrueba, "Í", "I");
+    NomPrueba = Regex.Replace(NomPrueba, "Ó", "O");
+    NomPrueba = Regex.Replace(NomPrueba, "Ú", "U");
+}
+<style>
+    .alias {
+        cursor: alias;
+    }
+
+    .all-scroll {
+        cursor: all-scroll;
+    }
+
+    .auto {
+        cursor: auto;
+    }
+
+    .cell {
+        cursor: cell;
+    }
+
+    .context-menu {
+        cursor: context-menu;
+    }
+
+    .col-resize {
+        cursor: col-resize;
+    }
+
+    .copy {
+        cursor: copy;
+    }
+
+    .crosshair {
+        cursor: crosshair;
+    }
+
+    .default {
+        cursor: default;
+    }
+
+    .e-resize {
+        cursor: e-resize;
+    }
+
+    .ew-resize {
+        cursor: ew-resize;
+    }
+
+    .grab {
+        cursor: -webkit-grab;
+        cursor: grab;
+    }
+
+    .grabbing {
+        cursor: -webkit-grabbing;
+        cursor: grabbing;
+    }
+
+    .help {
+        cursor: help;
+    }
+
+    .move {
+        cursor: move;
+    }
+
+    .n-resize {
+        cursor: n-resize;
+    }
+
+    .ne-resize {
+        cursor: ne-resize;
+    }
+
+    .nesw-resize {
+        cursor: nesw-resize;
+    }
+
+    .ns-resize {
+        cursor: ns-resize;
+    }
+
+    .nw-resize {
+        cursor: nw-resize;
+    }
+
+    .nwse-resize {
+        cursor: nwse-resize;
+    }
+
+    .no-drop {
+        cursor: no-drop;
+    }
+
+    .none {
+        cursor: none;
+    }
+
+    .not-allowed {
+        cursor: not-allowed;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    .progress {
+        cursor: progress;
+    }
+
+    .row-resize {
+        cursor: row-resize;
+    }
+
+    .s-resize {
+        cursor: s-resize;
+    }
+
+    .se-resize {
+        cursor: se-resize;
+    }
+
+    .sw-resize {
+        cursor: sw-resize;
+    }
+
+    .text {
+        cursor: text;
+    }
+
+    .url {
+        cursor: url(myBall.cur),auto;
+    }
+
+    .w-resize {
+        cursor: w-resize;
+    }
+
+    .wait {
+        cursor: wait;
+    }
+
+    .zoom-in {
+        cursor: zoom-in;
+    }
+
+    .zoom-out {
+        cursor: zoom-out;
+    }
+</style>
+<link rel="stylesheet" href="~/Content/fileinput.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            @ViewBag.NombrePrueba
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="@Url.RouteUrl("V_EvaluacionesSitio")">Evaluaciones</a></li>
+            <li><a href="@Url.RouteUrl("V_Pruebas")">Pruebas a Desarrollar</a></li>
+            <li><a href="@Url.RouteUrl("V_PruebaPartes")?@ruta">Partes</a></li>
+            <li class="active">Preguntas</li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header" style="background-color:#008DB7;color:white">
+                        <div class="box-title">
+                            <div class="col-md-3 text-center" style="padding-left: 5px;">
+                                <img src="@Sesion.MME_Sesion.me_prueba.candidato.VC_IMAGEN_PERSONALIZAR" style="border-radius:4px;max-width:100%; max-height:140px" />
+                            </div>
+                            <div class="col-md-9" style="padding-left:20px;padding-top:20px">
+                                <input type="hidden" id="txt_tipo_prueba" value="@Model.mme_prueba.me_prueba.prueba.nu_id_tipo_prueba" />
+                                <h2><strong>¡BUENA SUERTE @Sesion.MME_Sesion.me_prueba.candidato.vc_nombres!</strong></h2>
+                                <br />
+                                @if (Sesion.MME_Sesion.me_prueba.candidato.nu_id_perfil == 3)
+                                {
+                                    <p style="line-height:1.5">
+                                        Recuerda contestar cada una de las preguntas con toda sinceridad.
+                                    </p>
+                                }
+                                else
+                                {
+                                    <p style="line-height:1.5">
+                                        Recuerda contestar cada una de las preguntas en función de como ves el puesto a describir y no en función a la persona que lo ocupa.
+                                    </p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <p id="ContenidoInstruccion">
+                            @Model.mme_prueba.me_prueba.prueba_parte.vc_instruccion2
+                        </p>
+                        <br />
+                        <div class="col-md-2 text-center" hidden>
+                            <img src="~/Recursos/Gif/Ashowatt4.gif" width="180px" style="border-radius:4px" /><br />
+                            <label><i style="font-weight:600">Creo que no te puedo soplar ninguna respuesta.</i></label><br />
+                            <img src="~/Recursos/Gif/Ashowatt3.gif" width="120px" style="border-radius:4px" /><br />
+                            <label><i style="font-weight:600">Pero te daré unos consejos:</i></label>
+                            <ol style="text-align:left">
+                                <li>Lee bien las preguntas o ejercicios antes de contestar</li>
+                                <li>Comienza por aquello que estés más seguro</li>
+                                <li>Pide hojas en blanco para realizar operaciones, esquemas o guiones</li>
+                                <li>Revisa antes de dar por terminado cada parte de las pruebas</li>
+                                <li>Ten confianza en tus posibilidades y en el trabajo/estudio bien realizado. <strong>¡Puedes hacerlo!</strong>.</li>
+                            </ol>
+                        </div>
+
+                        <div id="ContenedorGeneral" class="col-md-12" style="padding:0px;border-bottom: 5px solid #565656;border-top: 5px solid #8E8E8E; border-left: 5px solid #565656; border-right: 5px solid #8E8E8E;">
+                            <br />                            
+                            <div class="col-md-12 text-center">
+                                <div id="Reloj" class="col-md-2" style="font-size:35px;color:#4B6279;">
+                                    <img src="~/Recursos/Gif/tiempo.gif" width="60px" />&nbsp;<span id="minutos"></span>:<span id="segundos"></span>
+                                </div>
+                                <button class="atras btn btn-default col-md-4 cs_continuar_evaluacion" style="background-image:-webkit-linear-gradient(top,#1aa3d6,#1a57a8)"><h3 style="color:white">.....Anterior </h3></button>
+                                <button class="adelante btn btn-default col-md-4 cs_continuar_evaluacion" style="background-image:-webkit-linear-gradient(top,#1aa3d6,#1a57a8)"><h3 style="color:white"> Siguiente...</h3></button>
+                                <button class="terminar btn btn-default col-md-2 cs_continuar_evaluacion" style="border-bottom: 10px solid #0080C0;border-top: 10px solid #FF0000; border-left: 10px solid #008000; border-right: 10px solid #FF8040;height:79px;"><h3 style="margin:0px;"><strong>Terminar</strong></h3></button>
+                            </div>
+                            <div id="ContenedorPregunta" class="col-md-12">
+                                <hr />
+                                @foreach (var item in Model.ls_mme_prueba)
+                                {
+                                    ch_presentacion = item.me_prueba.pregunta.ch_presentacion;
+                                    <input id="nu_id_pregunta" type="hidden" value="@item.me_prueba.pregunta.nu_id_pregunta" />
+                                    <input id="nu_nro_pregunta" type="hidden" value="@item.me_prueba.pregunta.nu_nro_pregunta" />
+                                    if (item.me_prueba.pregunta.ch_presentacion == "LS")
+                                    {
+                                        <label style="color:black;font-size:19px"><strong>@item.me_prueba.pregunta.nu_nro_pregunta</strong>. @item.me_prueba.pregunta.vc_desc_pregunta</label>
+                                        <p class="text-center">
+                                            @if (@item.me_prueba.pregunta.vc_desc_imagen != null)
+                                            {
+                                                <img src="/Recursos/ImgPrueba/@item.me_prueba.pregunta.vc_desc_imagen" width="300px" />
+                                            }
+                                        </p>
+                                    }
+                                    else if (item.me_prueba.pregunta.ch_presentacion == "DK")
+                                    {
+                                        int alternativas = 2;
+                                        int acumulado = 0;
+
+                                        <label style="color:#747677;font-size:25px"><strong>@item.me_prueba.pregunta.nu_nro_pregunta</strong>.</label>
+                                        <table class="table table-striped table-bordered table-hover table-condensed" style="border:7px solid rgb(75, 105, 152)" cellspacing="0">
+                                            <tbody id="DetallePreguntas1">
+
+                                                @foreach (var itemMulti in Model.ls_mme_prueba)
+                                                {
+                                                    <tr>
+                                                        <td style="text-align:center;vertical-align:middle;color:black"><h4><strong>@itemMulti.me_prueba.pregunta.vc_desc_pregunta</strong></h4></td>
+                                                        <td style="background:#F1F1F1;color:black">
+                                                            @{ int Lado = 0; }
+                                                            @for (int i = acumulado; i < alternativas + acumulado && i < 8; i++)
+                                                            {
+                                                                string marca = "";
+                                                                if (item.ls_mme_prueba[i].me_prueba.alternativa.ch_marca == "M") { marca = "checked=checked"; }
+                                                                <div class="col-md-5">
+
+                                                                    <label class="control-label" style="color:black">
+                                                                        <input type="radio" name="@Lado" class="Alternativa_@i" @marca onchange="ResponderDISC(@item.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                                                                        @item.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa
+                                                                    </label>
+                                                                    @if (item.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_imagen != null)
+                                                                    {
+                                                                        <img src="/Recursos/ImgPrueba/@item.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_imagen" width="100px" />
+                                                                    }
+                                                                </div>
+                                                                Lado++;
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                    acumulado += alternativas;
+                                                }
+
+                                            </tbody>
+                                        </table>
+                                    }
+                                    else if (item.me_prueba.pregunta.ch_presentacion == "TL")
+                                    {
+                                        decimal? nro_pregunta = 0;
+                                        decimal? nu_id_pregunta = 0;
+                                        <table class="table table-striped table-bordered table-hover table-condensed " cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    @foreach (var itemMulti in Model.ls_mme_prueba)
+                                                    {
+                                                        if (nro_pregunta != item.me_prueba.pregunta.nu_nro_pregunta)
+                                                        {
+                                                            nro_pregunta = item.me_prueba.pregunta.nu_nro_pregunta;
+                                                            <td class="text-center" style="background-color:#0F386B;color:white;" colspan="2"><strong>@item.me_prueba.pregunta.nu_nro_pregunta</strong>.<strong>@Html.Raw(@itemMulti.me_prueba.pregunta.vc_desc_criterio)</strong></td>
+                                                        }
+                                                    }
+                                                </tr>
+                                            </thead>
+                                            <tbody id="DetallePreguntas2">
+                                                @foreach (var itemMulti in Model.ls_mme_prueba)
+                                                {
+                                                    <tr>
+                                                        <td class="text-center" id="nu_id_pregunta_zavic" hidden="hidden"><strong>@itemMulti.me_prueba.pregunta.nu_id_pregunta</strong></td>
+                                                        <td class="text-center"><strong>@itemMulti.me_prueba.pregunta.vc_desc_pregunta</strong></td>
+                                                        <td class="text-center">
+                                                            <select class="zavic" onchange="SelectOpcion(@itemMulti.me_prueba.pregunta.nu_id_pregunta);" id="@(itemMulti.me_prueba.pregunta.nu_id_pregunta)">
+                                                                <option value="0">--Seleccionar--</option>
+                                                                @for (int i = 0; i < itemMulti.ls_mme_prueba.Count(); i++)
+                                                                {
+                                                                    if (itemMulti.me_prueba.pregunta.nu_id_pregunta == itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_pregunta && nu_id_pregunta != itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)
+                                                                    {
+                                                                        nu_id_pregunta = itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa;
+                                                                        if (itemMulti.ls_mme_prueba[i].me_prueba.alternativa.ch_marca != "M")
+                                                                        {
+                                                                            <option value="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬@(itemMulti.me_prueba.pregunta.nu_id_pregunta)" style="width:25px;height:25px">@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</option>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <option value="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬@(itemMulti.me_prueba.pregunta.nu_id_pregunta)" style="width:25px;height:25px" selected>@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</option>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    }
+                                    else if (item.me_prueba.pregunta.ch_presentacion == "IL")
+                                    {
+                                        decimal? nro_pregunta = 0;
+                                        decimal? nu_id_pregunta = 0;
+                                        <table class="table table-striped table-bordered table-hover table-condensed " cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    @foreach (var itemMulti in Model.ls_mme_prueba)
+                                                    {
+                                                        if (nro_pregunta != item.me_prueba.pregunta.nu_nro_pregunta)
+                                                        {
+                                                            nro_pregunta = item.me_prueba.pregunta.nu_nro_pregunta;
+                                                            <td class="text-center" style="background-color:#0F386B;color:white;" colspan="2"><strong>@item.me_prueba.pregunta.nu_nro_pregunta</strong>.<strong>@Html.Raw(@itemMulti.me_prueba.pregunta.vc_desc_criterio)</strong></td>
+                                                        }
+                                                    }
+                                                </tr>
+                                            </thead>
+                                            <tbody id="DetallePreguntas2">
+                                                @foreach (var itemMulti in Model.ls_mme_prueba)
+                                                {
+                                                    <tr>
+                                                        <td class="text-center" id="nu_id_pregunta_zavic" hidden="hidden"><strong>@itemMulti.me_prueba.pregunta.nu_id_pregunta</strong></td>
+                                                        <td class="text-center"><strong>@itemMulti.me_prueba.pregunta.vc_desc_pregunta</strong></td>
+                                                        <td class="text-center">
+                                                            <select class="zavic" onchange="SelectOpcion1(@itemMulti.me_prueba.pregunta.nu_id_pregunta);" id="@(itemMulti.me_prueba.pregunta.nu_id_pregunta)">
+                                                                <option value="0">--Seleccionar--</option>
+                                                                @for (int i = 0; i < itemMulti.ls_mme_prueba.Count(); i++)
+                                                                {
+                                                                    if (itemMulti.me_prueba.pregunta.nu_id_pregunta == itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_pregunta && nu_id_pregunta != itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)
+                                                                    {
+                                                                        nu_id_pregunta = itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa;
+                                                                        if (itemMulti.ls_mme_prueba[i].me_prueba.alternativa.ch_marca != "M")
+                                                                        {
+                                                                            <option value="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬@(itemMulti.me_prueba.pregunta.nu_id_pregunta)" style="width:25px;height:25px">@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</option>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <option value="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬@(itemMulti.me_prueba.pregunta.nu_id_pregunta)" style="width:25px;height:25px" selected>@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</option>
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    }
+                                    else if (item.me_prueba.pregunta.ch_presentacion == "DM")
+                                    {
+                                        decimal? nu_id_pregunta = 0;
+                                        <label style="color:black;font-size:19px"> @item.me_prueba.pregunta.vc_desc_pregunta</label>
+                                        <p class="text-center">
+                                            @if (@item.me_prueba.pregunta.vc_desc_imagen != null)
+                                            {
+                                                <img src="/Recursos/ImgPrueba/@item.me_prueba.pregunta.vc_desc_imagen" width="350px" />
+                                            }
+                                        </p>
+                                        <table class="table table-bordered table-hover table-condensed " cellspacing="0">
+                                            <tbody id="DetallePreguntas3">
+                                                @foreach (var itemMulti in Model.ls_mme_prueba)
+                                                {
+                                                    <tr id="A">
+                                                        <td class="text-center" style="font-size:20px"><strong>a</strong></td>
+                                                        @for (int i = 0; i < itemMulti.ls_mme_prueba.Count(); i++)
+                                                        {
+                                                            if (itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_parametro == "A" && itemMulti.me_prueba.pregunta.nu_id_pregunta == itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_pregunta && nu_id_pregunta != itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)
+                                                            {
+                                                                nu_id_pregunta = itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa;
+                                                                if (itemMulti.ls_mme_prueba[i].me_prueba.alternativa.ch_marca != "M")
+                                                                {
+                                                                    <td class="text-center" id="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬A" style="font-size:20px" onclick="CambiarColor(@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa),'A')">@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</td>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <td class="text-center" id="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬A" style="font-size:20px; background-color:#f39c12" onclick="CambiarColor(@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa),'A')">@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</td>
+                                                                }
+                                                            }
+                                                        }
+                                                    </tr>
+
+                                                    <tr id="B">
+                                                        <td class="text-center" style="font-size:20px"><strong>b</strong></td>
+                                                        @for (int i = 0; i < itemMulti.ls_mme_prueba.Count(); i++)
+                                                        {
+                                                            if (itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_parametro == "B" && itemMulti.me_prueba.pregunta.nu_id_pregunta == itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_pregunta && nu_id_pregunta != itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)
+                                                            {
+                                                                nu_id_pregunta = itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa;
+                                                                if (itemMulti.ls_mme_prueba[i].me_prueba.alternativa.ch_marca != "M")
+                                                                {
+                                                                    <td class="text-center" id="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬B" style="font-size:20px" onclick="CambiarColor(@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa),'B')">@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</td>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <td class="text-center" id="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬B" style="font-size:20px; background-color:#f39c12" onclick="CambiarColor(@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa),'B')">@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</td>
+                                                                }
+                                                            }
+                                                        }
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    }
+                                    else if (item.me_prueba.pregunta.ch_presentacion == "FL")
+                                    {
+                                        <label style="color:black;font-size:19px"><strong>@item.me_prueba.pregunta.nu_nro_pregunta</strong>. @item.me_prueba.pregunta.vc_desc_pregunta&nbsp;&nbsp;</label><a href="@item.me_prueba.prueba.vc_nomfile" target="_blank"><i class="fa fa-download"></i>Descargar Prueba</a>
+                                        <div style="height:20px"></div>
+
+
+                                        <p class="text-center">
+                                            <input class="file" id="@("fileLoad_"+ViewBag.nu_id_prueba)" name="@("fileLoad_"+ViewBag.nu_id_prueba)[]" type="file">
+                                            <div id="kartik-file-errors"></div>
+                                        </p>
+                                    }
+                                    else
+                                    {
+                                        <label style="color:#747677;font-size:19px"><strong>@item.me_prueba.pregunta.nu_nro_pregunta</strong>.</label>
+                                        <table class="table table-striped table-bordered table-hover table-condensed " cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    @foreach (var itemMulti in Model.ls_mme_prueba)
+                                                    {
+                                                        <td class="text-center" style="background-color:#0F386B;color:white;"><strong>@itemMulti.me_prueba.pregunta.vc_desc_criterio</strong></td>
+                                                    }
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    @foreach (var itemMulti in Model.ls_mme_prueba)
+                                                    {
+                                                        <td class="text-center"><strong>@itemMulti.me_prueba.pregunta.vc_desc_pregunta</strong></td>
+                                                    }
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    }
+
+                                    if (item.me_prueba.pregunta.ch_presentacion != "DK" && item.me_prueba.pregunta.ch_presentacion != "TL" && item.me_prueba.pregunta.ch_presentacion != "DM" && item.me_prueba.pregunta.ch_presentacion != "IL")
+                                    {
+                                        <br />
+                                        foreach (var item2 in item.ls_mme_prueba)
+                                        {
+                                            string marca = "";
+                                            if (item2.me_prueba.alternativa.ch_marca == "M") { marca = "checked=checked"; }
+
+                                            if (item2.me_prueba.alternativa.ch_orientacion == "H")
+                                            {
+                                                <div class="col-md-4" style="padding:10px">
+                                                    <label class="control-label" style="color:black">
+                                                        @if (@Model.mme_prueba.me_prueba.prueba.nu_id_tipo_prueba == 1 || @Model.mme_prueba.me_prueba.prueba.nu_id_tipo_prueba == 3)
+                                                        {
+                                                            if (item2.me_prueba.alternativa.ch_tipo_alternativa == "UN")
+                                                            {
+                                                                <input type="radio" name="Alternativa" @marca onchange="ResponderInteligencia(@item2.me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                                                            }
+                                                            else
+                                                            {
+                                                                <input type="checkbox" name="Alternativa" @marca onchange="Responder(@item2.me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            if (item2.me_prueba.alternativa.ch_tipo_alternativa == "UN")
+                                                            {
+                                                                <input type="radio" name="Alternativa" @marca onchange="Responder(@item2.me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                                                            }
+                                                            else
+                                                            {
+                                                                <input type="checkbox" name="Alternativa" @marca onchange="Responder(@item2.me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                                                            }
+                                                        }
+                                                        @item2.me_prueba.alternativa.vc_desc_alternativa
+                                                    </label>
+                                                    @if (item2.me_prueba.alternativa.vc_desc_imagen != null)
+                                                    {
+                                                        <img src="/Recursos/ImgPrueba/@item2.me_prueba.alternativa.vc_desc_imagen" width="100px" />
+                                                    }
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="col-md-12" style="padding:10px">
+                                                    <label class="control-label" style="color:black">
+                                                        @if (item2.me_prueba.alternativa.ch_tipo_alternativa == "UN")
+                                                        {
+                                                            <input type="radio" name="Alternativa" @marca onchange="Responder(@item2.me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                                                        }
+                                                        else
+                                                        {
+                                                            <input type="checkbox" name="Alternativa" @marca onchange="Responder(@item2.me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                                                        }
+                                                        @item2.me_prueba.alternativa.vc_desc_alternativa
+                                                    </label>
+                                                </div>
+                                            }
+                                        }
+                                    }
+                                    break;
+                                }
+                            </div>
+                            <div id="Status" class="col-md-12"></div>
+                            <div id="contentBtnsPregunta" class="col-md-12">
+
+                                @if (Model.ls_preguntas != null)
+                                {
+                                    if (Model.ls_preguntas.Count > 0)
+                                    {
+                                        @Html.Partial("VPBtnsPregunta", Model)
+                                    }
+                                }
+                                <br /><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+<script src="~/Scripts/Sistemas/jquery-3.5.1.min.js"></script>
+<script src="~/Scripts/fileinput/fileinput.min.js"></script>
+<script src="~/Scripts/fileinput/locales/es.js"></script>
+<script src="~/Content/themes/explorer-fas/theme.min.js"></script>
+<script type="text/javascript">
+
+    var nu_id_prueba_candidato  = "@ViewBag.nu_id_prueba_candidato";
+    var nu_id_prueba            = "@ViewBag.nu_id_prueba";
+    var nu_id_prueba_parte      = "@ViewBag.nu_id_prueba_parte";
+    var vc_url                  = "@Url.RouteUrl("VP_Pregunta")";
+    var vc_url_respuesta        = "@Url.RouteUrl("AC_Respuesta")";
+    var vc_url_btns             = "@Url.RouteUrl("AC_NroPreguntas")";
+    var vc_url_terminar         = "@Url.RouteUrl("AC_Terminar")";
+    var vc_url_tiempo           = "@Url.RouteUrl("AC_Tiempo")";
+    var vc_url_validar          = "@Url.RouteUrl("AC_ValidarIngles")";
+    var vc_url_file             = "@Url.RouteUrl("CF_LoadFile")";
+    var anterior    = parseInt($('#nu_nro_pregunta').val())-1;
+    var siguiente   = parseInt($('#nu_nro_pregunta').val())+1;
+
+    var contador_s  = "@Model.mme_prueba.me_prueba.prueba_candidato.nu_tiempo_transcurrido_segundos";
+    var contador_m  = "@Model.mme_prueba.me_prueba.prueba_candidato.nu_tiempo_transcurrido";
+
+    var progreso_m  = "@Model.mme_prueba.me_prueba.prueba_candidato.progreso_m";
+    var intervalo   = 0;
+
+    var cronometro = null;
+    var tiempo_limite = 1;
+
+    $(document).ready(function () {
+        $('#minutos').html(("0" + contador_m).slice(-2));
+        $('#segundos').html(("0" + contador_s).slice(-2));
+        if (contador_m > 0 || contador_s > 0) {
+            Carga();
+        } else {
+            console.log(contador_m, contador_s)
+            if ("@ch_presentacion" == "FL" && contador_m == 0 && contador_s == 0) {
+                Carga();
+            }
+        }
+        $('.terminar').css('visibility', 'hidden');
+
+        if ("@ch_presentacion" =="FL") {
+            $('.terminar').css('visibility', '');
+        }
+
+        if ("@ch_presentacion" =="TL") {
+            $('.terminar').css('visibility', '');
+        }
+
+        if (nu_id_prueba == 14) { // SI ES ZAVIC  
+            if (cantidadPreguntas == $("#nu_nro_pregunta").val()) { $('.terminar').css('visibility', ''); } else { $('.terminar').css('visibility', 'hidden'); }
+        }
+
+        if ("@Model.mme_prueba.me_prueba.prueba.ch_tiempo" == 0) { tiempo_limite = 0; $('#Reloj').remove(); }
+
+        $('#ContenidoInstruccion').html($('#ContenidoInstruccion').text().trim());
+        ValidaDISC();
+    });
+
+    $(document).on('keypress', function (e) {
+        if (e.which == 97 || e.which == 45) {
+            Anterior();
+        }
+        if (e.which == 100 || e.which == 43) {
+            Siguiente();
+        }
+    });
+
+    function Carga() {
+        cronometro = setInterval
+                     (
+                        function ()
+                        {
+                            //console.log(contador_m);
+                            //console.log(contador_s);
+
+                            if (contador_m == 0 && contador_s == 0) {
+                                clearInterval(cronometro);
+                                GuardarTiempo();
+                                Terminar();
+                            }
+                            if (contador_s == 0 && contador_m > 0) {
+                                contador_s = 59;
+                                contador_m--;
+                                progreso_m++;
+                                $('#minutos').html(("0" + contador_m).slice(-2));
+                            }
+
+                            $('#segundos').html(("0" + contador_s).slice(-2));
+                            contador_s--;
+                            intervalo++;
+
+                            if (intervalo == 2) { GuardarTiempo(); }
+                        }, 1000
+                     );
+    }
+
+    $(document).on('click', '.pregunta', function (e) {
+        if ($(this).attr('id') == $("#nu_nro_pregunta").val()) return false;
+        $('#Status').html('');
+        var select = document.getElementsByClassName("zavic");
+        if (select.length) {
+            var bo_funcion;
+            bo_funcion = ValidarZavic();
+            if (bo_funcion != false) {
+                BuscarPregunta($(this).attr('name'));
+                anterior = parseInt($(this).attr('id')) - 1;
+                siguiente = parseInt($(this).attr('id')) + 1;
+                if (anterior == 0) { anterior = 1; siguiente = 2; }
+                if (siguiente == (parseInt(cantidadPreguntas) + 1)) { siguiente = parseInt(cantidadPreguntas); anterior = parseInt(cantidadPreguntas) - 1; }
+            }
+            else {
+                alert("Asegurese de responder darle valor todas las situaciones.");
+            }
+        }
+        else if ($(':radio[name=Alternativa]').length) {
+            if ($("#txt_tipo_prueba").val() != 1 && $("#txt_tipo_prueba").val() != 3) {
+                var radios = $('input:radio[name=Alternativa]:checked').val();
+                if (radios == 'on') {
+                    BuscarPregunta($(this).attr('name'));
+                    anterior = parseInt($(this).attr('id')) - 1;
+                    siguiente = parseInt($(this).attr('id')) + 1;
+                    if (anterior == 0) { anterior = 1; siguiente = 2; }
+                    if (siguiente == (parseInt(cantidadPreguntas) + 1)) { siguiente = parseInt(cantidadPreguntas); anterior = parseInt(cantidadPreguntas) - 1; }
+                }
+                else {
+                    alert("Debe marcar una alternativa antes de seguir")
+                }
+            } else {
+                BuscarPregunta($(this).attr('name'));
+                anterior = parseInt($(this).attr('id')) - 1;
+                siguiente = parseInt($(this).attr('id')) + 1;
+                if (anterior == 0) { anterior = 1; siguiente = 2; }
+                if (siguiente == (parseInt(cantidadPreguntas) + 1)) { siguiente = parseInt(cantidadPreguntas); anterior = parseInt(cantidadPreguntas) - 1; }
+            }
+        }
+        else if ($(':radio[name=0]').length) {
+            var radios0 = $('input:radio[name=0]:checked').val();
+            var radios1 = $('input:radio[name=1]:checked').val();
+            if (radios0 == 'on' && radios1 == 'on') {
+                BuscarPregunta($(this).attr('name'));
+                anterior = parseInt($(this).attr('id')) - 1;
+                siguiente = parseInt($(this).attr('id')) + 1;
+                if (anterior == 0) { anterior = 1; siguiente = 2; }
+                if (siguiente == (parseInt(cantidadPreguntas) + 1)) { siguiente = parseInt(cantidadPreguntas); anterior = parseInt(cantidadPreguntas) - 1; }
+
+            }
+            else {
+                alert("Debe marcar dos alternativa antes de seguir")
+            }
+        }
+        else
+        {
+            BuscarPregunta($(this).attr('name'));
+            anterior = parseInt($(this).attr('id')) - 1;
+            siguiente = parseInt($(this).attr('id')) + 1;
+            if (anterior == 0) { anterior = 1; siguiente = 2; }
+            if (siguiente == (parseInt(cantidadPreguntas) + 1)) { siguiente = parseInt(cantidadPreguntas); anterior = parseInt(cantidadPreguntas) - 1; }
+        }
+    })
+
+    $(document).on('click', '.adelante', function (e) {
+        var select = document.getElementsByClassName("zavic");        
+        console.log("1--->")
+        if (select.length) {
+            var bo_funcion;
+            bo_funcion = ValidarZavic();
+            if (bo_funcion != false) {
+                Siguiente();1
+            }
+            else {
+                alert("Asegurese de responder darle valor todas las situaciones.");
+            }
+        }
+        else if ($(':radio[name=Alternativa]').length) {
+            //console.log("2--->")
+
+            if ($("#txt_tipo_prueba").val() != 1 && $("#txt_tipo_prueba").val() != 3) {
+                var radios = $('input:radio[name=Alternativa]:checked').val();
+                if (radios == 'on') {
+                    Siguiente();
+                }
+                else {
+                    alert("Debe marcar una alternativa antes de seguir")
+                }
+            } else {
+                Siguiente();
+            }
+        }
+        else if ($(':radio[name=0]').length) {
+            var radios0 = $('input:radio[name=0]:checked').val();
+            var radios1 = $('input:radio[name=1]:checked').val();
+            if (radios0 == 'on' && radios1 == 'on') {
+                Siguiente();
+            }
+            else {
+                alert("Debe marcar dos alternativa antes de seguir");
+            }
+        }
+        else { Siguiente(); }
+    });
+
+    function Siguiente() {
+        if (cantidadPreguntas == parseInt($("#nu_nro_pregunta").val())) return false;
+
+        $('#Status').html('');
+        if (nu_id_prueba_parte == 33) {
+            if ($('#nu_nro_pregunta').val() == 9) {
+                VAlidaIngles(1);
+            }
+            if ($('#nu_nro_pregunta').val() == 19) {
+                VAlidaIngles(2);
+            }
+            if ($('#nu_nro_pregunta').val() == 37) {
+                VAlidaIngles(3);
+            }
+        }
+        if (nu_id_prueba_parte == 34) {
+            if ($('#nu_nro_pregunta').val() == 2) {
+                VAlidaIngles(1);
+            }
+            if ($('#nu_nro_pregunta').val() == 18) {
+                VAlidaIngles(2);
+            }
+            if ($('#nu_nro_pregunta').val() == 36) {
+                VAlidaIngles(3);
+            }
+        }
+        //console.log($('#' + siguiente).attr('name'))
+        BuscarPregunta($('#' + siguiente).attr('name'));
+        anterior = parseInt(siguiente) - 1;
+        siguiente = parseInt(siguiente) + 1;
+        if (siguiente == (parseInt(cantidadPreguntas) + 1)) { siguiente = parseInt(cantidadPreguntas); anterior = parseInt(cantidadPreguntas) - 1; }
+    }
+
+    $(document).on('click', '.atras', function (e) {
+        Anterior();
+    });
+
+    function Anterior() {
+        if ((parseInt(anterior) - 1)<=0) return false;
+        $('#Status').html('');
+        ValidarZavic();
+        BuscarPregunta($('#' + anterior).attr('name'));
+        anterior = parseInt(anterior) - 1;
+        siguiente = parseInt(anterior) + 2;
+        if (anterior == 0) { anterior = 1; siguiente = 2; }
+    }
+
+    function ValidarZavic() {
+        var bo_comp = false;
+        $('#DetallePreguntas2 tr').each(function () {
+            var serie = $(this).find('td').eq(0).text().trim();
+                if ($('#' + serie + ' option:selected').val()=='0') {
+                    bo_comp = true;
+                    return false;
+                }
+        });
+        if (bo_comp) {
+            return false;
+        }
+    }
+    function BuscarPregunta(id) {
+        //console.log(id, parseInt($("#nu_id_pregunta").val()));
+        if (id == parseInt($("#nu_id_pregunta").val())) return false;
+        $('#Status').html('');
+        var model = { nu_id_pregunta: id, nu_id_prueba_candidato: nu_id_prueba_candidato, nu_id_prueba_parte: nu_id_prueba_parte }
+        HsTimerRestart();
+        $.ajax({
+            type: "POST",
+            url: vc_url,
+            data: model,
+            success: function (result) {
+                $('#ContenedorPregunta').html(result);                
+                if (cantidadPreguntas == numeroPregunta) { $('.terminar').css('visibility', ''); } else { $('.terminar').css('visibility', 'hidden'); }
+                ValidaDISC();
+            },
+            error: function (result) {
+                alert("Ha ocurrido un error inesperado al buscar la Pregunta, acepte el mensaje y continue.")
+            }
+        });
+    }
+
+        function SelectOpcion(id) {
+            var valor = document.getElementById(id).value;
+            var alternativa = valor.split("¬")[0];
+            var pregunta = valor.split("¬")[1];
+            var numero = $('#' + id + ' option:selected').text();
+            var bo_comp = false;
+            $('#DetallePreguntas2 tr').each(function () {
+                var serie = $(this).find('td').eq(0).text().trim();
+                if (pregunta != serie) {
+                    if (numero == $('#' + serie + ' option:selected').text()) {
+                        bo_comp = true;
+                        $('#' + pregunta).val('0');
+                        return false;
+                    }
+                }
+            });
+            if (bo_comp) {
+                alert("Recuerde: No deben repetirse los números en una misma situación.");
+                $('#Status').html('');
+            }
+            else {                
+                if (cantidadPreguntas == "1") { $('.terminar').css('visibility', ''); } else { $('.terminar').css('visibility', 'hidden'); }
+
+                if (nu_id_prueba == 14) { // SI ES ZAVIC  
+                    if (cantidadPreguntas == $("#nu_nro_pregunta").val()) { $('.terminar').css('visibility', ''); } else { $('.terminar').css('visibility', 'hidden'); }
+                }
+
+
+                ResponderZavic(alternativa, pregunta, numero);
+            }
+        }
+
+        function SelectOpcion1(id) {
+            var valor = document.getElementById(id).value;
+            var alternativa = valor.split("¬")[0];
+            var pregunta = valor.split("¬")[1];
+            var numero = $('#' + id + ' option:selected').text();
+            ResponderZavic(alternativa, pregunta, numero);
+        }
+
+    function ResponderZavic(id_alternativa, id_pregunta, numero) {
+            
+            //$('.cs_continuar_evaluacion').prop('disabled', true);
+            $('#ContenedorGeneral').find('*').prop('disabled', true);
+            $('#ContenedorGeneral').css('cursor', 'progress');
+            if (contador_m == 0 && contador_s == 0 && tiempo_limite == 1) { alert("Ya ha culminado el tiempo del esta parte del examen."); return false; }
+            var id_Preg
+            id_Preg = $('#nu_nro_pregunta').val()
+            $('#Status').html('');
+            var model = {
+                nu_id_prueba_candidato: nu_id_prueba_candidato,
+                nu_id_prueba_parte: nu_id_prueba_parte,
+                nu_id_pregunta: id_pregunta,
+                nu_id_alternativa: id_alternativa
+            }
+            HsTimerRestart();
+            $.ajax({
+                type: "POST",
+                url: vc_url_respuesta,
+                data: model,
+                success: function (result) {
+                    $('#Status').html(result);
+                    //BtnsPreguntas();
+                    $('#' + id_Preg).removeClass('btn-default');
+                    $('#' + id_Preg).addClass('btn-info');
+                    //$('.cs_continuar_evaluacion').prop('disabled', false);
+                    $('#ContenedorGeneral').find('*').prop('disabled', false);
+                    $('#ContenedorGeneral').css('cursor', 'default');
+                },
+                error: function (result) {
+                    //$('.cs_continuar_evaluacion').prop('disabled', true);
+                    $('#ContenedorGeneral').find('*').prop('disabled', false);
+                    $('#ContenedorGeneral').css('cursor', 'default');
+                    alert("Ha ocurrido un error inesperado al responder la prueba de Zavic,acepte el mensaje y continue.")
+                }
+            });
+        }
+
+        function Responder(id) {
+            //$('.cs_continuar_evaluacion').prop('disabled', true);
+            $('#ContenedorGeneral').find('*').prop('disabled', true);
+            $('#ContenedorGeneral').css('cursor', 'progress');
+            flagClick = true;
+            if (contador_m == 0 && contador_s == 0 && tiempo_limite == 1) { alert("Ya ha culminado el tiempo del esta parte del examen."); return false; }
+            var id_Preg
+            id_Preg = $('#nu_nro_pregunta').val()
+            $('#Status').html('');
+            var model = {
+                nu_id_prueba_candidato  : nu_id_prueba_candidato,
+                nu_id_prueba_parte      : nu_id_prueba_parte,
+                nu_id_pregunta          : $('#nu_id_pregunta').val(),
+                nu_id_alternativa       : id
+            }
+            HsTimerRestart();
+            $.ajax({
+                type: "POST",
+                url: vc_url_respuesta,
+                data: model,
+                success: function (result) {
+                    $('#Status').html(result);
+                    //BtnsPreguntas();
+                    $('#' + id_Preg).removeClass('btn-default');
+                    $('#' + id_Preg).addClass('btn-info');
+                    //$('.cs_continuar_evaluacion').prop('disabled', false);
+                    $('#ContenedorGeneral').find('*').prop('disabled', false);
+                    flagClick = false;
+                    $("#DetallePreguntas3").css('cursor', 'default');
+                    $('#ContenedorGeneral').css('cursor', 'default');
+                },
+                error: function (result) {
+                    alert("Ha ocurrido un error inesperado, acepte el mensaje y continue - " + result )
+                    //$('.cs_continuar_evaluacion').prop('disabled', true);
+                    $('#ContenedorGeneral').find('*').prop('disabled', false);
+                    flagClick = true;
+                    $("#DetallePreguntas3").css('cursor', 'default');
+                    $('#ContenedorGeneral').css('cursor', 'default');
+                }
+            });
+        }
+
+
+
+        function ResponderInteligencia(id) {
+            //$('.cs_continuar_evaluacion').prop('disabled', true);
+            $('#ContenedorGeneral').find('*').prop('disabled', true);
+            $('#ContenedorGeneral').css('cursor', 'progress');
+            if (contador_m == 0 && contador_s == 0 && tiempo_limite == 1) { alert("Ya ha culminado el tiempo del esta parte del examen."); return false; }
+            var id_Preg
+            id_Preg = $('#nu_nro_pregunta').val()
+            $('#Status').html('');
+            var model = {
+                nu_id_prueba_candidato: nu_id_prueba_candidato,
+                nu_id_prueba_parte: nu_id_prueba_parte,
+                nu_id_pregunta: $('#nu_id_pregunta').val(),
+                nu_id_alternativa: id
+            }
+            //console.log("Entro respondender pregunta Inteligencia")
+            HsTimerRestart();
+            $.ajax({
+                type: "POST",
+                url: vc_url_respuesta,
+                data: model,
+                success: function (result) {
+                    $('#Status').html(result);
+                    //BtnsPreguntas();
+                    $('#' + id_Preg).removeClass('btn-default');
+                    $('#' + id_Preg).addClass('btn-info');
+                    //$('.cs_continuar_evaluacion').prop('disabled', false);
+                    $('#ContenedorGeneral').find('*').prop('disabled', false);
+                    $('#ContenedorGeneral').css('cursor', 'default');
+                    setTimeout(function () {
+                        Siguiente();
+                    }, 1500);
+                },
+                error: function (result) {
+                    alert("Ha ocurrido un error inesperado al responder una pregunta de inteligencia, acepte el mensaje y continue. - " + result)
+                    //$('.cs_continuar_evaluacion').prop('disabled', true);
+                    $('#ContenedorGeneral').find('*').prop('disabled', false);
+                    $('#ContenedorGeneral').css('cursor', 'default');
+                }
+            });
+        }
+
+        function VAlidaIngles(option) {
+            var model = {
+                nu_id_prueba_candidato  : nu_id_prueba_candidato,
+                nu_id_prueba_parte      : nu_id_prueba_parte,
+                nu_id_option            : option
+            }
+            HsTimerRestart();
+            $.ajax({
+                type: "POST",
+                url: vc_url_validar,
+                data: model,
+                success: function (result) {
+                    if (result.message == '1') {
+                        alert("No llego a obtener la puntuacion mínima para pasar al siguiente nivel");
+                        Terminar();
+                    }
+                    else {
+                        alert('Felicitaciones!!!... Usted puede continuar con el siguiente nivel');
+                    }
+                },
+                error: function (result) {
+                    intervalo = 0;
+                    alert("Ha ocurrido un error al intentar guardar el tiempo, acepte el mensaje y continue.")
+                }
+            });
+        }
+
+            function ValidaDISC() {
+                if ($('.Alternativa_0').prop('checked')) { $('.Alternativa_1').attr('disabled', 'disabled'); } else { $('.Alternativa_1').removeAttr('disabled'); }
+                if ($('.Alternativa_1').prop('checked')) { $('.Alternativa_0').attr('disabled', 'disabled'); } else { $('.Alternativa_0').removeAttr('disabled'); }
+                if ($('.Alternativa_2').prop('checked')) { $('.Alternativa_3').attr('disabled', 'disabled'); } else { $('.Alternativa_3').removeAttr('disabled'); }
+                if ($('.Alternativa_3').prop('checked')) { $('.Alternativa_2').attr('disabled', 'disabled'); } else { $('.Alternativa_2').removeAttr('disabled'); }
+                if ($('.Alternativa_4').prop('checked')) { $('.Alternativa_5').attr('disabled', 'disabled'); } else { $('.Alternativa_5').removeAttr('disabled'); }
+                if ($('.Alternativa_5').prop('checked')) { $('.Alternativa_4').attr('disabled', 'disabled'); } else { $('.Alternativa_4').removeAttr('disabled'); }
+                if ($('.Alternativa_6').prop('checked')) { $('.Alternativa_7').attr('disabled', 'disabled'); } else { $('.Alternativa_7').removeAttr('disabled'); }
+                if ($('.Alternativa_7').prop('checked')) { $('.Alternativa_6').attr('disabled', 'disabled'); } else { $('.Alternativa_6').removeAttr('disabled'); }
+            }
+
+            function ResponderDISC(id) {
+                //$('.cs_continuar_evaluacion').prop('disabled', true);
+                ValidaDISC();
+                $('#ContenedorGeneral').find('*').prop('disabled', true);
+                $('#ContenedorGeneral').css('cursor', 'progress');
+
+                if (contador_m == 0 && contador_s == 0 && tiempo_limite == 1) { alert("Ya ha culminado el tiempo del esta parte del examen."); return false; }
+                var id_Preg
+                id_Preg = $('#nu_nro_pregunta').val()
+                $('#Status').html('');
+                var model = {
+                    nu_id_prueba_candidato: nu_id_prueba_candidato,
+                    nu_id_prueba_parte: nu_id_prueba_parte,
+                    nu_id_pregunta: $('#nu_id_pregunta').val(),
+                    nu_id_alternativa: id
+                }
+                HsTimerRestart();
+                $.ajax({
+                    type: "POST",
+                    url: vc_url_respuesta,
+                    data: model,
+                    success: function (result) {
+                        $('#Status').html(result);
+                        //BtnsPreguntas();
+                        $('#' + id_Preg).removeClass('btn-default');
+                        $('#' + id_Preg).addClass('btn-info');
+                        //$('.cs_continuar_evaluacion').prop('disabled', false);
+                        $('#ContenedorGeneral').find('*').prop('disabled', false);
+                        $('#ContenedorGeneral').css('cursor', 'default');
+                        ValidaDISC();
+                    },
+                    error: function (result) {
+                        alert("Ha ocurrido un error inesperado al responder DISC, acepte el mensaje y continue. - " + result)
+                        //$('.cs_continuar_evaluacion').prop('disabled', true);
+                        $('#ContenedorGeneral').find('*').prop('disabled', false);
+                        $('#ContenedorGeneral').css('cursor', 'default');
+                        ValidaDISC();
+                    }
+                });
+
+            }
+
+            function BtnsPreguntas()
+            {
+                var model = {
+                    nu_id_prueba_candidato  : nu_id_prueba_candidato,
+                    nu_id_prueba_parte      : nu_id_prueba_parte
+                }
+                HsTimerRestart();
+                $.ajax({
+                    type: "POST",
+                    url: vc_url_btns,
+                    data: model,
+                    success: function (result) {
+                        $('#contentBtnsPregunta').html(result);
+                    },
+                    error: function (result) {
+                        alert("Ha ocurrido un error inesperado al cargar los números de las preguntas, acepte el mensaje y continue. - " + result)
+                    }
+                });
+            }
+
+            $(document).on('click', '.terminar', function (e) {
+               Terminar();
+            });
+
+            const removeAccents = (str) => {
+                return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            }
+
+            function Terminar() {
+                clearInterval(cronometro);
+                var finalizar = false;
+                
+                var select = document.getElementsByClassName("zavic");
+                if (select.length) {
+                    var bo_funcion;
+                    bo_funcion = ValidarZavic();
+                    if (bo_funcion != false) {
+                        finalizar = true;
+                    }
+                    else {
+                        alert("Asegurese de responder darle valor todas las situaciones.");
+                    }
+                }
+                else if ($(':radio[name=Alternativa]').length) {
+                    //console.log("2--->")
+
+                    if ($("#txt_tipo_prueba").val() != 1 && $("#txt_tipo_prueba").val() != 3) {
+                        var radios = $('input:radio[name=Alternativa]:checked').val();
+                        if (radios == 'on') {
+                            finalizar = true;
+                        }
+                        else {
+                            alert("Debe marcar una alternativa antes de seguir")
+                        }
+                    } else {
+                        finalizar = true;
+                    }
+                }
+                else if ($(':radio[name=0]').length) {
+                    var radios0 = $('input:radio[name=0]:checked').val();
+                    var radios1 = $('input:radio[name=1]:checked').val();
+                    if (radios0 == 'on' && radios1 == 'on') {
+                        finalizar = true;
+                    }
+                    else {
+                        alert("Debe marcar dos alternativa antes de seguir");
+                    }
+                } else {
+
+                }
+
+                console.log("finalizar", finalizar)
+                
+                if (finalizar == true) {
+                    
+                    var model = {
+                        nu_id_prueba_candidato: nu_id_prueba_candidato,
+                        vc_desc_prueba: removeAccents('@NomPrueba'),
+                        nu_id_prueba: nu_id_prueba
+                    }
+                
+                    //alert("Prueba ID = " + nu_id_prueba)
+
+                    if (nu_id_prueba == 14 || nu_id_prueba == 4 || nu_id_prueba == 5 || nu_id_prueba == 11 || nu_id_prueba == 13 || nu_id_prueba == 17 || nu_id_prueba == 18 || nu_id_prueba == 19 || nu_id_prueba == 21 || nu_id_prueba == 22 || nu_id_prueba == 23) { // SI ES ZAVIC
+
+
+                        //alert($(".pregunta.btn.btn-info.btn-sm.cs_continuar_evaluacion").length + " | " +$(".pregunta.btn.btn-sm.cs_continuar_evaluacion").length)
+
+                        if ($(".pregunta.btn.btn-info.btn-sm.cs_continuar_evaluacion").length != $(".pregunta.btn.btn-sm.cs_continuar_evaluacion").length) {
+                            alert("Debe responder todas las Preguntas para poder finalizar la prueba.");
+                            return false;
+                        }                    
+                    }
+                    HsTimerRestart();
+                
+                    $.ajax({
+                        type: "POST",
+                        url: vc_url_terminar,
+                        data: model,
+                        success: function (result) {
+                            $('#ContenedorGeneral').html(result);
+                            //console.log(result)
+                        },
+                        error: function (result) {
+                            alert("Ha ocurrido un error inesperado al Terminar la prueba, acepte el mensaje y continue. - " + result)
+                        }
+                    });
+                    
+                    console.log("FIN")
+                }
+
+               
+            }
+
+            function GuardarTiempo() {
+                var model = {
+                    nu_id_prueba_candidato: nu_id_prueba_candidato,
+                    progreso_m: progreso_m,
+                    progreso_s: contador_s,
+                }
+                //HsTimerRestart();
+                $.ajax({
+                    type: "POST",
+                    url: vc_url_tiempo,
+                    data: model,
+                    success: function (result) {
+                        intervalo = 0;
+                    },
+                    error: function (result) {
+                        intervalo = 0;
+                        //alert("Ha ocurrido un error al intentar guardar el tiempo contactar con el área de sistemas")
+                    }
+                });
+
+            }
+            var flagClick = false;
+            function CambiarColor(Id, letra) {
+                $("#DetallePreguntas3").css('cursor', 'progress')
+                if (flagClick == false) {
+                    $('#' + letra).each(function () {
+                        $(this).find('td').removeData('style');
+                        $(this).find('td').attr('style', 'font-size:20px');
+                    });
+                    celda1 = Id + "¬" + letra;
+                    celda = document.getElementById(celda1);
+                    celda.style.backgroundColor = "#f39c12";
+                    Responder(Id);
+                }
+
+            }
+    function getFileExtension3(filename) {
+        return filename.slice((filename.lastIndexOf(".") - 1 >>> 0) + 2);
+    }
+
+    var dataExenciones = ['xlsx', 'xls'];
+    $("#fileLoad_28").fileinput({
+        showPreview: false,
+        showUpload: true,
+        uploadAsync: false ,
+        elErrorContainer: '#kartik-file-errors',
+        allowedFileExtensions: dataExenciones,
+        uploadExtraData: function () {
+            var info = {
+                id_prueba_candidato: nu_id_prueba_candidato,
+                id_prueba_parte: nu_id_prueba_parte,
+                id_prueba: nu_id_prueba,
+                id_pregunta : $("#nu_id_pregunta").val()
+            };
+            return info;
+        },
+        maxFileSize: 5120,
+        maxFilesNum: 1,
+        theme: 'explorer-fas',
+        language: 'es',
+        uploadUrl: vc_url_file
+    }).on("filebatchselected", function (event, files) {
+        console.log('filebatchselected');
+       // $('#fileLoad_28').fileinput('upload');
+    });;
+
+    $('#fileLoad_28').on('fileloaded', function (event, file, previewId, index, reader) {
+    });
+
+    $('#fileLoad_28').on('filebatchuploadsuccess', function (event, data) {
+        var form = data.form, files = data.files, extra = data.extra,
+            response = data.response, reader = data.reader;
+        if (data.response == "OK") {
+            $('#Status').html('<label style="color:darkgreen"><i class="fa fa-check"></i> Su respuesta se ha guardado</label>')
+        } else {
+            $('#Status').html('<label style="color:darkred"><strong><i class="fa fa-remove"></i> !Oh no¡ </strong>, ha sucedido un problema inesperado, contactar con el evaluador..</label>');
+        }
+    });
+</script>
+
+
+}
+else
+{

@@ -1,0 +1,156 @@
+G:\Trabajos\Sln23C\01 Soft\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+G:\Trabajos\Sln23C\01 Soft\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+G:\Trabajos\Sln23C\01 Soft\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+G:\Trabajos\Sln23C\01 Soft\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+G:\Trabajos\Sln23C\01 Soft\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+G:\Trabajos\Sln23C\01 Soft\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Trabajos\Sln23C\01 Soft\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+H:\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+H:\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+H:\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+H:\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+H:\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+H:\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+H:\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+D:\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+D:\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+D:\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+D:\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+D:\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+E:\TISI\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+E:\TISI\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+E:\TISI\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\TISI\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\TISI\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+E:\TISI\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+E:\TISI\Evaluaciones Online\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\stephanie.figueroa\Desktop\E\Root\KATY\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\stephanie.figueroa\Desktop\E\Root\KATY\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\stephanie.figueroa\Desktop\E\Root\KATY\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\stephanie.figueroa\Desktop\E\Root\KATY\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\stephanie.figueroa\Desktop\E\Root\KATY\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\stephanie.figueroa\Desktop\E\Root\KATY\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\stephanie.figueroa\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+D:\KATY\Proyecto de evaluaciones\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+D:\KATY\EVALUACIONES 2\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+C:\Users\marketing.HUMANSOLUTIONS\Desktop\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+C:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+D:\Human\Fuentes Web HS\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojAssemblyReference.cache
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.csproj.CopyComplete
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Evaluaciones Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+D:\Human\Fuentes Web HS\github\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.csprojResolveAssemblyReference.cache
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Conexiones\Conexiones\obj\Debug\Conexiones.pdb
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Conexiones\Conexiones\bin\Debug\Conexiones.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Conexiones\Conexiones\bin\Debug\Conexiones.pdb
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Conexiones\Conexiones\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Conexiones\Conexiones\obj\Debug\Conexiones.csproj.AssemblyReference.cache
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Conexiones\Conexiones\obj\Debug\Conexiones.csproj.CoreCompileInputs.cache
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Conexiones\Conexiones\obj\Debug\Conexiones.csproj.CopyComplete
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Conexiones\Conexiones\obj\Debug\Conexiones.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Conexiones\Conexiones\obj\Debug\Conexiones.pdb

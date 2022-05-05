@@ -1,0 +1,119 @@
+﻿@using EvaluacionesOnline.Areas.Sistemas.Models
+@{
+    int cont = 0;
+    ViewBag.Title = "HS | Evaluaciones";
+    Layout = "~/Areas/Seleccion/Views/MPEvaluacionesSitio.cshtml";
+    var Sesion = (SesionModel)Session[SesionModel.SessionName];
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            PRUEBAS A DESARROLLAR
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="@Url.RouteUrl("V_EvaluacionesSitio")">Evaluaciones</a></li>
+            <li class="active">Pruebas a Desarrollar</li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="box">
+                    <div class="box-header" style="background-color:#008DB7;color:white">
+                        <div class="box-title col-md-12">
+                            <div class="col-md-3 text-center" style="padding-left: 5px;">
+                                <img src="@Sesion.MME_Sesion.me_prueba.candidato.VC_IMAGEN_PERSONALIZAR" style="border-radius:4px;max-width:100%; max-height:140px"/>
+                            </div>
+                            <div class="col-md-9" style="padding-left:20px;padding-top:20px">
+                                <h2><strong>¡HOLA @Sesion.MME_Sesion.me_prueba.candidato.vc_nombres!</strong></h2>
+                                <br />                
+                                @if (Sesion.MME_Sesion.me_prueba.candidato.nu_id_perfil == 3)
+                                {
+                                    <p style="line-height:1.5">
+                                        ¡Gracias por iniciar la Evaluación Psicolaboral! Las siguientes pruebas están orientadas a conocer lo mejor de las personas.
+                                    </p>
+                                }
+                                else
+                                {
+                                    <p style="line-height:1.5">
+                                        Gracias por iniciar esta <strong>DESCRIPCIÓN DE PUESTO.</strong> <br /> En la prueba que vas a realizar debes tener presente que las palabras que adjudiques se encuentran en relación a como piensas que debe ser el <strong>PUESTO</strong> y no en relación a la persona que lo ocupa.
+                                    </p>                                                                        
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <p style="font-size:20px"> 
+                            <i class="fa fa-play" style="color:#20819E"></i> Recuerda que nuestras evaluaciones sólo nos ayudan a conocer y complementar un poco mejor tu información para nuestro proceso de selección.
+                        </p>
+                            
+                            @foreach (var item in Model.ls_mme_prueba)
+                            {
+
+                                String NomPrueba = "";
+                                if (item.me_prueba.prueba.nu_publica == 1){
+                                    NomPrueba = item.me_prueba.prueba.vc_desc_prueba;
+                                }else{
+                                    cont = cont + 1;
+                                    NomPrueba = "Prueba " + cont.ToString();
+                                                
+                                }
+
+
+                                string ruta = "vc_desc_prueba=" + NomPrueba + "&nu_id_prueba=" + item.me_prueba.prueba.nu_id_prueba;
+                                
+                                <div class="col-md-12" style="padding:0px;margin:10px;border-radius:4px;border:2px solid #F3B11D;background-image:-webkit-linear-gradient(top,rgba(255, 252, 245, 0.72),rgba(255, 223, 182, 0.44));color:darkslategrey;">
+                                    <div class="col-md-4" style="text-align:center;font-size:60px;background-color:white;border-radius:4px 4px;">
+                                        <h3 style="color:darkorange"><strong> @NomPrueba </strong></h3>
+                                        <h4>(@item.me_prueba.prueba.vc_desc_tipo_prueba)</h4>
+                                        <img src="~/Recursos/Img/Prueba.png" width="100px"/>
+                                        @if (item.me_prueba.prueba.ch_estado_prueba == "1")
+                                        {
+                                            <h4><strong>¡Ya ha culminado esta prueba!</strong></h4><br />
+                                        }
+                                        else
+                                        {
+                                            <a class="btn btn-primary" style="background-image:-webkit-linear-gradient(top,#06D6C2,#1A66A8)" href="@Url.RouteUrl("V_PruebaPartes")?@ruta"><h4>Empezar</h4> &nbsp;&nbsp;<i class="glyphicon glyphicon-play-circle" style="font-size:28px;"></i></a>
+                                            <br /><br />
+                                        }
+
+                                    </div>
+                                    <div class="col-md-8" style="">                                     
+                                        <p style="font-size:17px;text-align:justify;">
+                                            <br />
+                                            @item.me_prueba.prueba.vc_desc_observacion
+                                            <br /><br />
+                                            <label style="font-size:18px"><strong>Características</strong></label><br />
+                                            <i class="fa fa-file" style="color:darkorange;font-size:19px;"></i> @item.me_prueba.prueba.nu_nro_partes parte(s)
+                                            <br />
+                                            <i class="glyphicon glyphicon-time" style="color:darkorange;font-size:19px;"></i>
+                                            @if (item.me_prueba.prueba.ch_tiempo == "1")
+                                            {
+                                                @item.me_prueba.prueba_parte.nu_tiempo_limite_min <span>minutos</span>
+                                            }
+                                            else if (item.me_prueba.prueba.ch_tiempo == "2")
+                                            {
+                                                @item.me_prueba.prueba_parte.nu_tiempo_limite_min <span>minutos</span>
+                                            }
+                                            else
+                                            {
+                                                <span>Sin tiempo límite</span>
+                                            }
+                                            <br />
+                                            @if(item.me_prueba.prueba.ch_tiempo != "2") { 
+                                            <i class="fa fa-check" style="color:darkorange;font-size:19px;"></i> @(item.me_prueba.prueba.nu_nro_preguntas+ " preguntas")
+                                            }
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "Sln23C | Mensajes de Sistema";
+    Layout = "~/Areas/Sistemas/Views/MPSistemasSitio.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            MENSAJES DEL SISTEMA
+            <small>Planificación</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="@Url.RouteUrl("V_SistemasSitio")"><i class="fa fa-share-alt"></i> Sistemas</a></li>
+            <li><a href="@Url.RouteUrl("V_GestionDeLaCalidad")">Gestión de la calidad</a></li>
+            <li class="active">Mensajes del Sistema</li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="box box-info">
+                    <div class="box-header">
+                        <h3 class="box-title"><i class="glyphicon glyphicon-envelope" style="color:#C1BEBB;"></i> ¿Qué son los mensajes del sistema?</h3>
+                    </div>
+                    <div class="box-body">
+                        <p>
+                            Los mensajes del sistema pueden considerarse como la mínima unidad de comunicación completa entre el usuario y el ordenador. 
+                            A pesar de su brevedad y reducido tamaño, su papel en la interacción hombre-máquina es enorme, ya que constituyen a menudo la 
+                            diferencia entre el éxito y el fracaso. Por ello, el diseño de buenos mensajes del sistema resulta imprescindible para disponer 
+                            de una usabilidad correcta.
+                        </p>
+                        
+                        <div class="col-md-6">
+
+                            @*open>>> Información: Enlaces del módulo de sistemas y seguridad*@
+                                <div class="col-md-6" style="text-align:center;font-size:55px;color:#D2D61E;">
+                                    <a class="Nuevo" href="javascript:;"><i class="glyphicon glyphicon-envelope"></i></a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="Nuevo" href="javascript:;"><h4 style="color:green">Nuevo mensaje</h4></a>
+                                    <p>
+                                        Puedes crear mensajes del sistema para acontecimientos excepcionales que sucedan en el sistema.
+                                    </p>
+                                    <br /><br />
+                                </div>
+                            @*close>> Información*@
+                            
+                            @*open>>> Información: Enlaces del módulo de procesos*@
+                                <div class="col-md-6" style="text-align:center;font-size:55px;color:#618C65;">
+                                    <a href="#"><i class="glyphicon glyphicon-search"></i></a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#"><h4 style="color:green">Buscar mensaje</h4></a>
+                                    <a href="#">
+                                        Identificación de procesos
+                                    </a>
+                                    <br />
+                                    <a href="#">
+                                        Descripción de procesos
+                                    </a>
+                                    <br />
+                                    <a href="#">
+                                        Implementación de procesos
+                                    </a>
+                                    <br />
+                                    <a href="#">
+                                        Procesos
+                                    </a>
+                                    <br /><br />
+                                </div>
+                            @*close>> Información*@
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            @*open>>> Información: Enlaces del módulo de cuentas y privilegios*@
+                                <div class="col-md-6" style="text-align:center;font-size:55px;color:skyblue;">
+                                    <a href="#"><i class="fa fa-group"></i></a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#"><h4 style="color:green">Cuentas y privilegios</h4></a>
+                                    <a href="#">
+                                        Administrar cuentas del sistema
+                                    </a>
+                                    <br />
+                                    <a href="#">
+                                        Gestionar privilegios
+                                    </a>
+                                    <br /><br />
+                                </div>
+                            @*close>> Información*@
+
+                            @*open>>> Información: Enlaces del módulo de mejora continua*@
+                                <div class="col-md-6" style="text-align:center;font-size:55px;color:#618C65;">
+                                    <a href="#"><i class="fa fa-repeat"></i></a>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4 style="color:green">Mejora continua</h4>
+                                    <a href="#">
+                                        Gestionar requerimientos
+                                    </a>
+                                    <br />
+                                    <a href="#">
+                                        Lecciones aprendidas
+                                    </a>
+                                    <br /><br />
+                                </div>
+                            @*close>> Información*@
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        @*open>>> Modal: Contenedor de elementos de interacción *@
+            <div id="ModalDeInteraccion" class="modal" style="overflow:scroll">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="border:1px solid rgb(6, 138, 228)">
+                        <div class="modal-header">
+                            <section class="content-header">
+                                <h4>
+                                    <i class="glyphicon glyphicon-envelope"></i> Mensaje del Sistema
+                                    <small id="ModalDeInteraccion_Titulo"></small>
+                                    <input id="Peticion" type="hidden"/>
+                                </h4>
+                            </section>
+                        </div>
+                        <div id="ModalDeInteraccion_Contenido" class="modal-body">
+                            <img src="/Recursos/Gif/Cargando.gif" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @*close>> Modal *@
+
+    </section>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('.Nuevo').click(Nuevo);
+    });        
+
+    function Nuevo()
+    {
+        $('#ModalDeInteraccion_Titulo').html(' Crear nuevo mensaje.');
+        $('#Peticion').val('Nuevo');
+        $('#ModalDeInteraccion').modal('show');
+        $.ajax({
+            type: "POST",
+            url: '@Url.RouteUrl("VP_MensajeDelSistema_Nuevo")',
+            success: function (form) {
+                $('#ModalDeInteraccion_Contenido').html(form);
+            }
+        });
+    }
+
+</script>

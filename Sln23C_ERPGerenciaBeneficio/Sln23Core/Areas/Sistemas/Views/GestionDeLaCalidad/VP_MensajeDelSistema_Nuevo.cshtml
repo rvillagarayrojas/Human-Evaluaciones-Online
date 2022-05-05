@@ -1,0 +1,114 @@
+﻿@model Sln23Core.Areas.Sistemas.Models.GestionDeLaCalidadModel
+
+@*open>>> Formulario: Mensaje del sistema *@
+
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-label">Idns</label>
+                @Html.TextBoxFor(m => m.mme.me_mensaje_sistema.estandar.nu_stnd_idns,
+                new
+                {
+                    maxLength       = "25",
+                    atributo        = "mme.me_mensaje_sistema.estandar.nu_stnd_idns",
+                    @class          = "form-control",
+                    placeholder     = "101000100001001"
+                })
+            </div>
+            <div class="col-md-6">
+                <label class="control-label">Código</label>
+                @Html.TextBoxFor(m => m.mme.me_mensaje_sistema.mensaje_sistema.vc_mnsg_codi,
+                new
+                {
+                    maxLength       = "16",
+                    atributo        = "mme.me_mensaje_sistema.mensaje_sistema.vc_mnsg_codi",
+                    @class          = "form-control",
+                    placeholder     = "SLN101000100001001"
+                })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6">
+                <label class="control-label">Código externo</label>
+                @Html.TextBoxFor(m => m.mme.me_mensaje_sistema.mensaje_sistema.vc_mnsg_codi_exte,
+                new
+                {
+                    maxLength       = "16",
+                    atributo        = "mme.me_mensaje_sistema.mensaje_sistema.vc_mnsg_codi_exte",
+                    @class          = "form-control",
+                    placeholder     = "412"
+                })
+            </div>
+            <div class="col-md-6">
+                <label class="control-label">Descripción breve</label>
+                @Html.TextBoxFor(m => m.mme.me_mensaje_sistema.mensaje_sistema.vc_mnsg_desc_abrv,
+                new
+                {
+                    maxLength       = "50",
+                    atributo        = "mme.me_mensaje_sistema.mensaje_sistema.vc_mnsg_desc_abrv",
+                    @class          = "form-control",
+                    placeholder     = "..."
+                })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                <label class="control-label">Descripción</label>
+                @Html.TextAreaFor(m => m.mme.me_mensaje_sistema.mensaje_sistema.tx_mnsg_desc,
+                new
+                {
+                    maxLength       = "300",
+                    atributo        = "mme.me_mensaje_sistema.mensaje_sistema.tx_mnsg_desc",
+                    @class          = "form-control",
+                    placeholder     = "...",
+                    rows            = 1,
+                    style           = "resize:none"
+                })
+            </div>
+        </div>
+        <div id="Transaccion">
+
+        </div>
+    </form>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal"><i class="glyphicon glyphicon-arrow-left" style="font-size:10px"></i> Desistir</button>
+        <button type="button" class="btn btn-primary" onclick="Insertar(); return false;">Guardar <i class="glyphicon glyphicon-arrow-right" style="font-size:10px"></i></button>
+    </div>
+
+    <script src="/Scripts/Sistemas/yui.min.js"></script>
+    <script src="/Scripts/Sistemas/textareaAutoheight-min.js"></script>
+    <script type="text/javascript">
+        YUI({
+            gallery: "gallery-2012.05.09-20-27"
+        }).use("textareaAutoheight", function (Y) {
+            Y.one("textarea").plug(Y.TextareaAutoheight);
+        });
+    </script>
+    
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            
+            
+
+        });
+
+        function Insertar()
+        {
+            ConstruirMdl();
+
+            $.ajax({
+                url: '@Url.RouteUrl("AC_MensajeDelSistema_Insertar")',
+                type: "POST",
+                data: JSON.stringify(modelo),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (r) {
+                    $('#Transaccion').html(r.trans);
+                }
+            });
+        }
+
+    </script>
+
+@*close>> Formulario *@

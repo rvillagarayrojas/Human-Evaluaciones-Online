@@ -1,0 +1,729 @@
+﻿@using EvaluacionesOnline.Areas.Sistemas.Models
+@{
+
+    ViewBag.Title = "SISTEMA DE EVALUACIONES PSICOLABORALES - TEST SMART";
+    Layout = "~/Areas/Seleccion/Views/MPEvaluacionesPrint.cshtml";
+    var Sesion = (SesionModel)Session[SesionModel.SessionName];
+}
+
+<style type="text/css">
+    #container, #sliders {
+	    min-width: 310px; 
+	    max-width: 800px;
+	    margin: 0 auto;
+    }
+    #container {
+	    height: 400px; 
+    }
+</style>
+
+<script type="text/javascript">
+
+    var Esperado1, Obtenido1, Esperado2, Obtenido2, Esperado3, Obtenido3, Valor_D, Valor_I, Valor_S, Valor_C;
+
+    var CategoriasCPS   = []
+    var ValoresCPS      = [];
+    var ValoresCPSS     = [];
+
+    var PerfilesKostick = []
+    var PuntajesKostick = [];
+
+</script>
+
+
+@if (Model.ls_wonderlik != null && Model.ls_wonderlik.Count > 0)
+{
+    <script type="text/javascript">
+        Esperado1 = "@Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado";
+        Obtenido1 = "@Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido";
+    </script>
+}
+
+@if (Model.ls_gatb != null && Model.ls_gatb.Count > 0)
+{
+    <script type="text/javascript">
+        Esperado2 = "@Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado";
+        Obtenido2 = "@Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido";
+    </script>
+}
+
+@if (Model.ls_ic != null && Model.ls_ic.Count > 0)
+{
+    <script type="text/javascript">
+        Esperado3 = "@Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado";
+        Obtenido3 = "@Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido";
+    </script>
+}
+
+@if (Model.ls_disc != null && Model.ls_disc.Count > 0)
+{
+    <script type="text/javascript">
+        Valor_D = parseInt("@Model.ls_disc[0].me_prueba.reporte_conocimiento.nu_valor_d");
+        Valor_I = parseInt("@Model.ls_disc[0].me_prueba.reporte_conocimiento.nu_valor_i");
+        Valor_S = parseInt("@Model.ls_disc[0].me_prueba.reporte_conocimiento.nu_valor_s");
+        Valor_C = parseInt("@Model.ls_disc[0].me_prueba.reporte_conocimiento.nu_valor_c");
+    </script>
+}
+
+@if (Model.ls_cps != null && Model.ls_cps.Count > 0)
+{
+    foreach(var item in Model.ls_cps)
+    {
+        <script type="text/javascript">
+            CategoriasCPS[CategoriasCPS.length] = "@item.me_prueba.reporte_conocimiento.vc_parametro_cps";
+            ValoresCPS[ValoresCPS.length] = parseInt("@item.me_prueba.reporte_conocimiento.nu_marcadas");
+            ValoresCPSS[ValoresCPSS.length] = parseInt("@item.me_prueba.reporte_conocimiento.nu_valor_s");
+        </script>
+    }
+}
+
+@if (Model.ls_kostick != null && Model.ls_kostick.Count > 0)
+{
+    foreach (var item in Model.ls_kostick)
+    {
+        <script type="text/javascript">
+            PerfilesKostick[PerfilesKostick.length] = "@item.me_prueba.reporte_conocimiento.vc_desc_perfil";
+            PuntajesKostick[PuntajesKostick.length] = parseInt("@item.me_prueba.reporte_conocimiento.nu_marcadas");
+        </script>
+    }
+}
+
+
+<script src="~/Scripts/Sistemas/jquerydb.js"></script>
+<script type="text/javascript">
+
+    var Categorias1 = [], Calificacion1 = [];
+    var Categorias2 = [], Calificacion2 = [];
+    var Categorias3 = [], Calificacion3 = [];
+
+    $(document).ready(function () {
+
+        Categorias1[Categorias1.length] = "ESPERADO";
+        Categorias1[Categorias1.length] = "OBTENIDO";
+        Calificacion1[Calificacion1.length] = parseInt(Esperado1);
+        Calificacion1[Calificacion1.length] = parseInt(Obtenido1);
+
+        Categorias2[Categorias2.length] = "ESPERADO";
+        Categorias2[Categorias2.length] = "OBTENIDO";
+        Calificacion2[Calificacion2.length] = parseInt(Esperado2);
+        Calificacion2[Calificacion2.length] = parseInt(Obtenido2);
+
+        Categorias3[Categorias3.length] = "ESPERADO";
+        Categorias3[Categorias3.length] = "OBTENIDO";
+        Calificacion3[Calificacion3.length] = parseInt(Esperado3);
+        Calificacion3[Calificacion3.length] = parseInt(Obtenido3);
+
+        Load1();
+
+    });
+
+    function Load1() {
+        $('#container1').html('');
+        $('#container2').html('');
+        $('#container3').html('');
+
+        var chart1 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container1',
+                type: 'column',
+                marginTop: 80,
+                marginRight: 40
+            },
+
+            title: {
+                text: '<strong>CALIFICACIÓN ESPERADO Y OBTENIDO TEST DE WONDERLIK</strong>'
+            },
+
+            xAxis: {
+                categories: Categorias1
+            },
+
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'ESCALA DE CANTIDAD'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        fontsize: '18px',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'darkred'
+                    }
+                }
+            },
+
+            tooltip: {
+                headerFormat: '<b>{point.key}</b><br>',
+                pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '<br/>';
+                }
+            },
+            legend: {
+                reversed: true
+            },
+
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+
+            series: [{
+                name: 'CALIFICACIÓN',
+                data: Calificacion1
+            }]
+        });
+    
+
+        var chart2 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container2',
+                type: 'column',
+                marginTop: 80,
+                marginRight: 40
+            },
+
+            title: {
+                text: '<strong>CALIFICACIÓN ESPERADO Y OBTENIDO GATB</strong>'
+            },
+
+            xAxis: {
+                categories: Categorias2
+            },
+
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'ESCALA DE CANTIDAD'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        fontsize: '18px',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'darkred'
+                    }
+                }
+            },
+
+            tooltip: {
+                headerFormat: '<b>{point.key}</b><br>',
+                pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '<br/>';
+                }
+            },
+            legend: {
+                reversed: true
+            },
+
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+
+            series: [{
+                name: 'CALIFICACIÓN',
+                data: Calificacion2
+            }]
+        });
+
+
+
+
+        var chart3 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container3',
+                type: 'column',
+                marginTop: 80,
+                marginRight: 40
+            },
+
+            title: {
+                text: '<strong>CALIFICACIÓN ESPERADO Y OBTENIDO IC</strong>'
+            },
+
+            xAxis: {
+                categories: Categorias3
+            },
+
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'ESCALA DE CANTIDAD'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        fontsize: '18px',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'darkred'
+                    }
+                }
+            },
+
+            tooltip: {
+                headerFormat: '<b>{point.key}</b><br>',
+                pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '<br/>';
+                }
+            },
+            legend: {
+                reversed: true
+            },
+
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+
+            series: [{
+                name: 'CALIFICACIÓN',
+                data: Calificacion3
+            }]
+        });
+
+
+        var chart4 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container4',
+                type: 'column'
+            },
+            title: {
+                text: '<strong>VALORES OBTENIDOS PARA EL DISC</strong>'
+            },
+            xAxis: {
+                categories: ['PARÁMETRO']
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'D',
+                data: [Valor_D]
+            }, {
+                name: 'I',
+                data: [Valor_I]
+            }, {
+                name: 'S',
+                data: [Valor_S]
+            }, {
+                name: 'C',
+                data: [Valor_C]
+            }]
+        });
+
+
+        var chart5 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container5',
+                type: 'area',
+                spacingBottom: 30
+            },
+            title: {
+                text: '<strong>GRÁFICO DE RESULTADOS CPS</strong>'
+            },
+            subtitle: {
+                floating: true,
+                align: 'right',
+                verticalAlign: 'bottom',
+                y: 15
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'left',
+                verticalAlign: 'top',
+                x: 150,
+                y: 100,
+                floating: true,
+                borderWidth: 1,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+            },
+            xAxis: {
+                categories: CategoriasCPS
+            },
+            yAxis: {
+                title: {
+                    text: 'ESCALA DE CANTIDAD'
+                },
+                labels: {
+                    formatter: function () {
+                        return this.value;
+                    }
+                }
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                        this.x + ': ' + this.y;
+                }
+            },
+            plotOptions: {
+                area: {
+                    fillOpacity: 0.5
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'P.D.',
+                data: ValoresCPS
+            }, {
+                name: 'S',
+                data: ValoresCPSS
+            }]
+        });
+
+
+
+        var chart6 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container6',
+                polar: true,
+                type: 'line'
+            },
+
+            title: {
+                text: '<strong>PERFILES DE COMPETENCIA LABORAL - KOSTICK</strong>',
+                x: -80
+            },
+
+            pane: {
+                size: '90%'
+            },
+
+            xAxis: {
+                categories: PerfilesKostick,
+                tickmarkPlacement: 'on',
+                lineWidth: 0
+            },
+
+            yAxis: {
+                gridLineInterpolation: 'polygon',
+                lineWidth: 0,
+                min: 0
+            },
+
+            tooltip: {
+                shared: true,
+                pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+            },
+
+            legend: {
+                align: 'right',
+                verticalAlign: 'top',
+                y: 70,
+                layout: 'vertical'
+            },
+
+            series: [{
+                name: 'PUNTAJES',
+                data: PuntajesKostick,
+                pointPlacement: 'on'
+            }]
+
+        });
+        
+    }
+
+</script>
+<script src="~/Recursos/Db/js/highcharts.js"></script>
+<script src="~/Recursos/Db/js/highcharts-more.js"></script>
+<script src="~/Recursos/Db/js/modules/exporting.js"></script>
+
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            INFORME RESUMEN
+            <small>Selección</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="@Url.RouteUrl("V_EvaluacionesSitio")">Reportes</a></li>
+            <li class="active">Informe completo</li>
+        </ol>
+    </section>
+
+    <section class="content">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-body">
+                        <button id="btnImprimir" class="btn btn-warning" style="float:right;"><i class="fa fa-print"></i> IMPRIMIR INFORME RESUMEN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Contenido" class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-body">
+                        
+                        FECHA: <span id="Fecha"></span>
+                        <span style="float:right;">SISTEMA DE EVALUACIONES PSICOLABORALES</span>
+                        <hr style="margin:2px;"/>
+                        <div class="col-md-12" style="padding:0px;border-radius:4px;border:1px solid #F3B11D;color:darkslategrey;">                            
+                            <div class="col-md-12">                                     
+                                <img src="~/Recursos/Img/LogoHS.png" style="width:50px;margin-top:5px;"/>
+                                <img src="~/Recursos/Img/LogoTisi.png"  style="width:80px;margin-top:5px;float:right"/>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <h2><strong style="color:orange">INFORME PSICOLABORAL</strong></h2>
+                                <h6>
+                                    <strong>Consultor:</strong> 
+                                    @Model.mme_datos.me_prueba.reporte_conocimiento.vc_consultor
+
+                                </h6>
+                            </div>
+                        </div><br />
+                        <div class="col-md-12" style="padding:0px;border-radius:4px;border:1px solid #F3B11D;color:darkslategrey;">
+                            <div class="col-md-12">
+                                <h3><strong>DATOS PERSONALES</strong></h3>
+                                <hr style="margin:0px;"/>
+                                <h6><strong>Candidato:</strong> @Model.mme_datos.me_prueba.reporte_conocimiento.vc_candidato</h6>
+                                <h6><strong>Edad:</strong> @Model.mme_datos.me_prueba.reporte_conocimiento.nu_edad</h6>
+                                <h6><strong>Grado de Instrucción:</strong> @Model.mme_datos.me_prueba.reporte_conocimiento.vc_grado_instruccion</h6>
+                                <h6><strong>Profesión:</strong> @Model.mme_datos.me_prueba.reporte_conocimiento.vc_profesion</h6>
+                                <h6><strong>Empresa:</strong> @Model.mme_datos.me_prueba.reporte_conocimiento.vc_empresa</h6>
+                                <h6><strong>Ultima Experiencia:</strong> @Model.mme_datos.me_prueba.reporte_conocimiento.vc_ultima_experiencia</h6>
+                                <h6><strong>Nombres de Referencia:</strong> @Model.mme_datos.me_prueba.reporte_conocimiento.vc_nombres_referencia</h6>
+                                <h6><strong>Telf./Cel. de Referencia:</strong> @Model.mme_datos.me_prueba.reporte_conocimiento.vc_telefono_referencia</h6>
+                            </div>
+                        </div>
+                        @if (Model.ls_wonderlik != null && Model.ls_wonderlik.Count > 0)
+                        {
+                            <div class="col-md-12" style="padding:0px;">
+                                <div class="col-md-12">
+                                    <h3><strong>1. TEST DE WODERLIK</strong></h3>
+                                    <hr style="margin:0px;"/>
+                                    <h6><strong>Parámetro definido:</strong> @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada</h6>
+                                    <h6><strong>Rango esperado:</strong> @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado - @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_rango_mayor_esperado</h6>
+                                    <h6><strong>Parámetro obtenido:</strong> @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida</h6>
+                                    <h6><strong>Rango obtenido:</strong> @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_rango_menor - @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_rango_mayor</h6>
+                                    <h6><strong>Valor obtenido:</strong> @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido</h6>
+                                    <h6><strong>Recomendación:</strong> @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_recomendacion</h6>
+                                    <h6><strong>Descripción:</strong></h6>
+                                    <h6 style="text-align:justify">
+                                        @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_diagnostico
+                                    </h6>
+                                </div>
+                            </div>
+                            <br />
+                        }
+                        @if (Model.ls_gatb != null && Model.ls_gatb.Count > 0)
+                        {
+                            <div class="col-md-12" style="padding:0px;">
+                                <div class="col-md-12">
+                                    <h3><strong>2. GATB</strong></h3>
+                                    <hr style="margin:0px;"/>
+                                    <h6><strong>Parámetro definido:</strong> @Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada</h6>
+                                    <h6><strong>Rango esperado:</strong> @Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado - @Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_rango_mayor_esperado</h6>
+                                    <h6><strong>Parámetro obtenido:</strong> @Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida</h6>
+                                    <h6><strong>Rango obtenido:</strong> @Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_rango_menor - @Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_rango_mayor</h6>
+                                    <h6><strong>Valor obtenido:</strong> @Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido</h6>
+                                    <h6><strong>Recomendación:</strong> @Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_recomendacion</h6>
+                                    <h6><strong>Descripción:</strong></h6>
+                                    <h6 style="text-align:justify">
+                                        @Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_diagnostico
+                                    </h6>
+                                </div>
+                            </div>
+                            <br />
+                        }
+                        @if (Model.ls_ic != null && Model.ls_ic.Count > 0)
+                        {
+                            <div class="col-md-12" style="padding:0px;">
+                                <div class="col-md-12">
+                                    <h3><strong>3. IC</strong></h3>
+                                    <hr style="margin:0px;"/>
+                                    <h6><strong>Parámetro definido:</strong> @Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada</h6>
+                                    <h6><strong>Rango esperado:</strong> @Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado - @Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_rango_mayor_esperado</h6>
+                                    <h6><strong>Parámetro obtenido:</strong> @Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida</h6>
+                                    <h6><strong>Rango obtenido:</strong> @Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_rango_menor - @Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_rango_mayor</h6>
+                                    <h6><strong>Valor obtenido:</strong> @Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido</h6>
+                                    <h6><strong>Recomendación:</strong> @Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_recomendacion</h6>
+                                    <h6><strong>Descripción:</strong></h6>
+                                    <h6 style="text-align:justify">
+                                        @Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_diagnostico
+                                    </h6>
+                                </div>
+                            </div>
+                            <br />
+                        }
+                        @if (Model.ls_disc != null && Model.ls_disc.Count > 0)
+                        {
+                            <div class="col-md-12" style="padding:0px;">
+                                <div class="col-md-12">
+                                    <h3><strong>4. DISC</strong></h3>
+                                    <hr style="margin:0px;"/>
+                                    <h6><strong>Parámetro definido:</strong> @Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada</h6>
+                                    <h6><strong>Parámetro obtenido:</strong> @Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida</h6>
+                                    <h6><strong>Patrón DISC:</strong> @Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_patron_disc</h6>
+                                    <h6><strong>Descripción de patrón:</strong> @Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_descripcion_patron</h6>
+                                    <br />                                    
+                                </div>
+                                <br />
+                                <div class="col-md-12">
+                                    <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Código: activate to sort column descending">CÓDIGO</th>
+                                                <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Descripción engine: activate to sort column descending">DESCRIPCIÓN</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach(var item in Model.ls_disc)
+                                            {
+                                                <tr>
+                                                    <td style="text-align:center;vertical-align:middle;">
+                                                        <strong>@item.me_prueba.reporte_conocimiento.vc_caracteristica</strong>
+                                                    </td>
+                                                    <td>
+                                                        @item.me_prueba.reporte_conocimiento.vc_desc_caracteristica
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <br />
+                        }
+                        @if (Model.ls_cps != null && Model.ls_cps.Count > 0)
+                        {
+                            <div class="col-md-12" style="padding:0px;">
+                                <div class="col-md-12">
+                                    <h3><strong>5. CPS</strong></h3>
+                                    <hr style="margin:0px;"/>
+                                    <br />                                    
+                                </div>
+                                <br />
+                                <div class="col-md-12">
+                                    <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="text-center">ESCALA</th>
+                                                <th>EN EL POLO BAJO DEFINE A UNA PERSONA COMO…</th>
+                                                <th class="text-center">P.D.</th>
+                                                <th class="text-center">S</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.ls_cps)
+                                            {
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <strong>@item.me_prueba.reporte_conocimiento.vc_parametro_cps</strong>
+                                                    </td>
+                                                    <td>
+                                                        @item.me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida
+                                                    </td>
+                                                    <td class="text-center">
+                                                        @item.me_prueba.reporte_conocimiento.nu_marcadas
+                                                    </td>
+                                                    <td class="text-center">
+                                                        @item.me_prueba.reporte_conocimiento.nu_valor_s
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <br />
+                        }
+                        @if (Model.ls_kostick != null && Model.ls_kostick.Count > 0)
+                        {
+                            <div class="col-md-12" style="padding:0px;">
+                                <div class="col-md-12">
+                                    <h3><strong>6. KOSTICK</strong></h3>
+                                    <hr style="margin:0px;"/>
+                                    <br />                                    
+                                </div>
+                                <br />
+                                <div class="col-md-12">
+                                    <br />
+                                    <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="text-center">FACTOR</th>
+                                                <th>DESCRIPCIÓN</th>
+                                                <th>PERFIL COMPETENCIA LABORAL</th>
+                                                <th class="text-center">P.D.</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.ls_kostick)
+                                            {
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <strong>@item.me_prueba.reporte_conocimiento.vc_letra_parametro</strong>
+                                                    </td>
+                                                    <td>
+                                                        @item.me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida
+                                                    </td>
+                                                    <td>
+                                                        @item.me_prueba.reporte_conocimiento.vc_desc_perfil
+                                                    </td>
+                                                    <td class="text-center">
+                                                        @item.me_prueba.reporte_conocimiento.nu_marcadas
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <br />
+                        }
+                        <hr />
+                        <div class="col-md-12" style="padding:0px;">
+                            <div class="col-md-12">
+                                <h6><strong>OBSERVACIÓN DEL CONSULTOR</strong></h6>
+                                <hr style="margin:0px;"/>
+                                <h6 style="text-align:justify" contenteditable>
+                                    
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="/Scripts/jquery-1.7.1.min.js"></script>
+<script src="/Scripts/PrintArea.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#btnImprimir").click(function () {
+            $('#Contenido').printArea();
+        });
+
+        var f = new Date();
+        $('#Fecha').html( ("0"+f.getDate()).slice(-2) + "/" + ("0"+(f.getMonth() + 1)).slice(-2) + "/" + f.getFullYear())
+    });
+
+</script>

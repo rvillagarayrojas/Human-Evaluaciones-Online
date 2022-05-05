@@ -1,0 +1,143 @@
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Sln23Core.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Sln23Core.pdb
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Antlr3.Runtime.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\EntityFramework.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Microsoft.Web.Infrastructure.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Newtonsoft.Json.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Mvc.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Optimization.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Providers.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Razor.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Deployment.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Razor.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\WebGrease.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\EntityFramework.xml
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Newtonsoft.Json.xml
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Mvc.xml
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Razor.xml
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.xml
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Deployment.xml
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Razor.xml
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.pdb
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\MvcFlash.Core.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Helpers.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Vereyon.Web.FlashMessage.dll
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Helpers.xml
+G:\Trabajos\Sln 6C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.csprojResolveAssemblyReference.cache
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Sln23Core.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Sln23Core.pdb
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Antlr3.Runtime.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\EntityFramework.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Microsoft.Web.Infrastructure.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\MvcFlash.Core.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Newtonsoft.Json.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Helpers.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Mvc.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Optimization.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Providers.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Razor.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Deployment.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Razor.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Vereyon.Web.FlashMessage.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\WebGrease.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Helpers.xml
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Mvc.xml
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Razor.xml
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.xml
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Deployment.xml
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Razor.xml
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\EntityFramework.xml
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Newtonsoft.Json.xml
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.csprojResolveAssemblyReference.cache
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.dll
+E:\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.pdb
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Sln23Core.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Sln23Core.pdb
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Antlr3.Runtime.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Entidad.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\EntityFramework.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\MacroEntidad.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Microsoft.Web.Infrastructure.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\MultiEntidad.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\MvcFlash.Core.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Newtonsoft.Json.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Procedimiento.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Helpers.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Mvc.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Optimization.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Providers.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Razor.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Deployment.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Razor.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Vereyon.Web.FlashMessage.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\WebGrease.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Entidad.pdb
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\MacroEntidad.pdb
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\MultiEntidad.pdb
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Procedimiento.pdb
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Helpers.xml
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Mvc.xml
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Razor.xml
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.xml
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Deployment.xml
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Razor.xml
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\EntityFramework.xml
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Newtonsoft.Json.xml
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.csprojResolveAssemblyReference.cache
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.pdb
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Transaccion.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Conexiones.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Transaccion.pdb
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Conexiones.pdb
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+G:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Sln23Core.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Sln23Core.pdb
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Antlr3.Runtime.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Entidad.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\EntityFramework.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\MacroEntidad.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Microsoft.Web.Infrastructure.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\MultiEntidad.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\MvcFlash.Core.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Newtonsoft.Json.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Procedimiento.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Helpers.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Mvc.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Optimization.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Providers.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Razor.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Deployment.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Razor.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Vereyon.Web.FlashMessage.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\WebGrease.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Transaccion.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Conexiones.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Entidad.pdb
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\MacroEntidad.pdb
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\MultiEntidad.pdb
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Procedimiento.pdb
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Helpers.xml
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Mvc.xml
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.Razor.xml
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.xml
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Deployment.xml
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\System.Web.WebPages.Razor.xml
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\EntityFramework.xml
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Newtonsoft.Json.xml
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Transaccion.pdb
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\bin\Conexiones.pdb
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.csprojResolveAssemblyReference.cache
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.dll
+H:\Trabajos\Sln23C\01 Soft\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.pdb
+H:\Evaluaciones Online\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.csprojResolveAssemblyReference.cache
+H:\Evaluaciones Online\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.dll
+H:\Evaluaciones Online\Sln23C_ERPGerenciaBeneficio\Sln23Core\obj\Debug\Sln23Core.pdb

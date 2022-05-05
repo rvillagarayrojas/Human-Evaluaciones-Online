@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+
+        <link href="/Temas/Trans01/dist/img/IconoSln.png" rel="shortcut icon">
+        <meta charset="UTF-8" name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        @*open>>> Información: Cargando estilos de la página principal de sistemas*@
+
+            <link href="/Temas/Trans01/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+            <link href="/Temas/Trans01/Online/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+            <link href="/Temas/Trans01/Online/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+            <link href="/Temas/Trans01/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+            <link href="/Temas/Trans01/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+            <link href="/Temas/Trans01/plugins/iCheck/flat/blue.css" rel="stylesheet" type="text/css" />
+            <link href="/Temas/Trans01/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+            <link href="/Temas/Trans01/plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+            <link href="/Temas/Trans01/plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
+            <link href="/Temas/Trans01/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+            <link href="/Temas/Trans01/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+            <link href="/Content/Shared/jquery.confirm.css" rel="stylesheet" />
+
+        @*close>> Información*@
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="/Temas/Trans01/Online/js/html5shiv.min.js"></script>
+            <script src="/Temas/Trans01/Online/js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <!--<div class="alert alert-warning" role="alert">
+           <b>!ATENCIÓN ESTIMADO USUARIOS¡</b></BR>
+            Debido al mantenimiento de nuestra plataforma, estarán suspendidos los servicios de nuestra Página Web el dia de hoy 12/09/2019 desde las <b>6:30 PM</b> hasta las <b>7:00 PM</b><br /><br />
+            Ofrecemos disculpas por los posibles inconvenientes ocasionados.
+        </div>-->
+
+        <div id="MPSitio_Contenido">
+            @RenderBody()
+        </div>
+
+        @Scripts.Render("~/bundles/SitioSistemas")
+        <script type="text/javascript">
+            $.widget.bridge('uibutton', $.ui.button);
+        </script>
+        @Scripts.Render("~/bundles/confirm")
+        @Scripts.Render("~/bundles/getmdls")
+        
+    </body>
+</html>

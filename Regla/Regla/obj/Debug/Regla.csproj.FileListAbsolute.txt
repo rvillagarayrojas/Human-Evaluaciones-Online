@@ -1,0 +1,53 @@
+G:\Trabajos\Sln 6C\01 Soft\Regla\Regla\bin\Debug\Regla.dll
+G:\Trabajos\Sln 6C\01 Soft\Regla\Regla\bin\Debug\Regla.pdb
+G:\Trabajos\Sln 6C\01 Soft\Regla\Regla\obj\Debug\Regla.dll
+G:\Trabajos\Sln 6C\01 Soft\Regla\Regla\obj\Debug\Regla.pdb
+C:\Users\KCHUMBES\Desktop\Evaluaciones Online\Regla\Regla\bin\Debug\Regla.dll
+C:\Users\KCHUMBES\Desktop\Evaluaciones Online\Regla\Regla\bin\Debug\Regla.pdb
+C:\Users\KCHUMBES\Desktop\Evaluaciones Online\Regla\Regla\obj\Debug\Regla.csprojResolveAssemblyReference.cache
+C:\Users\KCHUMBES\Desktop\Evaluaciones Online\Regla\Regla\obj\Debug\Regla.dll
+C:\Users\KCHUMBES\Desktop\Evaluaciones Online\Regla\Regla\obj\Debug\Regla.pdb
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\bin\Debug\Regla.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\bin\Debug\Regla.pdb
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\obj\Debug\Regla.csprojResolveAssemblyReference.cache
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\obj\Debug\Regla.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\obj\Debug\Regla.pdb
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\bin\Debug\Regla.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\bin\Debug\Regla.pdb
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\obj\Debug\Regla.csprojResolveAssemblyReference.cache
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\obj\Debug\Regla.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\obj\Debug\Regla.pdb
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\bin\Debug\Regla.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\bin\Debug\Regla.pdb
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\obj\Debug\Regla.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\obj\Debug\Regla.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Regla\Regla\obj\Debug\Regla.pdb
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Regla\Regla\bin\Debug\Regla.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Regla\Regla\bin\Debug\Regla.pdb
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Regla\Regla\obj\Debug\Regla.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Regla\Regla\obj\Debug\Regla.pdb
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Regla\Regla\bin\Debug\Regla.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Regla\Regla\bin\Debug\Regla.pdb
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Regla\Regla\obj\Debug\Regla.csprojResolveAssemblyReference.cache
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Regla\Regla\obj\Debug\Regla.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Regla\Regla\obj\Debug\Regla.pdb
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Regla\Regla\bin\Debug\Regla.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Regla\Regla\bin\Debug\Regla.pdb
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Regla\Regla\obj\Debug\Regla.csprojResolveAssemblyReference.cache
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Regla\Regla\obj\Debug\Regla.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Regla\Regla\obj\Debug\Regla.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Regla\Regla\bin\Debug\Regla.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Regla\Regla\bin\Debug\Regla.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Regla\Regla\obj\Debug\Regla.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Regla\Regla\obj\Debug\Regla.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Regla\Regla\obj\Debug\Regla.csprojResolveAssemblyReference.cache
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Regla\Regla\bin\Debug\Regla.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Regla\Regla\bin\Debug\Regla.pdb
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Regla\Regla\obj\Debug\Regla.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Regla\Regla\obj\Debug\Regla.pdb
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Regla\Regla\bin\Debug\Regla.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Regla\Regla\bin\Debug\Regla.pdb
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Regla\Regla\obj\Debug\Regla.csproj.AssemblyReference.cache
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Regla\Regla\obj\Debug\Regla.csproj.CoreCompileInputs.cache
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Regla\Regla\obj\Debug\Regla.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Regla\Regla\obj\Debug\Regla.pdb

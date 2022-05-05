@@ -1,0 +1,43 @@
+G:\Trabajos\Sln 6C\01 Soft\Estandar\bin\Debug\Estandar.dll
+G:\Trabajos\Sln 6C\01 Soft\Estandar\bin\Debug\Estandar.pdb
+G:\Trabajos\Sln 6C\01 Soft\Estandar\obj\Debug\Estandar.dll
+G:\Trabajos\Sln 6C\01 Soft\Estandar\obj\Debug\Estandar.pdb
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Estandar\bin\Debug\Estandar.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Estandar\bin\Debug\Estandar.pdb
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Estandar\obj\Debug\Estandar.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Estandar\obj\Debug\Estandar.pdb
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Estandar\bin\Debug\Estandar.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Estandar\bin\Debug\Estandar.pdb
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Estandar\obj\Debug\Estandar.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Estandar\obj\Debug\Estandar.pdb
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Estandar\bin\Debug\Estandar.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Estandar\bin\Debug\Estandar.pdb
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Estandar\obj\Debug\Estandar.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Estandar\obj\Debug\Estandar.pdb
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Estandar\bin\Debug\Estandar.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Estandar\bin\Debug\Estandar.pdb
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Estandar\obj\Debug\Estandar.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Estandar\obj\Debug\Estandar.pdb
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Estandar\bin\Debug\Estandar.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Estandar\bin\Debug\Estandar.pdb
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Estandar\obj\Debug\Estandar.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Estandar\obj\Debug\Estandar.pdb
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Estandar\bin\Debug\Estandar.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Estandar\bin\Debug\Estandar.pdb
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Estandar\obj\Debug\Estandar.csprojResolveAssemblyReference.cache
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Estandar\obj\Debug\Estandar.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Estandar\obj\Debug\Estandar.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Estandar\bin\Debug\Estandar.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Estandar\bin\Debug\Estandar.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Estandar\obj\Debug\Estandar.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Estandar\obj\Debug\Estandar.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Estandar\obj\Debug\Estandar.csprojResolveAssemblyReference.cache
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Estandar\bin\Debug\Estandar.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Estandar\bin\Debug\Estandar.pdb
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Estandar\obj\Debug\Estandar.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Estandar\obj\Debug\Estandar.pdb
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Estandar\bin\Debug\Estandar.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Estandar\bin\Debug\Estandar.pdb
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Estandar\obj\Debug\Estandar.csproj.CoreCompileInputs.cache
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Estandar\obj\Debug\Estandar.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Estandar\obj\Debug\Estandar.pdb

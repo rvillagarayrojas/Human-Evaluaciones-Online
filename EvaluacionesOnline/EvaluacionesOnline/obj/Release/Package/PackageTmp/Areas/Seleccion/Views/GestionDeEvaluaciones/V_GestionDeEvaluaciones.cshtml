@@ -1,0 +1,88 @@
+﻿@model  EvaluacionesOnline.Areas.Seleccion.Models.PruebasModel
+@{
+    ViewBag.Title = "V_GestionDeEvaluaciones";
+    Layout = "~/Areas/Seleccion/Views/MPEvaluacionesSitio.cshtml";
+}
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            GESTIÓN DE EVALUACIONES
+            <small>Selección</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="@Url.RouteUrl("V_EvaluacionesSitio")">Evaluaciones</a></li>
+            <li class="active">Gestión de evaluaciones</li>
+        </ol>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="box">
+                    <div class="box-header">
+                    <h3 class="box-title"><i class="glyphicon glyphicon-cog" style="color:#C1BEBB;"></i> Gestionar evaluaciones</h3>
+                    </div>
+                    <div class="box-body">
+                        <p> 
+                            Crea, edita o visualiza las evaluaciones psicológicas utilizadas para 
+                            seleccionar a un nuevo colaborador o evaluar a un colaborador actual.
+                        </p>                        
+                        <div class="col-md-6">
+
+                            @*open>>> Información: Enlaces de creación de nueva evaluación*@
+                                <div class="col-md-6" style="text-align:center;font-size:55px;color:#D2D61E;">
+                                    <a href="#"><i class="glyphicon glyphicon-list-alt" style="color:rgba(3, 80, 117, 0.72)"></i>&nbsp;<i class="fa fa-plus" style="color:rgba(23, 140, 1, 0.94)"></i></a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#"><h4 style="color:green">Crear evaluación</h4></a>
+                                    <p>
+                                        Crea, edita o visualiza las evaluaciones psicológicas utilizadas para 
+                                        seleccionar a un nuevo colaborador o evaluar a un colaborador actual.
+                                    </p>
+                                    <br /><br />
+                                </div>
+                            @*close>> Información*@
+                            
+                            @*open>>> Información: Enlaces del visualización de evaluaciones*@
+                                <div class="col-md-6" style="text-align:center;font-size:55px;color:#618C65;">
+                                    <a href="#"><i class="glyphicon glyphicon-list-alt" style="color:rgba(3, 80, 117, 0.72)"></i>&nbsp;<i class="fa fa-search" style="color:#F7E50C"></i></a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#"><h4 style="color:green">Buscar y visualizar evaluaciones</h4></a>
+                                    <p>
+                                        Las evaluaciones no tratan de averiguar si dentro de nosotros habita un 
+                                        ser oscuro, sino de conocer los rasgos que más definen tu personalidad.
+                                    </p>
+                                    <br /><br />
+                                </div>
+                            @*close>> Información*@
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            @*open>>> Información: Enlaces del módulo de cuentas y privilegios*@
+                                <div class="col-md-6" style="text-align:center;font-size:55px;color:skyblue;">
+                                    <a href="#"><i class="fa fa-file-pdf-o" style="color:rgba(255, 24, 0, 0.59)"></i>&nbsp;<i class="fa fa-line-chart" style="color:black"></i></a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#"><h4 style="color:green">Reportes</h4></a>
+                                    <p>
+                                        Analiza tus reportes para dar una mirada integral a los resultados 
+                                        de las evaluaciones realizadas por los candidatos o colaboradores actuales.
+                                    </p>
+                                    <br /><br />
+                                </div>
+                            @*close>> Información*@
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,24 @@
+﻿td.esperado {
+    background-color: rgb(244,209,170) !important;
+    -webkit-print-color-adjust: exact;
+}
+
+td.obtenido {
+    background-color: rgb(235,110,25) !important;
+    -webkit-print-color-adjust: exact;
+}
+
+td.bordes {
+    border: 1px solid rgb(244,209,170) !important;
+    -webkit-print-color-adjust: exact;
+}
+
+th.bordes {
+    border: 1px solid rgb(244,209,170) !important;
+    -webkit-print-color-adjust: exact;
+}
+
+rect:hover {
+    border: 1px solid rgb(244,209,170) !important;
+    -webkit-print-color-adjust: exact;
+}

@@ -1,0 +1,25 @@
+﻿@media print {
+td.esperado {
+    background-color: rgb(244,209,170) !important;
+    color:white;
+    -webkit-print-color-adjust: exact;
+}}
+
+@media print {
+td.obtenido {
+    background-color: rgb(235,110,25) !important;
+    color:white;
+    -webkit-print-color-adjust: exact;
+}}
+
+@media print {
+td.bordes {
+    border: 1px solid rgb(244,209,170) !important;
+    -webkit-print-color-adjust: exact;
+}}
+
+@media print {
+th.bordes {
+    border: 1px solid rgb(244,209,170) !important;
+    -webkit-print-color-adjust: exact;
+}}

@@ -1,0 +1,57 @@
+G:\Trabajos\Sln 6C\01 Soft\Control\bin\Debug\Control.dll
+G:\Trabajos\Sln 6C\01 Soft\Control\bin\Debug\Control.pdb
+G:\Trabajos\Sln 6C\01 Soft\Control\obj\Debug\Control.dll
+G:\Trabajos\Sln 6C\01 Soft\Control\obj\Debug\Control.pdb
+G:\Trabajos\Sln23C\01 Soft\Control\bin\Debug\Control.dll
+G:\Trabajos\Sln23C\01 Soft\Control\bin\Debug\Control.pdb
+G:\Trabajos\Sln23C\01 Soft\Control\obj\Debug\Control.dll
+G:\Trabajos\Sln23C\01 Soft\Control\obj\Debug\Control.pdb
+C:\Users\KCHUMBES\Desktop\Evaluaciones Online\Control\bin\Debug\Control.dll
+C:\Users\KCHUMBES\Desktop\Evaluaciones Online\Control\bin\Debug\Control.pdb
+C:\Users\KCHUMBES\Desktop\Evaluaciones Online\Control\obj\Debug\Control.csprojResolveAssemblyReference.cache
+C:\Users\KCHUMBES\Desktop\Evaluaciones Online\Control\obj\Debug\Control.dll
+C:\Users\KCHUMBES\Desktop\Evaluaciones Online\Control\obj\Debug\Control.pdb
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Control\bin\Debug\Control.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Control\bin\Debug\Control.pdb
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Control\obj\Debug\Control.csprojResolveAssemblyReference.cache
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Control\obj\Debug\Control.dll
+C:\Users\KCHUMBES\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Control\obj\Debug\Control.pdb
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Control\bin\Debug\Control.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Control\bin\Debug\Control.pdb
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Control\obj\Debug\Control.csprojResolveAssemblyReference.cache
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Control\obj\Debug\Control.dll
+C:\Users\KCHUMBES\Desktop\OFICINA\Proyecto de evaluaciones\Evaluaciones Online\Control\obj\Debug\Control.pdb
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Control\bin\Debug\Control.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Control\bin\Debug\Control.pdb
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Control\obj\Debug\Control.dll
+C:\Users\ASUS\Desktop\Proyecto de evaluaciones\Evaluaciones Online\Control\obj\Debug\Control.pdb
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Control\bin\Debug\Control.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Control\bin\Debug\Control.pdb
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Control\obj\Debug\Control.csprojResolveAssemblyReference.cache
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Control\obj\Debug\Control.dll
+D:\Proyectos\CapitalTec\Human\gitlab\Human-Evaluaciones-Online\Control\obj\Debug\Control.pdb
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Control\bin\Debug\Control.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Control\bin\Debug\Control.pdb
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Control\obj\Debug\Control.csprojResolveAssemblyReference.cache
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Control\obj\Debug\Control.dll
+D:\Human\Fuentes Web HS\github\Human-Evaluaciones-Online Desarrollo\Control\obj\Debug\Control.pdb
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Control\bin\Debug\Control.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Control\bin\Debug\Control.pdb
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Control\obj\Debug\Control.csprojResolveAssemblyReference.cache
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Control\obj\Debug\Control.dll
+D:\Proyectos\CapitalTec\Human\GitHub\Human-Evaluaciones-Online Desarrollo\Control\obj\Debug\Control.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Control\bin\Debug\Control.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Control\bin\Debug\Control.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Control\obj\Debug\Control.dll
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Control\obj\Debug\Control.pdb
+D:\Proyectos\HelpDesk-Human\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Control\obj\Debug\Control.csprojResolveAssemblyReference.cache
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Control\bin\Debug\Control.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Control\bin\Debug\Control.pdb
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Control\obj\Debug\Control.dll
+D:\RODOLFO\Human\FUENTE\Fuentes Web HS\Human-Evaluaciones-Online Desarrollo\Control\obj\Debug\Control.pdb
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Control\bin\Debug\Control.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Control\bin\Debug\Control.pdb
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Control\obj\Debug\Control.csproj.AssemblyReference.cache
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Control\obj\Debug\Control.csproj.CoreCompileInputs.cache
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Control\obj\Debug\Control.dll
+D:\RODOLFO\CapitalTec\Human\Fuentes\Human-Evaluaciones-Online\Control\obj\Debug\Control.pdb

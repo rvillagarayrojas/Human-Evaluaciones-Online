@@ -1,0 +1,35 @@
+﻿@model  EvaluacionesOnline.Areas.Seleccion.Models.PruebasModel
+@{
+    
+    decimal? nroPregunta = 0;
+    string Oculto = "";
+    int PreguntasRespondidas = 0;
+}
+<hr />
+@foreach (var item in Model.ls_preguntas)
+{
+    if(nroPregunta != item.me_prueba.pregunta.nu_nro_pregunta)
+    {
+        if (@Model.mme_prueba.me_prueba.prueba.nu_id_tipo_prueba == 2)//si la prueba es de Personalidad se ocultan los botones
+        {
+            Oculto = ";display:none";
+        }
+        
+        if (item.me_prueba.pregunta.ch_marca == "B")
+        {
+            <button id="@item.me_prueba.pregunta.nu_nro_pregunta" name="@item.me_prueba.pregunta.nu_id_pregunta" class="pregunta btn btn-default btn-sm cs_continuar_evaluacion" style="margin-bottom:2px;width:40px;border-radius:0px @Oculto">@item.me_prueba.pregunta.nu_nro_pregunta</button>
+        }
+        else
+        {
+            PreguntasRespondidas++;
+            <button id="@item.me_prueba.pregunta.nu_nro_pregunta" name="@item.me_prueba.pregunta.nu_id_pregunta" class="pregunta btn btn-info btn-sm cs_continuar_evaluacion" style="margin-bottom:2px;width:40px;border-radius:0px @Oculto">@item.me_prueba.pregunta.nu_nro_pregunta</button>
+        }
+        
+        nroPregunta = item.me_prueba.pregunta.nu_nro_pregunta;        
+    }
+}
+<br /><br /> 
+
+      <script type="text/javascript">
+            var cantidadPreguntas   = "@Model.ls_preguntas[Model.ls_preguntas.Count-1].me_prueba.pregunta.nu_nro_pregunta";
+      </script>

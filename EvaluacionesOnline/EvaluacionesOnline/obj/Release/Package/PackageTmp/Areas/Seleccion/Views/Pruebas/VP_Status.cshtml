@@ -1,0 +1,10 @@
+﻿@model  EvaluacionesOnline.Areas.Seleccion.Models.PruebasModel
+<br />
+@if(Model.mme_prueba.nu_status == 1)
+{   
+    <label style="color:darkgreen"><i class="fa fa-check"></i> Su respuesta se ha guardado</label>                                        
+}
+else
+{
+    <label style="color:darkred"><strong><i class="fa fa-remove"></i> !Oh no¡ </strong>, ha sucedido un problema inesperado, contactar con el evaluador..</label>
+}

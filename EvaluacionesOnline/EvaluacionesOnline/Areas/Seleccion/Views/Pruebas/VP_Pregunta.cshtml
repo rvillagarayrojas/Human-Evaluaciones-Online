@@ -1,0 +1,325 @@
+﻿@model  EvaluacionesOnline.Areas.Seleccion.Models.PruebasModel
+
+<hr style="margin-top: 10px; margin-bottom: 10px" />
+@foreach (var item in Model.ls_mme_prueba)
+{
+    <input id="nu_id_pregunta" type="hidden" value="@item.me_prueba.pregunta.nu_id_pregunta" />
+    <input id="nu_nro_pregunta" type="hidden" value="@item.me_prueba.pregunta.nu_nro_pregunta" />
+    if (item.me_prueba.pregunta.ch_presentacion == "LS")
+    {
+        <label style="color:black;font-size:19px"><strong>@item.me_prueba.pregunta.nu_nro_pregunta</strong>. @Html.Raw(item.me_prueba.pregunta.vc_desc_pregunta)</label>
+        <p class="text-center">
+            @if (@item.me_prueba.pregunta.vc_desc_imagen != null)
+            {
+                if (@item.me_prueba.prueba_parte.nu_id_prueba_parte != 37)
+                {
+                    <img src="/Recursos/ImgPrueba/@item.me_prueba.pregunta.vc_desc_imagen" width="300px" />
+                }
+                else
+                {
+                    <img src="/Recursos/ImgPrueba/@item.me_prueba.pregunta.vc_desc_imagen" height="141px" />
+                }
+            }
+        </p>
+    }
+    else if (item.me_prueba.pregunta.ch_presentacion == "DK")
+    {
+        int alternativas = 2;
+        int acumulado = 0;
+
+        <label style="color:#747677;font-size:25px"><strong>@item.me_prueba.pregunta.nu_nro_pregunta</strong>.</label>
+        <table class="table table-striped table-bordered table-hover table-condensed" style="border:7px solid rgb(75, 105, 152)" cellspacing="0">
+            <tbody>
+
+                @foreach (var itemMulti in Model.ls_mme_prueba)
+                {
+                    <tr>
+                        <td style="text-align:center;vertical-align:middle;color:black"><h4><strong>@itemMulti.me_prueba.pregunta.vc_desc_pregunta</strong></h4></td>
+                        <td style="background:#F1F1F1;color:black">
+
+                            @{ int Lado = 0; }
+                            @for (int i = acumulado; i < alternativas + acumulado && i < 8; i++)
+                            {
+                                string marca = "";
+                                if (item.ls_mme_prueba[i].me_prueba.alternativa.ch_marca == "M") { marca = "checked=checked"; }
+                                <div class="col-md-5">
+
+                                    <label class="control-label" style="color:black">
+
+                                        <input type="radio" name="@Lado" class="Alternativa_@i" @marca onchange="ResponderDISC(@item.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                                        @item.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa
+
+                                    </label>
+
+                                    @if (item.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_imagen != null)
+                                    {
+                                        <img src="/Recursos/ImgPrueba/@item.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_imagen" width="100px" />
+                                    }
+                                </div>
+                                Lado++;
+                            }
+                        </td>
+                    </tr>
+                    acumulado += alternativas;
+                }
+
+            </tbody>
+        </table>
+    }
+    else if (item.me_prueba.pregunta.ch_presentacion == "TL")
+    {
+        decimal? nro_pregunta = 0;
+        decimal? nu_id_pregunta = 0;
+        <table class="table table-striped table-bordered table-hover table-condensed " cellspacing="0">
+            <thead>
+                <tr>
+                    @foreach (var itemMulti in Model.ls_mme_prueba)
+                    {
+                        if (nro_pregunta != item.me_prueba.pregunta.nu_nro_pregunta)
+                        {
+                            nro_pregunta = item.me_prueba.pregunta.nu_nro_pregunta;
+                            <td class="text-center" style="background-color:#0F386B;color:white;" colspan="2"><strong>@item.me_prueba.pregunta.nu_nro_pregunta</strong>.<strong>@Html.Raw(@itemMulti.me_prueba.pregunta.vc_desc_criterio)</strong></td>
+                        }
+                    }
+                </tr>
+            </thead>
+            <tbody id="DetallePreguntas2">
+                @foreach (var itemMulti in Model.ls_mme_prueba)
+                {
+                    <tr>
+                        <td class="text-center" id="nu_id_pregunta_zavic" hidden="hidden"><strong>@itemMulti.me_prueba.pregunta.nu_id_pregunta</strong></td>
+                        <td class="text-center"><strong>@itemMulti.me_prueba.pregunta.vc_desc_pregunta</strong></td>
+                        <td class="text-center">
+                            <select class="zavic" onchange="SelectOpcion(@itemMulti.me_prueba.pregunta.nu_id_pregunta);" id="@(itemMulti.me_prueba.pregunta.nu_id_pregunta)">
+                                <option value="0">--Seleccionar--</option>
+                                @for (int i = 0; i < itemMulti.ls_mme_prueba.Count(); i++)
+                                {
+                                    if (itemMulti.me_prueba.pregunta.nu_id_pregunta == itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_pregunta && nu_id_pregunta != itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)
+                                    {
+                                        nu_id_pregunta = itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa;
+                                        if (itemMulti.ls_mme_prueba[i].me_prueba.alternativa.ch_marca != "M")
+                                        {
+                                            <option value="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬@(itemMulti.me_prueba.pregunta.nu_id_pregunta)" style="width:25px;height:25px">@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬@(itemMulti.me_prueba.pregunta.nu_id_pregunta)" style="width:25px;height:25px" selected>@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</option>
+                                        }
+                                    }
+                                }
+                            </select>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else if (item.me_prueba.pregunta.ch_presentacion == "IL")
+    {
+        decimal? nro_pregunta = 0;
+        decimal? nu_id_pregunta = 0;
+        <table class="table table-striped table-bordered table-hover table-condensed " cellspacing="0">
+            <thead>
+                <tr>
+                    @foreach (var itemMulti in Model.ls_mme_prueba)
+                    {
+                        if (nro_pregunta != item.me_prueba.pregunta.nu_nro_pregunta)
+                        {
+                            nro_pregunta = item.me_prueba.pregunta.nu_nro_pregunta;
+                            <td class="text-center" style="background-color:#0F386B;color:white;" colspan="2"><strong>@item.me_prueba.pregunta.nu_nro_pregunta</strong>.<strong>@Html.Raw(@itemMulti.me_prueba.pregunta.vc_desc_criterio)</strong></td>
+                        }
+                    }
+                </tr>
+            </thead>
+            <tbody id="DetallePreguntas2">
+                @foreach (var itemMulti in Model.ls_mme_prueba)
+                {
+                    <tr>
+                        <td class="text-center" id="nu_id_pregunta_zavic" hidden="hidden"><strong>@itemMulti.me_prueba.pregunta.nu_id_pregunta</strong></td>
+                        <td class="text-center"><strong>@itemMulti.me_prueba.pregunta.vc_desc_pregunta</strong></td>
+                        <td class="text-center">
+                            <select class="zavic" onchange="SelectOpcion1(@itemMulti.me_prueba.pregunta.nu_id_pregunta);" id="@(itemMulti.me_prueba.pregunta.nu_id_pregunta)">
+                                <option value="0">--Seleccionar--</option>
+                                @for (int i = 0; i < itemMulti.ls_mme_prueba.Count(); i++)
+                                {
+                                    if (itemMulti.me_prueba.pregunta.nu_id_pregunta == itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_pregunta && nu_id_pregunta != itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)
+                                    {
+                                        nu_id_pregunta = itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa;
+                                        if (itemMulti.ls_mme_prueba[i].me_prueba.alternativa.ch_marca != "M")
+                                        {
+                                            <option value="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬@(itemMulti.me_prueba.pregunta.nu_id_pregunta)" style="width:25px;height:25px">@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬@(itemMulti.me_prueba.pregunta.nu_id_pregunta)" style="width:25px;height:25px" selected>@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</option>
+                                        }
+                                    }
+                                }
+                            </select>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else if (item.me_prueba.pregunta.ch_presentacion == "DM")
+    {
+        decimal? nu_id_pregunta = 0;
+        <label style="color:black;font-size:19px"> @item.me_prueba.pregunta.vc_desc_pregunta</label>
+        <p class="text-center">
+            @if (@item.me_prueba.pregunta.vc_desc_imagen != null)
+            {
+                <img src="/Recursos/ImgPrueba/@item.me_prueba.pregunta.vc_desc_imagen" width="350px" />
+            }
+        </p>
+        <table class="table table-bordered table-hover table-condensed " cellspacing="0">
+            <tbody id="DetallePreguntas3">
+                @foreach (var itemMulti in Model.ls_mme_prueba)
+                {
+                    <tr id="A">
+                        <td class="text-center" style="font-size:20px"><strong>a</strong></td>
+                        @for (int i = 0; i < itemMulti.ls_mme_prueba.Count(); i++)
+                        {
+                            if (itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_parametro == "A" && itemMulti.me_prueba.pregunta.nu_id_pregunta == itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_pregunta && nu_id_pregunta != itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)
+                            {
+                                nu_id_pregunta = itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa;
+                                if (itemMulti.ls_mme_prueba[i].me_prueba.alternativa.ch_marca != "M")
+                                {
+                                    <td class="text-center" id="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬A" style="font-size:20px" onclick="CambiarColor(@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa),'A')">@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</td>
+                                }
+                                else
+                                {
+                                    <td class="text-center" id="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬A" style="font-size:20px; background-color:#f39c12" onclick="CambiarColor(@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa),'A')">@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</td>
+                                }
+                            }
+                        }
+                    </tr>
+
+                    <tr id="B">
+                        <td class="text-center" style="font-size:20px"><strong>b</strong></td>
+                        @for (int i = 0; i < itemMulti.ls_mme_prueba.Count(); i++)
+                        {
+                            if (itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_parametro == "B" && itemMulti.me_prueba.pregunta.nu_id_pregunta == itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_pregunta && nu_id_pregunta != itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)
+                            {
+                                nu_id_pregunta = itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa;
+                                if (itemMulti.ls_mme_prueba[i].me_prueba.alternativa.ch_marca != "M")
+                                {
+                                    <td class="text-center" id="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬B" style="font-size:20px" onclick="CambiarColor(@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa),'B')">@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</td>
+                                }
+                                else
+                                {
+                                    <td class="text-center" id="@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa)¬B" style="font-size:20px; background-color:#f39c12" onclick="CambiarColor(@(itemMulti.ls_mme_prueba[i].me_prueba.alternativa.nu_id_alternativa),'B')">@itemMulti.ls_mme_prueba[i].me_prueba.alternativa.vc_desc_alternativa</td>
+                                }
+                            }
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else if (item.me_prueba.pregunta.ch_presentacion == "FL")
+    {
+        <label style="color:black;font-size:19px"><strong>@item.me_prueba.pregunta.nu_nro_pregunta</strong>. @item.me_prueba.pregunta.vc_desc_pregunta&nbsp;&nbsp;</label><a href="@item.me_prueba.prueba.vc_nomfile" target="_blank"><i class="fa fa-download"></i>Descargar Prueba</a>
+        <div style="height:20px"></div>
+
+
+        <p class="text-center">
+            <input class="file" id="@("fileLoad_"+ViewBag.nu_id_prueba)" name="@("fileLoad_"+ViewBag.nu_id_prueba)[]" type="file">
+            <div id="kartik-file-errors"></div>
+        </p>
+    }
+    else
+    {
+        <label style="color:#747677;font-size:19px"><strong>@item.me_prueba.pregunta.nu_nro_pregunta</strong>.</label>
+        <table class="table table-striped table-bordered table-hover table-condensed " cellspacing="0">
+            <thead>
+                <tr>
+                    @foreach (var itemMulti in Model.ls_mme_prueba)
+                    {
+                        <td class="text-center" style="background-color:#0F386B;color:white;"><strong>@itemMulti.me_prueba.pregunta.vc_desc_criterio</strong></td>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    @foreach (var itemMulti in Model.ls_mme_prueba)
+                    {
+                        <td class="text-center"><strong>@itemMulti.me_prueba.pregunta.vc_desc_pregunta</strong></td>
+                    }
+                </tr>
+            </tbody>
+        </table>
+    }
+
+    if (item.me_prueba.pregunta.ch_presentacion != "DK" && item.me_prueba.pregunta.ch_presentacion != "TL" && item.me_prueba.pregunta.ch_presentacion != "DM" && item.me_prueba.pregunta.ch_presentacion != "IL")
+    {
+        <br />
+        foreach (var item2 in item.ls_mme_prueba)
+        {
+            string marca = "";
+            if (item2.me_prueba.alternativa.ch_marca == "M") { marca = "checked=checked"; }
+
+            if (item2.me_prueba.alternativa.ch_orientacion == "H")
+            {
+                <div class="col-md-4" style="padding:10px">
+                    <label class="control-label" style="color:black">
+                        @if (@Model.mme_prueba.me_prueba.prueba.nu_id_tipo_prueba == 1 || @Model.mme_prueba.me_prueba.prueba.nu_id_tipo_prueba == 3)
+                        {
+                            if (item2.me_prueba.alternativa.ch_tipo_alternativa == "UN")
+                            {
+                                <input type="radio" name="Alternativa" @marca onchange="ResponderInteligencia(@item2.me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                            }
+                            else
+                            {
+                                <input type="checkbox" name="Alternativa" @marca onchange="Responder(@item2.me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                            }
+                        }
+                        else
+                        {
+                            if (item2.me_prueba.alternativa.ch_tipo_alternativa == "UN")
+                            {
+                                <input type="radio" name="Alternativa" @marca onchange="Responder(@item2.me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                            }
+                            else
+                            {
+                                <input type="checkbox" name="Alternativa" @marca onchange="Responder(@item2.me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                            }
+                        }
+                        @item2.me_prueba.alternativa.vc_desc_alternativa
+                    </label>
+                    @if (item2.me_prueba.alternativa.vc_desc_imagen != null)
+                    {
+                        <img src="/Recursos/ImgPrueba/@item2.me_prueba.alternativa.vc_desc_imagen" width="100px" />
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="col-md-12" style="padding:10px">
+                    <label class="control-label" style="color:black">
+                        @if (item2.me_prueba.alternativa.ch_tipo_alternativa == "UN")
+                        {
+                            <input type="radio" name="Alternativa" @marca onchange="Responder(@item2.me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                        }
+                        else
+                        {
+                            <input type="checkbox" name="Alternativa" @marca onchange="Responder(@item2.me_prueba.alternativa.nu_id_alternativa); return false;" style="width:25px;height:25px" />
+                        }
+                        @item2.me_prueba.alternativa.vc_desc_alternativa
+                    </label>
+                </div>
+            }
+        }
+    }
+
+
+    <script type="text/javascript">
+
+        var numeroPregunta = "@item.me_prueba.pregunta.nu_nro_pregunta";
+
+    </script>
+
+    break;
+}
+<div id="Status" class="col-md-12"></div>
+

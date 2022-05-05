@@ -1,0 +1,1442 @@
+﻿@using EvaluacionesOnline.Areas.Sistemas.Models
+@{
+
+    ViewBag.Title = "SISTEMA DE EVALUACIONES PSICOLABORALES - TEST SMART";
+    Layout = "~/Areas/Seleccion/Views/MPEvaluacionesPrint.cshtml";
+    var Sesion = (SesionModel)Session[SesionModel.SessionName];
+}
+<link href="~/Content/Print.css" rel="stylesheet" type="text/css" media="print"/>
+<link href="~/Content/Doc.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+    #container, #sliders {
+	    min-width: 310px; 
+	    max-width: 800px;
+	    margin: 0 auto;
+    }
+    #container {
+	    height: 400px; 
+    }
+</style>
+
+<script type="text/javascript">
+
+    var Esperado1, Obtenido1, Esperado2, Obtenido2, Esperado3, Obtenido3, Valor_D, Valor_I, Valor_S, Valor_C;
+
+    var CategoriasCPS   = []
+    var ValoresCPS      = [];
+    var ValoresCPSS     = [];
+
+    var PerfilesKostick = []
+    var PuntajesKostick = [];
+
+</script>
+
+
+@if (Model.ls_wonderlik != null && Model.ls_wonderlik.Count > 0)
+{
+    <script type="text/javascript">
+        Esperado1 = "@Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado";
+        Obtenido1 = "@Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido";
+    </script>
+}
+
+@if (Model.ls_gatb != null && Model.ls_gatb.Count > 0)
+{
+    <script type="text/javascript">
+        Esperado2   = "@Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado";
+        Obtenido2   = "@Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido";
+        Obtenido2_v = "@Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido_v";
+        Obtenido2_n = "@Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido_n";
+    </script>
+}
+
+@if (Model.ls_ic != null && Model.ls_ic.Count > 0)
+{
+    <script type="text/javascript">
+        Esperado3 = parseInt("@Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_categoria_esperada");
+        Obtenido3 = parseInt("@Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_categoria_obtenida");
+    </script>
+}
+
+@if (Model.ls_disc != null && Model.ls_disc.Count > 0)
+{
+    <script type="text/javascript">
+        Valor_D = parseInt("@Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_patron_disc[0]");
+        Valor_I = parseInt("@Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_patron_disc[1]");
+        Valor_S = parseInt("@Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_patron_disc[2]");
+        Valor_C = parseInt("@Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_patron_disc[3]");
+    </script>
+}
+
+<script type="text/javascript">
+
+    CategoriasCPS[CategoriasCPS.length] = "<strong>PERCENTIL MÁXIMO</strong>";
+    ValoresCPSS[ValoresCPSS.length]     = 99;
+
+</script>
+
+@if (Model.ls_cps != null && Model.ls_cps.Count > 0)
+{
+    foreach(var item in Model.ls_cps)
+    {
+        <script type="text/javascript">
+
+            CategoriasCPS[CategoriasCPS.length] = "@item.me_prueba.reporte_conocimiento.vc_parametro_cps";
+            ValoresCPS[ValoresCPS.length]       = parseInt("@item.me_prueba.reporte_conocimiento.nu_marcadas");
+            ValoresCPSS[ValoresCPSS.length]     = parseInt("@item.me_prueba.reporte_conocimiento.nu_valor_s");
+        </script>
+    }
+}
+
+@if (Model.ls_kostick != null && Model.ls_kostick.Count > 0)
+{
+    foreach (var item in Model.ls_kostick)
+    {
+        <script type="text/javascript">
+            PerfilesKostick[PerfilesKostick.length] = "@item.me_prueba.reporte_conocimiento.vc_desc_perfil";
+            PuntajesKostick[PuntajesKostick.length] = parseInt("@item.me_prueba.reporte_conocimiento.nu_marcadas");
+        </script>
+    }
+}
+
+
+<script src="~/Scripts/Sistemas/jquerydb.js"></script>
+<script type="text/javascript">
+
+    var Categorias1     = [], Calificacion1     = [], Calificacion11    = [];
+    var Categorias2     = [], Calificacion2E    = [];
+    var Calificacion2O  = [];
+    var Categorias3     = [], Calificacion3     = [], Calificacion33 = [];
+
+    $(document).ready(function () {
+
+        Categorias1[Categorias1.length] = "RESULTADO";
+        Calificacion1[Calificacion1.length] = parseInt(Esperado1);
+        Calificacion11[Calificacion11.length] = parseInt(Obtenido1);
+
+        Categorias2[Categorias2.length] = "G";
+        Categorias2[Categorias2.length] = "V";
+        Categorias2[Categorias2.length] = "N";
+        Calificacion2E[Calificacion2E.length] = parseInt(Esperado2);
+        Calificacion2O[Calificacion2O.length] = parseInt(Obtenido2);
+        Calificacion2E[Calificacion2E.length] = parseInt(Esperado2);
+        Calificacion2O[Calificacion2O.length] = parseInt(Obtenido2_v);
+        Calificacion2E[Calificacion2E.length] = parseInt(Esperado2);
+        Calificacion2O[Calificacion2O.length] = parseInt(Obtenido2_n);
+
+
+        Categorias3[Categorias3.length]         = "RESULTADO";
+        Calificacion3[Calificacion3.length]     = parseInt(Esperado3);
+        Calificacion33[Calificacion33.length]   = parseInt(Obtenido3);
+
+        Load1();
+
+    });
+
+    function Load1() {
+        $('#container1').html('');
+        $('#container2').html('');
+        $('#container3').html('');
+
+        var chart1 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container1',
+                type: 'bar',
+                marginTop: 80,
+                marginRight: 40
+            },
+
+            title: {
+                text: '<strong>RESULTADO DEL TEST DE WONDERLIC</strong>'
+            },
+
+            xAxis: {
+                categories: Categorias1
+            },
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'ESCALA DE CANTIDAD'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        fontsize: '18px',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'darkred'
+                    }
+                }
+            },
+            credits: {
+                enabled: false
+            },
+
+            series: [{
+                name: 'ESPERADO',
+                data: Calificacion1
+            },{
+                name: 'OBTENIDO',
+                data: Calificacion11
+            }]
+        });
+    
+
+        var chart2 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container2',
+                type: 'column',
+                marginTop: 80,
+                marginRight: 40
+            },
+
+            title: {
+                text: '<strong>RESULTADO GATB</strong>'
+            },
+
+            xAxis: {
+                categories: Categorias2
+            },
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'ESCALA DE CANTIDAD'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        fontsize: '18px',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'darkred'
+                    }
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'ESPERADO',
+                data: Calificacion2E
+            }, {
+                name: 'OBTENIDO',
+                data: Calificacion2O
+            }]
+        });
+
+
+
+
+        var chart3 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container3',
+                type: 'bar',
+                marginTop: 80,
+                marginRight: 40
+            },
+
+            title: {
+                text: '<strong>RESULTADO IC</strong>'
+            },
+
+            xAxis: {
+                categories: Categorias3
+            },
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'ESCALA DE CATEGORÍAS'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        fontsize: '18px',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'darkred'
+                    }
+                }
+            },
+            credits: {
+                enabled: false
+            },
+
+            series: [{
+                name: 'ESPERADO',
+                data: Calificacion3
+            }, {
+                name: 'OBTENIDO',
+                data: Calificacion33
+            }]
+        });
+
+
+        var chart4 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container4',
+                type: 'bar'
+            },
+            title: {
+                text: '<strong>RESULTADO DISC</strong>'
+            },
+            xAxis: {
+                categories: ['RESULTADO']
+            },
+            yAxis: {
+                allowDecimals: false,
+                min: 0,
+                title: {
+                    text: 'ESCALA DE VALOR'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        fontsize: '18px',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'darkred'
+                    }
+                }
+            },
+
+            tooltip: {
+                headerFormat: '<b>{point.key}</b><br>',
+                pointFormat: '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+                        this.series.name + ': ' + this.y + '<br/>';
+                }
+            },
+
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'D',
+                data: [Valor_D]
+            }, {
+                name: 'I',
+                data: [Valor_I]
+            }, {
+                name: 'S',
+                data: [Valor_S]
+            }, {
+                name: 'C',
+                data: [Valor_C]
+            }]
+        });
+
+
+        var chart5 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container5',
+                type: 'bar',
+                spacingBottom: 30,
+                height: 750
+            },
+            title: {
+                text: '<strong>RESULTADO CPS</strong>'
+            },
+            subtitle: {
+                floating: true,
+                align: 'right',
+                verticalAlign: 'bottom',
+                y: 15
+            },
+            xAxis: {
+                categories: CategoriasCPS,
+                labels: {
+                    style: {
+                        fontSize: '13px',
+                    }
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'Percentil Obtenido'
+                },
+                labels: {
+                    formatter: function () {
+                        return this.value;
+                    },
+                    style: {
+                        fontSize: '14px',
+                    }
+                },
+                scalable: false,
+                max: 100
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                        this.x + ': ' + this.y;
+                }
+            },
+            plotOptions: {
+                area: {
+                    fillOpacity: 0.5
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'Percentil Obtenido',
+                data: ValoresCPSS
+            }]
+        });
+
+
+
+        var chart6 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container6',
+                polar: true,
+                type: 'line'
+            },
+
+            title: {
+                text: '<strong>PERFILES DE COMPETENCIA LABORAL - KOSTICK</strong>',
+                x: -80
+            },
+
+            pane: {
+                size: '90%'
+            },
+
+            xAxis: {
+                categories: PerfilesKostick,
+                tickmarkPlacement: 'on',
+                lineWidth: 0
+            },
+
+            yAxis: {
+                gridLineInterpolation: 'polygon',
+                lineWidth: 0,
+                min: 0
+            },
+
+            tooltip: {
+                shared: true,
+                pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+            },
+
+            legend: {
+                align: 'right',
+                verticalAlign: 'top',
+                y: 70,
+                layout: 'vertical'
+            },
+
+            series: [{
+                name: 'PUNTAJES',
+                data: PuntajesKostick,
+                pointPlacement: 'on'
+            }]
+
+        });
+        
+    }
+
+</script>
+<script src="~/Recursos/Db/js/highcharts.js"></script>
+<script src="~/Recursos/Db/js/highcharts-more.js"></script>
+<script src="~/Recursos/Db/js/modules/exporting.js"></script>
+
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            INFORME COMPLETO
+            <small>Selección</small>
+        </h1>   
+        <ol class="breadcrumb">
+            <li><a href="@Url.RouteUrl("V_EvaluacionesSitio")">Reportes</a></li>
+            <li class="active">Informe completo</li>
+        </ol>
+    </section>
+
+    <section class="content">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-body">
+                        <button id="btnImprimir" class="btn btn-warning" style="float:right;"><i class="fa fa-print"></i> IMPRIMIR INFORME COMPLETO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Contenido" class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-body">
+                        
+                        FECHA: <span id="Fecha"></span>
+                        <span style="float:right;">SISTEMA DE EVALUACIONES PSICOLABORALES</span>
+                        <hr style="margin:2px;"/>
+                        <div class="col-md-12" style="padding:0px;border-radius:4px;border:1px solid rgb(244,209,170);color:darkslategrey;">                            
+                            <div class="col-md-12">                                     
+                                <img src="~/Recursos/Img/LogoHS.png" style="width:130px;margin-top:5px;"/>
+                                <img src="~/Recursos/Img/LogoTisi.png"  style="width:80px;margin-top:5px;float:right"/>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <h1><strong style="color:orange">INFORME PSICOLABORAL</strong></h1>
+                                <h4>
+                                    <strong>Consultor:</strong> 
+                                    @Model.mme_datos.me_prueba.reporte_conocimiento.vc_consultor
+
+                                </h4>
+                            </div>
+                        </div><br />
+                        <div class="col-md-12">
+                                
+                            <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                <thead>
+                                    <tr>
+                                        <td class="bordes text-center" colspan="2"><h3><strong>DATOS PERSONALES</strong></h3></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="bordes text-right" style="width:30%"><h4><strong>CANDIDATO</strong></h4></td>
+                                        <td class="bordes"><h4>@Model.mme_datos.me_prueba.reporte_conocimiento.vc_candidato</h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bordes text-right" style="width:20%"><h4><strong>EDAD</strong></h4></td>
+                                        <td class="bordes"><h4>@Model.mme_datos.me_prueba.reporte_conocimiento.nu_edad</h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bordes text-right" style="width:20%"><h4><strong>GRADO DE INSTRUCCIÓN</strong></h4></td>
+                                        <td class="bordes"><h4>@Model.mme_datos.me_prueba.reporte_conocimiento.vc_grado_instruccion</h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bordes text-right" style="width:20%"><h4><strong>PROFESIÓN</strong></h4></td>
+                                        <td class="bordes"><h4>@Model.mme_datos.me_prueba.reporte_conocimiento.vc_profesion</h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bordes text-right" style="width:20%"><h4><strong>EMPRESA</strong></h4></td>
+                                        <td class="bordes"><h4>@Model.mme_datos.me_prueba.reporte_conocimiento.vc_empresa</h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bordes text-right" style="width:20%"><h4><strong>ÚLTIMA EXPERIENCIA</strong></h4></td>
+                                        <td class="bordes"><h4>@Model.mme_datos.me_prueba.reporte_conocimiento.vc_ultima_experiencia</h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bordes text-right" style="width:20%"><h4><strong>NOMBRES DE REFERENCIA</strong></h4></td>
+                                        <td class="bordes"><h4>@Model.mme_datos.me_prueba.reporte_conocimiento.vc_nombres_referencia</h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bordes text-right" style="width:20%"><h4><strong>TELF./CEL. DE REFERENCIA</strong></h4></td>
+                                        <td class="bordes"><h4>@Model.mme_datos.me_prueba.reporte_conocimiento.vc_telefono_referencia</h4></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        @if (Model.ls_wonderlik != null && Model.ls_wonderlik.Count > 0)
+                        {
+                            <div class="col-md-12" style="padding:0px;">
+
+                                <div class="col-md-12">
+                                    <h2><strong>1. TEST DE WONDERLIC</strong></h2>
+                                    <hr style="margin:0px;"/>
+                                    <br />
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-7">
+                                            <div id="container1"></div>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                        <thead>
+                                            <tr>
+                                                <td class="bordes text-center" colspan="8"><h4><strong>RESULTADO DEL TEST DE WONDERLIC</strong></h4></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="bordes text-right" style="width:30%"><h4><strong>RESULTADO ESPERADO</strong></h4></td>
+
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "DEFICIENTE MENTAL SUPERFICIAL")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>MI</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>MI</strong></h4></td>
+                                                }
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "INFERIOR")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>I</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>I</strong></h4></td>
+                                                }
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "NORMAL INFERIOR")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>PI</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>PI</strong></h4></td>
+                                                }
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "NORMAL PROMEDIO")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>NP</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>NP</strong></h4></td>
+                                                }
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "NORMAL SUPERIOR")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>PS</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>PS</strong></h4></td>
+                                                }
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "SUPERIOR")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>S</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>S</strong></h4></td>
+                                                }
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "MUY SUPERIOR")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>MS</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>MS</strong></h4></td>
+                                                }
+                                            </tr>
+                                            <tr>
+                                                <td class="bordes text-right" style="width:20%"><h4><strong>RESULTADO OBTENIDO</strong></h4></td>
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "DEFICIENTE MENTAL SUPERFICIAL")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>MI</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>MI</strong></h4></td>
+                                                }
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "INFERIOR")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>I</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>I</strong></h4></td>
+                                                }
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "NORMAL INFERIOR")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>PI</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>PI</strong></h4></td>
+                                                }
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "NORMAL PROMEDIO")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>NP</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>NP</strong></h4></td>
+                                                }
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "NORMAL SUPERIOR")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>PS</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>PS</strong></h4></td>
+                                                }
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "SUPERIOR")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>S</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>S</strong></h4></td>
+                                                }
+                                                @if (Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "MUY SUPERIOR")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>MS</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>MS</strong></h4></td>
+                                                }
+                                            </tr>
+                                            <tr>
+                                                <td class="bordes text-right" style="width:20%"><h4><strong>DESCRIPCIÓN</strong></h4></td>
+                                                <td class="bordes" colspan="7"><h4>@Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_diagnostico</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bordes text-right" style="width:20%"><h4><strong>RECOMENDACIÓN</strong></h4></td>
+                                                <td class="bordes" colspan="7"><h4>@Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_recomendacion</h4></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                    @*<h4><strong>Parámetro definido:</strong> @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada</h4>
+                                    <h4><strong>Rango esperado:</strong> @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado - @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_rango_mayor_esperado</h4>
+                                    <h4><strong>Parámetro obtenido:</strong> @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida</h4>
+                                    <h4><strong>Rango obtenido:</strong> @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_rango_menor - @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_rango_mayor</h4>
+                                    <h4><strong>Valor obtenido:</strong> @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido</h4>
+                                    <h4><strong>Recomendación:</strong> @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_recomendacion</h4>
+                                    <h4><strong>Descripción:</strong></h4>
+                                    <h4 style="text-align:justify">
+                                        @Model.ls_wonderlik[0].me_prueba.reporte_conocimiento.vc_desc_diagnostico
+                                    </h4>*@
+
+                                </div>
+                            </div>
+                        }
+                        @if (Model.ls_gatb != null && Model.ls_gatb.Count > 0)
+                        {
+                            <div class="col-md-12" style="padding:0px;">
+                                <div class="col-md-12">
+                                    <h4 style="text-align:justify" contenteditable>
+
+                                    </h4>
+                                    <h2><strong>2. GATB</strong></h2>
+                                    <hr style="margin:0px;"/>
+                                    @*<h4><strong>Parámetro definido:</strong> @Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada</h4>
+                                    <h4><strong>Rango esperado:</strong> @Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado - @Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_rango_mayor_esperado</h4>
+                                    <h4><strong>Parámetro obtenido:</strong> @Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida</h4>
+                                    <h4><strong>Rango obtenido:</strong> @Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_rango_menor - @Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_rango_mayor</h4>
+                                    <h4><strong>Valor obtenido:</strong> @Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido</h4>
+                                    <h4><strong>Recomendación:</strong> @Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_recomendacion</h4>
+                                    <h4><strong>Descripción:</strong></h4>
+                                    <h4 style="text-align:justify">
+                                        @Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_diagnostico
+                                    </h4>*@
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-8">
+                                        <div id="container2"></div>
+                                    </div>
+                                </div>
+                                <br />
+                                    <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                        <thead>
+                                            <tr>
+                                                <td class="bordes text-center"><h5><strong></strong></h5></td>
+                                                <td class="bordes text-center"><h5><strong>R. Esperado G</strong></h5></td>
+                                                <td class="bordes text-center"><h5><strong>R. Obtenido G</strong></h5></td>
+                                                <td class="bordes text-center"><h5><strong>R. Esperado N</strong></h5></td>
+                                                <td class="bordes text-center"><h5><strong>R. Obtenido N</strong></h5></td>
+                                                <td class="bordes text-center"><h5><strong>R. Esperado V</strong></h5></td>
+                                                <td class="bordes text-center"><h5><strong>R. Obtenido V</strong></h5></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="bordes text-right"><h4><strong>CI</strong></h4></td>
+
+                                                <td class="bordes text-center"><h5>@Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado</h5></td>
+                                                <td class="bordes text-center"><h5>@Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido</h5></td>
+                                                <td class="bordes text-center"><h5>@Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado</h5></td>
+                                                <td class="bordes text-center"><h5>@Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido_v</h5></td>
+                                                <td class="bordes text-center"><h5>@Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado</h5></td>
+                                                <td class="bordes text-center"><h5>@Model.ls_gatb[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido_n</h5></td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                        <thead>
+                                            <tr>
+                                                <td class="bordes text-center" colspan="8"><h4><strong>RESULTADO GATB</strong></h4></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="bordes text-right" style="width:30%"><h4><strong>RESULTADO ESPERADO</strong></h4></td>
+
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "DEFICIENTE MENTAL SUPERFICIAL")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>MI</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>MI</strong></h4></td>
+                                                }
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "INFERIOR")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>I</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>I</strong></h4></td>
+                                                }
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "NORMAL INFERIOR")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>PI</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>PI</strong></h4></td>
+                                                }
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "NORMAL PROMEDIO")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>NP</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>NP</strong></h4></td>
+                                                }
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "NORMAL SUPERIOR")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>PS</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>PS</strong></h4></td>
+                                                }
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "SUPERIOR")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>S</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>S</strong></h4></td>
+                                                }
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "MUY SUPERIOR")
+                                                {
+                                                    <td class="bordes text-center esperado"><h4><strong>MS</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>MS</strong></h4></td>
+                                                }
+                                            </tr>
+                                            <tr>
+                                                <td class="bordes text-right" style="width:20%"><h4><strong>RESULTADO OBTENIDO</strong></h4></td>
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "DEFICIENTE MENTAL SUPERFICIAL")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>MI</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>MI</strong></h4></td>
+                                                }
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "INFERIOR")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>I</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>I</strong></h4></td>
+                                                }
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "NORMAL INFERIOR")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>PI</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>PI</strong></h4></td>
+                                                }
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "NORMAL PROMEDIO")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>NP</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>NP</strong></h4></td>
+                                                }
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "NORMAL SUPERIOR")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>PS</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>PS</strong></h4></td>
+                                                }
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "SUPERIOR")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>S</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>S</strong></h4></td>
+                                                }
+                                                @if (Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "MUY SUPERIOR")
+                                                {
+                                                    <td class="bordes text-center obtenido"><h4><strong>MS</strong></h4></td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="bordes text-center"><h4><strong>MS</strong></h4></td>
+                                                }
+                                            </tr>
+                                            <tr>
+                                                <td class="bordes text-right" style="width:20%"><h4><strong>DESCRIPCIÓN</strong></h4></td>
+                                                <td class="bordes" colspan="7"><h4 id="DescGatb">@Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_desc_diagnostico</h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bordes text-right" style="width:20%"><h4><strong>RECOMENDACIÓN</strong></h4></td>
+                                                <td class="bordes" colspan="7"><h4>@Model.ls_gatb[0].me_prueba.reporte_conocimiento.vc_recomendacion</h4></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                        }
+                        @if (Model.ls_ic != null && Model.ls_ic.Count > 0)
+                        {
+                            <div class="col-md-12" style="padding:0px;">
+                                <div class="col-md-12">
+                                    <h4 style="text-align:justify" contenteditable>
+
+                                    </h4>
+                                    <h2><strong>3. IC</strong></h2>
+                                    <hr style="margin:0px;"/>
+                                    @*<h4><strong>Parámetro definido:</strong> @Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada</h4>
+                                    <h4><strong>Rango esperado:</strong> @Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_rango_menor_esperado - @Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_rango_mayor_esperado</h4>
+                                    <h4><strong>Parámetro obtenido:</strong> @Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida</h4>
+                                    <h4><strong>Rango obtenido:</strong> @Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_rango_menor - @Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_rango_mayor</h4>
+                                    <h4><strong>Valor obtenido:</strong> @Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_parametro_obtenido</h4>
+                                    <h4><strong>Recomendación:</strong> @Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_recomendacion</h4>
+                                    <h4><strong>Descripción:</strong></h4>
+                                    <h4 style="text-align:justify">
+                                        @Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_diagnostico
+                                    </h4>*@
+                                </div>
+                                <br />
+                                <div class="col-sm-12">
+                                    <div class="col-sm-8">
+                                        <div id="container3"></div>
+                                    </div>
+                                </div>
+                                <br />
+                                <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                    <thead>
+                                        <tr>
+                                            <td class="bordes text-center"><h5><strong></strong></h5></td>
+                                            <td class="bordes text-center"><h5><strong>R. Esperado</strong></h5></td>
+                                            <td class="bordes text-center"><h5><strong>R. Obtenido</strong></h5></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="bordes text-center"><h5><strong>CATEGORÍA</strong></h5></td>
+                                            <td class="bordes text-center"><h5>@Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_categoria_esperada</h5></td>
+                                            <td class="bordes text-center"><h5>@Model.ls_ic[0].me_prueba.reporte_conocimiento.nu_categoria_obtenida</h5></td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <br />
+                                <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                    <thead>
+                                        <tr>
+                                            <td class="bordes text-center" colspan="8"><h4><strong>RESULTADO IC</strong></h4></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="bordes text-right" style="width:30%"><h4><strong>RESULTADO ESPERADO</strong></h4></td>
+
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "DEFICIENTE MENTAL SUPERFICIAL")
+                                            {
+                                                <td class="bordes text-center esperado"><h4><strong>MI</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>MI</strong></h4></td>
+                                            }
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "INFERIOR")
+                                            {
+                                                <td class="bordes text-center esperado"><h4><strong>I</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>I</strong></h4></td>
+                                            }
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "NORMAL INFERIOR")
+                                            {
+                                                <td class="bordes text-center esperado"><h4><strong>PI</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>PI</strong></h4></td>
+                                            }
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "NORMAL PROMEDIO")
+                                            {
+                                                <td class="bordes text-center esperado"><h4><strong>NP</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>NP</strong></h4></td>
+                                            }
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "NORMAL SUPERIOR")
+                                            {
+                                                <td class="bordes text-center esperado"><h4><strong>PS</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>PS</strong></h4></td>
+                                            }
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "SUPERIOR")
+                                            {
+                                                <td class="bordes text-center esperado"><h4><strong>S</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>S</strong></h4></td>
+                                            }
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "MUY SUPERIOR")
+                                            {
+                                                <td class="bordes text-center esperado"><h4><strong>MS</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>MS</strong></h4></td>
+                                            }
+                                        </tr>
+                                        <tr>
+                                            <td class="bordes text-right" style="width:20%"><h4><strong>RESULTADO OBTENIDO</strong></h4></td>
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "DEFICIENTE MENTAL SUPERFICIAL")
+                                            {
+                                                <td class="bordes text-center obtenido"><h4><strong>MI</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>MI</strong></h4></td>
+                                            }
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "INFERIOR")
+                                            {
+                                                <td class="bordes text-center obtenido"><h4><strong>I</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>I</strong></h4></td>
+                                            }
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "NORMAL INFERIOR")
+                                            {
+                                                <td class="bordes text-center obtenido"><h4><strong>PI</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>PI</strong></h4></td>
+                                            }
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "NORMAL PROMEDIO")
+                                            {
+                                                <td class="bordes text-center obtenido"><h4><strong>NP</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>NP</strong></h4></td>
+                                            }
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "NORMAL SUPERIOR")
+                                            {
+                                                <td class="bordes text-center obtenido"><h4><strong>PS</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>PS</strong></h4></td>
+                                            }
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "SUPERIOR")
+                                            {
+                                                <td class="bordes text-center obtenido"><h4><strong>S</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>S</strong></h4></td>
+                                            }
+                                            @if (Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "MUY SUPERIOR")
+                                            {
+                                                <td class="bordes text-center obtenido"><h4><strong>MS</strong></h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4><strong>MS</strong></h4></td>
+                                            }
+                                        </tr>
+                                        <tr>
+                                            <td class="bordes text-right" style="width:20%"><h4><strong>DESCRIPCIÓN</strong></h4></td>
+                                            <td class="bordes" colspan="7"><h4>@Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_desc_diagnostico</h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="bordes text-right" style="width:20%"><h4><strong>RECOMENDACIÓN</strong></h4></td>
+                                            <td class="bordes" colspan="7"><h4>@Model.ls_ic[0].me_prueba.reporte_conocimiento.vc_recomendacion</h4></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        @if (Model.ls_disc != null && Model.ls_disc.Count > 0)
+                        {
+                            <div class="col-md-12" style="padding:0px;">
+                                <div class="col-md-12">
+                                    <h4 style="text-align:justify" contenteditable>
+
+                                    </h4>
+                                    <h2><strong>4. DISC</strong></h2>
+                                    <hr style="margin:0px;"/>
+                                    @*<h4><strong>Parámetro definido:</strong> @Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada</h4>
+                                    <h4><strong>Parámetro obtenido:</strong> @Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida</h4>
+                                    <h4><strong>Patrón DISC:</strong> @Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_patron_disc</h4>
+                                    <h4><strong>Descripción de patrón:</strong> @Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_descripcion_patron</h4>*@
+                                    <br />
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-8">
+                                        <div id="container4"></div>
+                                    </div>
+                                </div>
+                                <br />
+                                <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                    <thead>
+                                        <tr>
+                                            <td class="bordes text-center" colspan="8"><h4><strong>RESULTADO DEL DISC</strong></h4></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>                                        
+                                        <tr>
+                                            <td class="bordes text-right" style="width:20%"><h4><strong>PATRÓN DISC</strong></h4></td>
+                                            <td class="bordes" colspan="7"><h4>@Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_patron_disc</h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="bordes text-right" style="width:20%"><h4><strong>PERFIL DISC</strong></h4></td>
+                                            <td class="bordes" colspan="7"><h4>@Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_descripcion_patron</h4></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="bordes text-right" style="width:30%"><h4><strong>RESULTADO ESPERADO</strong></h4></td>
+
+                                            @if (Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "D")
+                                            {
+                                                <td class="bordes text-center esperado"><h4>Determinante</h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4>Determinante</h4></td>
+                                            }
+                                            @if (Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "I")
+                                            {
+                                                <td class="bordes text-center esperado"><h4>Influyente</h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4>Influyente</h4></td>
+                                            }
+                                            @if (Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "S")
+                                            {
+                                                <td class="bordes text-center esperado"><h4>Sereno</h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4>Sereno</h4></td>
+                                            }
+                                            @if (Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_esperada == "C")
+                                            {
+                                                <td class="bordes text-center esperado"><h4>Concienzudo</h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4>Concienzudo</h4></td>
+                                            }
+                                        </tr>
+                                        <tr>
+                                            <td class="bordes text-right" style="width:20%"><h4><strong>RESULTADO OBTENIDO</strong></h4></td>
+                                            @if (Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "D")
+                                            {
+                                                <td class="bordes text-center obtenido"><h4>Determinante</h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4>Determinante</h4></td>
+                                            }
+                                            @if (Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "I")
+                                            {
+                                                <td class="bordes text-center obtenido"><h4>Influyente</h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4>Influyente</h4></td>
+                                            }
+                                            @if (Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "S")
+                                            {
+                                                <td class="bordes text-center obtenido"><h4>Sereno</h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4>Sereno</h4></td>
+                                            }
+                                            @if (Model.ls_disc[0].me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida == "C")
+                                            {
+                                                <td class="bordes text-center obtenido"><h4>Concienzudo</h4></td>
+                                            }
+                                            else
+                                            {
+                                                <td class="bordes text-center"><h4>Concienzudo</h4></td>
+                                            }
+                                        </tr>
+                                    </tbody>
+                                </table>                      
+                                <br />
+                                <div class="col-md-12">
+                                    <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="bordes"class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Código: activate to sort column descending">CÓDIGO</th>
+                                                <th class="bordes"class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Descripción engine: activate to sort column descending">DESCRIPCIÓN</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.ls_disc)
+                                            {
+                                                <tr>
+                                                    <td class="bordes text-center" style="vertical-align:middle;">
+                                                        <strong>@item.me_prueba.reporte_conocimiento.vc_caracteristica</strong>
+                                                    </td>
+                                                    <td class="bordes" style="vertical-align:middle;">
+                                                        @item.me_prueba.reporte_conocimiento.vc_desc_caracteristica
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        }
+                        @if (Model.ls_cps != null && Model.ls_cps.Count > 0)
+                        {
+                            <div class="col-md-12" style="padding:0px;">
+                                <div class="col-md-12">
+                                    <h4 style="text-align:justify" contenteditable>
+
+                                    </h4>
+                                    <h2><strong>5. CPS</strong></h2>
+                                    <hr style="margin:0px;"/>
+                                    <br />                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-8">
+                                        <div id="container5"></div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="col-md-12">
+                                    <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="bordes text-center"colspan="3"><h4><strong>RESULTADO CPS</strong></h4></th>
+                                            </tr>
+                                            <tr role="row">
+                                                <th class="bordes text-center">ESCALA</th>
+                                                <th class="bordes text-center">PER</th>
+                                                <th>EN EL POLO BAJO DEFINE A UNA PERSONA COMO…</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.ls_cps)
+                                            {
+                                                <tr>
+                                                    <td class="bordes text-center">
+                                                        <strong>@item.me_prueba.reporte_conocimiento.vc_parametro_cps</strong>
+                                                    </td>
+                                                    <td class="bordes text-center">
+                                                        <strong>@item.me_prueba.reporte_conocimiento.nu_valor_s</strong>
+                                                    </td>
+                                                    <td class="bordes">
+                                                        @item.me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        }
+                        @if (Model.ls_kostick != null && Model.ls_kostick.Count > 0)
+                        {
+                            <div class="col-md-12" style="padding:0px;">
+                                <div class="col-md-12">
+                                    <h4 style="text-align:justify" contenteditable>
+
+                                    </h4>
+                                    <h2><strong>6. KOSTICK</strong></h2>
+                                    <hr style="margin:0px;"/>
+                                    <br />                                    
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-8">
+                                        <div id="container6"></div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="col-md-12">
+                                    <br />
+                                    <div class="col-md-6">
+                                        <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th class="bordes">ÁREA EVALUADA</th>
+                                                    <th class="bordes text-center">PUNTAJE</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model.ls_kostick)
+                                                {
+                                                    <tr>
+                                                        <td class="bordes">
+                                                            @item.me_prueba.reporte_conocimiento.vc_desc_clasificacion_obtenida
+                                                        </td>
+                                                        <td class="bordes text-center">
+                                                            @item.me_prueba.reporte_conocimiento.nu_marcadas
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <table border="1" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align:justify;">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="bordes text-center"colspan="4"><h4><strong>RESUMEN DE RESULTADOS POSITIVOS Y DE MEJORA KOSTICK</strong></h4></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="bordes text-center" style="vertical-align:middle"><h4><strong>ÁREA EVALUADA</strong></h4></td>
+                                                <td class="bordes text-center" style="vertical-align:middle"><h4><strong>PUNTAJE</strong></h4></td>
+                                                <td class="bordes text-center" style="vertical-align:middle"><h4><strong>ASPECTOS POSITIVOS</strong></h4></td>
+                                                <td class="bordes text-center" style="vertical-align:middle"><h4><strong>ASPECTOS NEGATIVOS</strong></h4></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bordes text-center" colspan="4"><h5><strong>FORTALEZAS</strong></h5></td>
+                                            </tr>
+                                            @foreach (var item in Model.ls_kostick)
+                                            {
+                                                if (item.me_prueba.reporte_conocimiento.nu_marcadas > 6)
+                                                {
+                                                    <tr>
+                                                        <td class="bordes text-center" style="vertical-align:middle">
+                                                            @item.me_prueba.reporte_conocimiento.vc_area_evaluada
+                                                        </td>
+                                                        <td class="bordes text-center" style="vertical-align:middle">
+                                                            @item.me_prueba.reporte_conocimiento.nu_marcadas
+                                                        </td>
+                                                        <td class="bordes" style="vertical-align:middle">
+                                                            @item.me_prueba.reporte_conocimiento.vc_positivo
+                                                        </td>
+                                                        <td class="bordes" style="vertical-align:middle">
+                                                            @item.me_prueba.reporte_conocimiento.vc_negativo
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                            <tr>
+                                                <td class="bordes text-center" colspan="4"><h5><strong>DEBILIDADES</strong></h5></td>
+                                            </tr>
+                                            @foreach (var item in Model.ls_kostick)
+                                            {
+                                                if (item.me_prueba.reporte_conocimiento.nu_marcadas < 4)
+                                                {
+                                                    <tr>
+                                                        <td class="bordes text-center" style="vertical-align:middle">
+                                                            @item.me_prueba.reporte_conocimiento.vc_area_evaluada
+                                                        </td>
+                                                        <td class="bordes text-center" style="vertical-align:middle">
+                                                            @item.me_prueba.reporte_conocimiento.nu_marcadas
+                                                        </td>
+                                                        <td class="bordes" style="vertical-align:middle">
+                                                            @item.me_prueba.reporte_conocimiento.vc_positivo
+                                                        </td>
+                                                        <td class="bordes" style="vertical-align:middle">
+                                                            @item.me_prueba.reporte_conocimiento.vc_negativo
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        }
+                        <hr />
+                        <div class="col-md-12" style="padding:0px;">
+                            <div class="col-md-12">
+                                <h4 style="text-align:justify" contenteditable>
+
+                                </h4>
+                                <h4><strong>OBSERVACIÓN DEL CONSULTOR</strong></h4>
+                                <hr style="margin:0px;"/>
+                                <h4 style="text-align:justify" contenteditable>
+                                    
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="/Scripts/jquery-1.7.1.min.js"></script>
+<script src="/Scripts/PrintArea.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#btnImprimir").click(function () {
+            $('#Contenido').printArea();
+        });
+        BuscarAttr();
+        var f = new Date();
+        $('#Fecha').html(("0" + f.getDate()).slice(-2) + "/" + ("0" + (f.getMonth() + 1)).slice(-2) + "/" + f.getFullYear());
+        $('#DescGatb').html($('#DescGatb').text());
+        RemoveCps();
+    });
+
+    function BuscarAttr() {
+
+        cronometro = setInterval
+                     (
+                        function () {
+                            
+                            $('[fill]').each(function () {
+
+                                if ($(this).attr('fill') == '#7cb5ec') {
+                                    $(this).attr('fill', 'rgb(244,209,170)');
+                                }
+                                if ($(this).attr('fill') == '#434348') {
+                                    $(this).attr('fill', 'rgb(235,110,25)');
+                                }
+                                if ($(this).attr('fill') == '#f7a35c') {
+                                    $(this).attr('fill', 'rgba(255, 241, 77, 0.82)');
+                                }
+
+                            });
+
+                        }, 10
+                     );
+    }
+
+    function RemoveCps() {
+        var cont = 0;
+        $('#container5 .highcharts-grid path').each(function () {
+            if (cont > 10) { $(this).remove(); }
+            cont++;
+        }); 
+        cont = 0;
+        $('#container5 .highcharts-yaxis-labels text').each(function () {
+            if (cont > 10) { $(this).remove(); }
+            cont++;
+        });
+    }
+
+</script>

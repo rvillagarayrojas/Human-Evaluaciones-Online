@@ -1,0 +1,35 @@
+﻿@using EvaluacionesOnline.Areas.Sistemas.Models
+@model  EvaluacionesOnline.Areas.Seleccion.Models.PruebasModel
+
+<div class="panel panel-primary">
+    <div class="panel-heading">5. REFERENCIAS LABORALES (Señale dos personas que hayan sido sus jefes inmediatos. No compañeros de trabajo, amigos ni familiares)</div>
+    <div id="div_ListaReferencia" class="table-responsive" style="padding-top:1px">
+        <table class="table table-striped table-bordered table-condensed ">
+            <thead>
+                <tr style="height:40px">
+                    <th style="font-size:12px;min-width:100px">Nombre del jefe inmediato</th>
+                    <th style="font-size:12px;min-width:100px">Cargo</th>
+                    <th style="font-size:12px;min-width:100px">Empresa</th>
+                    <th style="font-size:12px;min-width:100px">Telefono (Empresa)</th>
+                    <th style="font-size:12px;min-width:100px">Telefono</th>
+                </tr>
+            </thead>
+            <tbody id="itemsDetalle">
+                <tr>
+                    <td id="vc_nombres_referencia" contenteditable="true"></td>
+                    <td id="vc_cargo_referencia" contenteditable="true"></td>
+                    <td id="vc_empresa" contenteditable="true"></td>
+                    <td id="vc_telefono_empresa1" contenteditable="true"></td>
+                    <td id="vc_telefono_referencia" contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td id="vc_nombres_referencia2" contenteditable="true"></td>
+                    <td id="vc_cargo_referencia2" contenteditable="true"></td>
+                    <td id="vc_empresa_referencia2" contenteditable="true"></td>
+                    <td id="vc_telefono_empresa2" contenteditable="true"></td>
+                    <td id="vc_telefono_referencia2" contenteditable="true"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

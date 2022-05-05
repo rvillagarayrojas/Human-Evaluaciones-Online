@@ -1,0 +1,166 @@
+﻿@using EvaluacionesOnline.Areas.Sistemas.Models
+@model  EvaluacionesOnline.Areas.Seleccion.Models.PruebasModel
+<div class="panel panel-primary">
+      <div class="panel-heading">1. DATOS PERSONALES</div>
+      <div class="panel-body">
+          <div class="row" >
+                <div class="form-group col-md-3">
+                    <label for="txtDNI_FDP">Documento Identidad<sub>(*)</sub></label>                    
+                    <div class="input-group">
+                    <span class="input-group-addon">DNI</span>
+                    <input type="text" class="form-control input-sm" disabled="disabled" id="txtDNI_FDP" value="@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_dni_candidato" placeholder="Apellidos">
+                    </div> 
+                </div>
+                <div class="form-group col-md-9">
+                    <label for="txtNombres_FDP">Correo Electrónico<sub>(*)</sub></label>                    
+                    <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                    <input type="email" class="form-control input-sm" disabled="disabled" id="txtEmail_FDP" value="@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_correo_candidato" placeholder="Nombres">
+                    </div> 
+                </div>
+          </div>
+          <div class="row" >
+                <div class="form-group col-md-6">
+                    <label for="txtApellidos_FDP">Apellidos<sub>(*)</sub></label>
+                    <input type="text" class="form-control input-sm" id="txtApellidos_FDP" value="@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_apellidos_candidato" placeholder="Apellidos">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtNombres_FDP">Nombres<sub>(*)</sub></label>
+                    <input type="text" class="form-control input-sm" id="txtNombres_FDP" value="@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_nombres_candidato" placeholder="Nombres">
+                </div>
+          </div>
+          <div class="row" >
+                <div class="form-group col-md-3">
+                    <label for="txtEdad_FDP">Edad<sub>(*)</sub></label>
+                    <input type="text" class="form-control input-sm" id="txtEdad_FDP" value="@Model.mme_prueba.me_prueba.candidato_evaluacion.nu_edad_candidato" placeholder="Edad">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="cboSexo_FDP">Sexo<sub>(*)</sub></label>
+                    <select class="form-control input-sm" id="cboSexo_FDP">
+                        <option value="">Seleccione</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtFechNac_FDP">Fecha Nacimiento<sub>(*)</sub></label>
+                    <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    <input id="txtFechNac_FDP" type="text" class="form-control input-sm" placeholder="dd/mm/AAAA">
+                    </div>
+                </div>  
+
+                <div class="form-group col-md-3">
+                    <label for="txtLugarNac_FDP">Lugar Nacimiento<sub>(*)</sub></label>
+                    <input type="text" class="form-control input-sm" id="txtLugarNac_FDP" value="@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_lugar_nacimiento" placeholder="Lugar Nacimiento">
+                </div>
+          </div>
+          <div class="row" >
+                <div class="form-group col-md-3">
+                    <label for="cboEstadoCivil_FDP">Estado Civil<sub>(*)</sub></label>
+                    <select class="form-control input-sm" id="cboEstadoCivil_FDP">
+                        <option value="">Seleccione</option>
+                        <option value="Soltero">Solero(a)</option>
+                        <option value="Casado">Casado(a)</option>
+                        <option value="Divorsiado">Divorsiado(a)</option>                        
+                        <option value="Viudo">Viudo(a)</option>                        
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtDireccion_FDP">Dirección<sub>(*)</sub></label>
+                    <input type="text" class="form-control input-sm" id="txtDireccion_FDP" value="@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_direccion" placeholder="Dirección">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtDistrito_FDP">Distrito<sub>(*)</sub></label>
+                    <input type="text" class="form-control input-sm" id="txtDistrito_FDP" value="" placeholder="Distrito">
+                </div>
+          </div>
+           <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="txtTelFijo_FDP">Telefono Fijo</label>
+                    <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                    <input type="text" class="form-control input-sm" id="txtTelFijo_FDP" value="@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_nro_telefono" placeholder="Nro Telefono Fijo">
+                    </div>                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtCelular_FDP">Celular<sub>(*)</sub></label>
+                    <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-mobile"></i></span>
+                    <input type="text" class="form-control input-sm" id="txtCelular_FDP" value="@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_celular" placeholder="Nro Celular">
+                    </div>                    
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtBrevete_FDP">Brevete</label>
+                    <input type="text" class="form-control input-sm" id="txtBrevete_FDP" value="@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_brevete" placeholder="Brevete (No, Si=Categoria)">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="txtPretencioEconomica_FDP">Pretenciones Economicas</label>                    
+                    <div class="input-group">
+                    <span class="input-group-addon">S/</span>
+                    <input type="text" class="form-control input-sm" id="txtPretencioEconomica_FDP" value="@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_pretencion_salarial" placeholder="Pretención Economica">
+                    </div>
+                </div>
+           </div>
+          <div class="row">
+              <div class="form-group col-md-12"><sub>(*) Datos obligatorios</sub></div>              
+          </div>
+    </div>
+</div>
+@*<table class="table table-striped table-bordered table-condensed " style="display:none">
+    <thead>
+        <tr>
+            <th colspan="4">1. DATOS PERSONALES</th>
+        </tr>
+        <tr>
+            <th style="font-size:12px;padding:0px" colspan="3">Apellidos</th>
+            <th style="font-size:12px;padding:0px">Nombres</th>
+        </tr>
+        <tr>
+            <th id="apellidos" contenteditable="true" colspan="3">@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_apellidos_candidato</th>
+            <th id="nombres" contenteditable="true">@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_nombres_candidato</th>
+        </tr>
+        <tr>
+            <th style="font-size:12px;padding:0px">Edad</th>
+            <th style="font-size:12px;padding:0px">Sexo</th>
+            <th style="font-size:12px;padding:0px">Fecha de nacimiento <strong style="color:red; font-size:12px">(dd/mm/aaaa)</strong></th>
+            <th style="font-size:12px;padding:0px">Lugar de nacimiento</th>
+        </tr>
+        <tr>
+            <th id="edad" contenteditable="true"> </th>
+            <th id="sexo" contenteditable="true"> </th>
+            <th id="fecha_nacimiento" contenteditable="true"> </th>
+            <th id="lugar_nacimiento" contenteditable="true"> </th>
+        </tr>
+        <tr>
+            <th style="font-size:12px;padding:0px" colspan="2">Estado civil</th>
+            <th style="font-size:12px;padding:0px">Dirección actual</th>
+            <th style="font-size:12px;padding:0px">Distrito</th>
+        </tr>
+        <tr>
+            <th id="estado_civil" contenteditable="true" colspan="2"> </th>
+            <th id="direccion" contenteditable="true"> </th>
+            <th id="distrito" contenteditable="true"> </th>
+        </tr>
+        <tr>
+            <th style="font-size:12px;padding:0px" colspan="2">Telf. fijo</th>
+            <th style="font-size:12px;padding:0px">Celular</th>
+            <th style="font-size:12px;padding:0px">Brevete</th>
+        </tr>
+        <tr>
+            <th id="telefono_fijo" contenteditable="true" colspan="2">@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_nro_telefono</th>
+            <th id="celular" contenteditable="true"> </th>
+            <th id="brevete" contenteditable="true"> </th>
+        </tr>
+        <tr>
+            <th style="font-size:12px;padding:0px" colspan="2">DNI:</th>
+            <th style="font-size:12px;padding:0px">Email</th>
+            <th style="font-size:12px;padding:0px">Pretensiones económicas</th>
+        </tr>
+        <tr>
+            <th id="dni" colspan="2">@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_dni_candidato</th>
+            <th id="correo">@Model.mme_prueba.me_prueba.candidato_evaluacion.vc_correo_candidato</th>
+            <th id="pretensiones_economicas" contenteditable="true"> </th>
+        </tr>
+    </thead>
+</table>*@

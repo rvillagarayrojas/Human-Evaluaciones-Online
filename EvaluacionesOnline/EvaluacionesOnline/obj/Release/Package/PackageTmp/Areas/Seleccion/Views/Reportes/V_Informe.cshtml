@@ -1,0 +1,104 @@
+﻿@using EvaluacionesOnline.Areas.Sistemas.Models
+@model EvaluacionesOnline.Areas.Seleccion.Models.PruebasModel
+@{
+
+    ViewBag.Title = "SISTEMA DE EVALUACIONES PSICOLABORALES - TEST SMART";
+    Layout = "~/Areas/Seleccion/Views/MPEvaluacionesSitio.cshtml";
+    var Sesion = (SesionModel)Session[SesionModel.SessionName];
+}
+
+
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            INFORMES DE LOS CANDIDATOS
+            <small>Selección</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="@Url.RouteUrl("V_Informe")">Informes</a></li>
+        </ol>
+    </section>
+
+    <section class="content">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-body">
+
+                        <div class="col-sm-6 input-group input-group-sm">
+                            <input type="text" id="dato" class="form-control" placeholder="Buscar número de documento de identidad o nombres..."/>
+                            <span class="input-group-btn">
+                              <button class="btn btn-info btn-flat" type="button" onclick="Buscar(); return false;"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Contenido" class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div id="Candidatos" class="box-body">
+                        
+                        @Html.Partial("VP_Candidatos",Model)
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="/Scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#btnImprimir").click(function () {
+            $('#Contenido').printArea();
+        });
+
+        $('#dato').keypress(enterBuscar);
+
+        var f = new Date();
+        $('#Fecha').html( ("0"+f.getDate()).slice(-2) + "/" + ("0"+(f.getMonth() + 1)).slice(-2) + "/" + f.getFullYear())
+    });
+
+    function enterBuscar(e)
+    {
+        if (e.which == 13) { Buscar(); return false; }
+        return true;
+    }
+
+    function Buscar()
+    {
+        var model = { dato: $('#dato').val() }
+        $.ajax({
+            type: "POST",
+            url: '@Url.RouteUrl("VP_Candidatos")',
+            data: model,
+            success: function (result) {
+                $('#Candidatos').html(result);
+            },
+            error: function (result) {
+                alert("Ha ocurrido un error inesperado contactar con el área de sistemas")
+            }
+        });
+    }
+
+    function VerInformeCompleto(id)
+    {
+        location.href = '@Url.RouteUrl("V_Reporte_Completo")' +"?id=" + id;
+    }
+
+    function VerInformeResumen(id) {
+        location.href = '@Url.RouteUrl("V_Reporte_Resumen")' + "?id=" + id;
+    }
+
+    function VerInformeGrafico(id) {
+        location.href = '@Url.RouteUrl("V_Reporte_Grafico")' + "?id=" + id;
+    }
+
+</script>
