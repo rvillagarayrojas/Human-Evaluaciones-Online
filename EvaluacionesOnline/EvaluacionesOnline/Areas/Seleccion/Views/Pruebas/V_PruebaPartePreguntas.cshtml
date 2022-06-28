@@ -718,7 +718,18 @@
                 alert("Debe marcar dos alternativa antes de seguir")
             }
         }
-        else
+        else if ($(':checkbox[name=Alternativa]:checked').length && validarPruebasMarcarTodas(nu_id_prueba)) {
+            if ($(':checkbox[name=Alternativa]:checked').length == 2) {
+                BuscarPregunta($(this).attr('name'));
+                anterior = parseInt($(this).attr('id')) - 1;
+                siguiente = parseInt($(this).attr('id')) + 1;
+                if (anterior == 0) { anterior = 1; siguiente = 2; }
+                if (siguiente == (parseInt(cantidadPreguntas) + 1)) { siguiente = parseInt(cantidadPreguntas); anterior = parseInt(cantidadPreguntas) - 1; }
+            } else {
+                //if (validarPruebasMarcarTodas(nu_id_prueba))
+                alert("Marque dos alternativa antes de seguir")
+            }
+        }else
         {
             BuscarPregunta($(this).attr('name'));
             anterior = parseInt($(this).attr('id')) - 1;
@@ -766,7 +777,14 @@
                 alert("Debe marcar dos alternativa antes de seguir");
             }
         }
-        else { Siguiente(); }
+        else if ($(':checkbox[name=Alternativa]:checked').length && validarPruebasMarcarTodas(nu_id_prueba)) {
+            if ($(':checkbox[name=Alternativa]:checked').length == 2) {
+                Siguiente();
+            } else {
+                alert("Marque dos alternativa antes de seguir")
+            }
+        }
+        else { console.log("Next Siguiente"); Siguiente(); }
     });
 
     function Siguiente() {
@@ -807,7 +825,7 @@
     });
 
     function Anterior() {
-        if ((parseInt(anterior) - 1)<=0) return false;
+        if ((parseInt(anterior))<=0) return false;
         $('#Status').html('');
         ValidarZavic();
         BuscarPregunta($('#' + anterior).attr('name'));
@@ -1117,9 +1135,17 @@
                Terminar();
             });
 
+            function validarPruebasMarcarTodas(nu_id_prueba) {
+                if (nu_id_prueba == 14 || nu_id_prueba == 4 || nu_id_prueba == 5 || nu_id_prueba == 11 || nu_id_prueba == 13 || nu_id_prueba == 17 || nu_id_prueba == 18 || nu_id_prueba == 19 || nu_id_prueba == 21 || nu_id_prueba == 22 || nu_id_prueba == 23)
+                    return true;
+                else
+                    return false;
+            }
+
             const removeAccents = (str) => {
                 return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
             }
+
 
             function Terminar() {
                 clearInterval(cronometro);
@@ -1160,8 +1186,15 @@
                     else {
                         alert("Debe marcar dos alternativa antes de seguir");
                     }
-                } else {
-
+                } else if ($(':checkbox[name=Alternativa]:checked').length && validarPruebasMarcarTodas(nu_id_prueba)) {
+                    if ($(':checkbox[name=Alternativa]:checked').length == 2) {
+                        finalizar = true;
+                    } else {
+                        alert("Marque dos alternativa antes de seguir")
+                    }
+                }
+                else {
+                    finalizar = true;
                 }
 
                 console.log("finalizar", finalizar)
@@ -1176,9 +1209,7 @@
                 
                     //alert("Prueba ID = " + nu_id_prueba)
 
-                    if (nu_id_prueba == 14 || nu_id_prueba == 4 || nu_id_prueba == 5 || nu_id_prueba == 11 || nu_id_prueba == 13 || nu_id_prueba == 17 || nu_id_prueba == 18 || nu_id_prueba == 19 || nu_id_prueba == 21 || nu_id_prueba == 22 || nu_id_prueba == 23) { // SI ES ZAVIC
-
-
+                    if (validarPruebasMarcarTodas(nu_id_prueba)) { // SI ES ZAVIC
                         //alert($(".pregunta.btn.btn-info.btn-sm.cs_continuar_evaluacion").length + " | " +$(".pregunta.btn.btn-sm.cs_continuar_evaluacion").length)
 
                         if ($(".pregunta.btn.btn-info.btn-sm.cs_continuar_evaluacion").length != $(".pregunta.btn.btn-sm.cs_continuar_evaluacion").length) {
