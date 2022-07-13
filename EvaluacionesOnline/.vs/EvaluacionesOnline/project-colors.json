@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "bf5a3cb3-a2f9-4693-8e8e-dfaca38a1200": {
+      "ProjectGuid": "bf5a3cb3-a2f9-4693-8e8e-dfaca38a1200",
+      "DisplayName": "EvaluacionesOnline",
+      "ColorIndex": 0
+    },
+    "b13f1a83-d251-4285-a502-fedd677f7969": {
+      "ProjectGuid": "b13f1a83-d251-4285-a502-fedd677f7969",
+      "DisplayName": "Transaccion",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
